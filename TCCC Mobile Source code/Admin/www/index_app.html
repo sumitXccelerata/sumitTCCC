@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+
+        <title>Index</title><!-- style sheets started here -->
+	<script type="text/javascript" src="cordova.js"></script> 
+	<script src="src/extlib/alertify.js"></script>	
+        <link href="cssmain/bootstrap.min.css" rel="stylesheet">
+        <link href="cssmain/custom.css" rel="stylesheet">
+        <link href="cssmain/custom-responsive.css" rel="stylesheet">
+        <link href="cssmain/animations.css" rel="stylesheet">
+        <link href="cssmain/responsive.css" rel="stylesheet"><!-- style sheets ends here -->
+
+
+ <style type="text/css">
+@import url("css/alertify.css");
+	@import url("css/default.css");		
+</style>
+
+
+<script src="cclib/cricketleague/api.js"></script>
+<script src="cclib/cricketleague/db.js"></script>
+<script src="cclib/cclibs.js"></script>
+
+        <style>
+
+
+
+        .titleforteams{
+
+        color: white;
+        margin-bottom: 2px;
+        text-align: left;
+
+
+
+        }
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+.teamsscroll {
+	height: 630px;position: fixed;overflow: auto;display: block;
+}
+.tournmaindiv {
+	height: 630px;position: fixed;overflow: auto;display: block;padding:6px;
+}
+.playername {
+	position: relative;
+	bottom: 33px;
+	color: white;
+	background: rgba(0,0,0,0.4);
+	padding: 4px;
+	border-bottom-right-radius: 6px;
+	border-bottom-left-radius: 6px;
+	text-align: center;
+}
+.umpiresmaindiv {
+color: white;
+    width: 65%;
+    margin: auto;
+    position: relative;
+    top: 100px;
+}
+.umpoutcls1 {
+	    width: 100px;
+    height: 100px;
+    border: 2px solid red;
+    border-radius: 50%;
+    display: inline-block;
+}
+.umpoutcls {
+	border: 1px solid red;
+    border-radius: 50%;
+    background: red;
+    height: 90px;
+    display: inline-block;
+    width: 90px;
+    position: relative;
+    top: 3%;
+}
+.umpoutcls3 {
+	position: relative;
+    top: 36%;
+    font-weight: bold;
+    font-size: 18px;
+}
+.umpnotoutcls1 {
+	width: 100px;
+    height: 100px;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    top: 19px;
+    left: 10%;
+}
+.umpnotoutcls {
+	border: 1px solid green;
+    border-radius: 50%;
+    background: green;
+    height: 90px;
+    display: inline-block;
+    width: 90px;
+    position: relative;
+    top: 3%;
+}
+.umpnotoutcls3 {
+	    position: relative;
+    top: 23%;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: normal;
+}
+.umpdeci {
+	text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    margin-left: 35px;
+}
+.countteamstyle{
+
+            position: absolute;
+    right: 15px;
+    color: white;
+    bottom: 13px;
+    background: rgba(255,0,0,0.8);
+    padding: 8px;
+    font-weight: bold;
+    border-radius: 6px;
+    padding-right: 18px;
+    padding-left: 17px;
+    font-size: 15px;
+
+        }
+        .playerstextname{
+        color: #FFFFFF;
+        font-size: 12px;
+        font-weight: 700;
+        padding-left: 1%;
+        padding-top: 2%;   
+        white-space: nowrap;
+        }
+
+        .playerimagestyle{
+
+        width: 105px;
+        height: 105px;
+
+        border-radius:5px;
+
+
+        }
+        .maindivstyle123{
+
+        display:inline-flex;
+
+        }
+        .maindiv12345{
+
+        position: relative;
+        text-align: center;padding:10px
+        }
+
+
+
+
+
+
+        @media (max-height: 700px){
+        .teamplayerdiv{ 
+        width: 33%;
+        display: inline-block;
+        padding: 4px;
+        }
+        
+        }
+
+
+
+.playersheight{
+
+height:650px;position:fixed;overflow:auto;padding-left: 10px;
+
+}
+
+
+
+
+
+        </style>
+        
+</head>
+
+<body>
+        <!--Main section started here-->
+
+
+        <section class="main-sec">
+                <!--<div class="container-fluid top-fluid">
+<div class="row">
+<div class="col-lg-6">
+
+</div>
+
+<div class="col-lg-6 top-right-content">
+<a href="#" class="right-close float-right  pt-three pb-one pl-four"><img src="img/close-icon.png"></a>
+
+<img src="img/logo.png" class="img-responsive logo float-right pt-one pb-one black-logo">
+<img src="img/iton-logo-white.png" class="img-responsive logo float-right pt-one pb-one white-logo">
+
+
+</div>
+
+</div>
+</div>-->
+                <!-- Main container started here -->
+
+
+                <div class="container-fluid top-container">
+                        <!--top-row container started here-->
+
+
+                        <div class="row top-row top-fluid">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding height">
+                                        <!-- left-content container started here -->
+
+
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 left-content padding-right ipadpro">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding pt-ten">
+                                                        <!-- semi-circle container started here -->
+
+
+                                                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 semi-circle">
+                                                        <div style = "width:130px" class="respective-text"><img class="img-responsive hidden-md hidden-sm hidden-xs" src="img/logo1.png">
+                                                        </div>
+
+
+                                                        <div style = "width:130px" class="respective-text"><img class="img-responsive hidden-lg visible-md visible-sm visible-xs" src="img/logo1.png">
+                                                        </div>
+                                                        <img style = "position: relative;top: 12px;left: 3%;max-width: 175%;height:34em" class="img-responsive semi-cicle" src="img/image1.png">
+                                                        </div>
+                                                        <!-- semi-circle container ends here -->
+                                                        <!-- icons container starts here -->
+
+
+                                                        <div style= "line-height: normal;" class="col-lg-5 col-md-5 col-sm-5 col-xs-5 icons">
+                                                                <div class="row icons-row platform-row" onClick = "playersdata();">
+                                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 padding plotform-img">
+                                                                                <a style='display:none' class="platforms-icon main-icons" href="index.html#01" id="one"><img class="img-responsive semi-cicle-icon" src=
+                                                                                "img/platform.png"></a>
+                                                                        </div>
+
+
+                                                                        <div style="height: 56px;position: relative;top: -4px;" class="col-lg-8 col-md-8 col-sm-8 col-xs-8 padding click-bg plotform-txt main-icons" id="one-sub">
+										<p style="" class="icon-hd">TEAMS</p>
+
+
+                                                                                <p style="width:94%" class="icon-text">Toronto City Cricket Club Teams.</p>
+                                                                        </div>
+                                                                </div>
+
+
+                                                                <div class="row icons-row industries-row" onClick = "playersdata1234();">
+                                                                        <div style="display:none" class="col-lg-4 col-md-4 col-sm-4 col-xs-4 padding industries-img">
+                                                                                <a class="industries-icon main-icons" href="index.html#02" id="two"><img class="img-responsive semi-cicle-icon" src=
+                                                                                "img/Industries.png"></a>
+                                                                        </div>
+
+
+                                                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 padding click-bg main-icons" id="two-sub">
+                                                                                <p style="" class="icon-hd">PLAYERS</p>
+
+
+                                                                                <p style="width:93%" class="icon-text">Toronto City Cricket Club Players.</p>
+                                                                        </div>
+                                                                </div>
+
+
+                                                                <div class="row icons-row communication-center-row" onClick = "clickumpires();">
+                                                                        <div style="display:none" class="col-lg-4 col-md-4 col-sm-4 col-xs-4 padding communication-center-img">
+                                                                                <a class="communication-center-icon main-icons" href="index.html#03" id="three"><img class=
+                                                                                "img-responsive semi-cicle-icon" src="img/Communication-center.png"></a>
+                                                                        </div>
+
+
+                                                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-4 padding click-bg main-icons" id="three-sub">
+                                                                                <p style="" class="icon-hd">UMPIRES</p>
+
+
+                                                                                <p style="width:90%" class="icon-text">Toronto City Cricket Club Umpires.</p>
+                                                                        </div>
+                                                                </div>
+
+
+                                                                <div class="row icons-row blog-row"  onClick = "tournaments();">
+                                                                        <div style="display:none" class="col-lg-4 col-md-4 col-sm-4 col-xs-4 padding blog-img">
+                                                                                <a class="blog-icon main-icons" href="index.html#04" id="four"><img class="img-responsive semi-cicle-icon" src=
+                                                                                "img/blog.png"></a>
+                                                                        </div>
+
+
+                                                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 padding click-bg main-icons" id="four-sub">
+                                                                                <p style="" class="icon-hd">TOURNAMENTS</p>
+
+
+                                                                                <p style="width:93%" class="icon-text">Tournaments of Toronto City Cricket Club.</p>
+                                                                        </div>
+                                                                </div>
+
+
+                                                                <div class="row icons-row contact-us-row">
+                                                                        <div style = "display:none" class="col-lg-4 col-md-4 col-sm-4 col-xs-4 padding contact-us-img">
+                                                                                <a class="contact-icon main-icons" href="index.html#05" id="five"><img class="img-responsive semi-cicle-icon" src=
+                                                                                "img/contact.png"></a>
+                                                                        </div>
+
+
+                                                                        <div style="height:55px" class="col-lg-8 col-md-8 col-sm-8 col-xs-8 padding click-bg main-icons" id="five-sub">
+                                                                                <p style="" class="icon-hd">ORGANIZATION</p>
+
+
+                                                                                <p style="width:80%" class="icon-text">Toronto City Cricket Club Organization.</p>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <!-- icons container ends here -->
+                                                </div>
+                                        </div>
+                                        <!-- left-content container ends here -->
+                                        <!-- right-content container started here -->
+
+
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 right-content padding">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 top-right-content"><a style="margin-top: 20px;" class="right-close float-right" href="index.html"><img src=
+                                                "img/close.png"></a> <img style="margin-top:15px" class="img-responsive float-right logo pt-one pb-one black-logo" src="img/logo.png"> </div>
+                                                <!-- login div started here -->
+
+
+                                                <div style = "margin-top:280px;" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding login main-icon-div" id="login">
+                                                        
+                                                                <table style="border-collapse: separate !important;border-spacing: 4px;margin-left: 70px;width:80%">
+									<tr><td><input class="form-control" id="exampleInputEmail2" placeholder="Enter email" type="email" style="box-shadow:none !important;background-image:none !important"></td><td>
+                                                                        
+                                                                                 <input class="form-control" id="exampleInputPassword2" placeholder="Password" type="password"  style="box-shadow:none !important"></td><td>
+
+                                                                                
+                                                                        
+                                                                        <button style= "background: #0A4FAD;;color:#fff" class="btn btn-default" type="button" onClick = "login();">Sign In</button></td></tr>
+
+								
+									</table>
+<div>
+                                                                                        <a  style = "margin-left: 76px;" onclick="return forgot123()">Forgot Password ?</a><img style="margin-left: 10px;visibility:hidden" id = "img-loder" class="" src="img/loader.gif"/>
+
+</div>
+                                                       
+                                                </div>
+                                                <!-- login div ends here -->
+
+
+
+ <!-- forgot password  started here -->
+
+
+                                                <div style = "margin-top:50px;display:none" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding login main-icon-div" id="forgotdivid">
+                                                        <div class="col-xs-offset-3 col-lg-5 col-md-5 col-sm-5 col-xs-5 inner-login">
+                                                                <form class="form-horizontal" role="form">
+                                                                        <div class="form-group">
+                                                                                <label class="sr-only" for="exampleInputEmail2">Email address</label> <input class="form-control" id="InputEmailforgotpass" placeholder="Enter email" type="email" style="box-shadow:none !important">
+                                                                        </div>
+
+
+                                                                        <div class="form-group">
+                                                                              
+
+                                                                                <div class="join-forgot" style="margin-top:-13px;">
+                                                                                        <a onclick="login1234()">Login</a>
+                                                                                </div>
+                                                                        </div>
+                                                                        <button style = "background: #0A4FAD;color: white;" class="btn btn-default" type="button" onClick = "forgot();">Submit</button><img style="margin-left: 10px;visibility:hidden" id = "img-loder" class="" src="img/loader.gif"/>
+                                                                </form>
+                                                        </div>
+                                                </div>
+                                                <!-- forgot password div ends here -->
+
+                                                <!-- Iton players div started here -->
+
+
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding platforms main-icon-div" id="playersdetailsid">
+                                                        <!-- Iton platforms inner started here -->
+                                                        <!---   <div class="inner-platforms"  id="playersdetailsid">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                            <a href="index.html#" class="iton-platforms" id="mobile-payment">
+                                <img src="http://www.torontocitycricketclub.ca/siteimages/icicibankcricketteam.jpg" class="img-responsive iton-platform-thumbs img-rounded">
+
+                            </a>
+                        
+                        </div>
+                       </div>=-->
+                                                        <!-- Iton players  inner ends here -->
+                                                </div>
+                                                <!-- Iton platforms  div ends here -->
+                                                <!-- Industries div started here -->
+
+
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding industries main-icon-div" id="palyersiddetails">
+                                                        <!-- Iton platforms inner started here -->
+                                                        <!--    <div class="inner-Industries">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                            <a href="index.html#" class="">
+                                <img src="img/sec-img.png" class="img-responsive iton-platform-thumbs img-rounded">
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                            <a href="index.html#" class="">
+                                <img src="img/cwta-img.png" class="img-responsive iton-platform-thumbs img-rounded">
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                            <a href="index.html#" class="">
+                                <img src="img/MDN-img.png" class="img-responsive iton-platform-thumbs img-rounded">
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                            <a href="index.html#" class="">
+                                <img src="img/mc-img.png" class="img-responsive iton-platform-thumbs img-rounded">
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                            <a href="index.html#" class="">
+                                <img src="img/SMA-img.png" class="img-responsive iton-platform-thumbs img-rounded">
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                            <a href="index.html#" class="">
+                                <img src="img/smm-img.png" class="img-responsive iton-platform-thumbs img-rounded">
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                            <a href="index.html#" class="">
+                                <img src="img/smi-mg.png" class="img-responsive iton-platform-thumbs img-rounded">
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                            <a href="index.html#" class="">
+                                <img src="img/em-img.png" class="img-responsive iton-platform-thumbs img-rounded">
+                            </a>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding main-readmore">
+                            <a href="index.html#" class="main-read">MORE INFORMATION</a>
+                        </div>
+                    </div>===========-->
+                                                        <!-- Iton platforms  inner ends here -->
+                                                </div>
+                                                <!-- Iton Industries  div ends here -->
+                                                <!-- communication center div started here -->
+
+
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding communication-center main-icon-div" id="communication-center">
+                                                        <!-- Iton platforms inner started here -->
+
+
+                                                        
+                                                </div>
+                                                <!-- communication center  div ends here -->
+                                                <!-- Our Blog center div started here -->
+
+
+                                                <div id= "tournaments" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding blog main-icon-div" id="blog">
+                                                        <!-- Iton platforms inner started here
+
+
+                                                        <div class="inner-blog">
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                        <a class="" href="index.html#"><img class="img-responsive iton-platform-thumbs img-rounded" src="img/smm-img.png"></a>
+                                                                </div>
+
+
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                        <a class="" href="index.html#"><img class="img-responsive iton-platform-thumbs img-rounded" src="img/SMA-img.png"></a>
+                                                                </div>
+
+
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                        <a class="" href="index.html#"><img class="img-responsive iton-platform-thumbs img-rounded" src="img/sec-img.png"></a>
+                                                                </div>
+
+
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                        <a class="" href="index.html#"><img class="img-responsive iton-platform-thumbs img-rounded" src="img/smi-mg.png"></a>
+                                                                </div>
+
+
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                        <a class="" href="index.html#"><img class="img-responsive iton-platform-thumbs img-rounded" src="img/em-img.png"></a>
+                                                                </div>
+
+
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                        <a class="" href="index.html#"><img class="img-responsive iton-platform-thumbs img-rounded" src="img/mc-img.png"></a>
+                                                                </div>
+
+
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                        <a class="" href="index.html#"><img class="img-responsive iton-platform-thumbs img-rounded" src="img/MDN-img.png"></a>
+                                                                </div>
+
+
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                        <a class="" href="index.html#"><img class="img-responsive iton-platform-thumbs img-rounded" src="img/cwta-img.png"></a>
+                                                                </div>
+
+
+                                                                <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 padding main-readmore">
+                                                                        <a class="main-read" href="index.html#">MORE INFORMATION</a>
+                                                                </div>
+                                                        </div>
+                                                        Iton platforms  inner ends here -->
+                                                </div>
+                                                <!-- Our Blog center  div ends here -->
+                                                <!-- Contact US  div started here -->
+
+
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding contact-us main-icon-div" id="contact-us">
+                                                        <!-- Iton platforms inner started here -->
+
+
+                                                        <div class="inner-contact-us">
+                                                                <div class="contact-us-content" style = "margin-top:60px">
+                                                                        <p style = "text-align: center;font-weight:bold" class="inner-hd">ORGANIZATION</p>
+
+
+                                                                        <p style = "line-height: normal;text-align: center;" class="inner-text">THE COMPLETE TCCC BASED MARKETING PACKAGE</p>
+
+
+                                                                        <img style = "padding:60px;padding-top:10px;padding-bottom:5px" class="img-responsive semi-cicle" src="img/innovation-img2.png">
+									<p style = "text-align: center;    line-height: normal;" class="inner-hd">MATCHES</p>
+
+
+                                                                        <p style = "line-height: normal;text-align: center;margin-top: -6px;" class="inner-text">The mission of Toronto City Cricket Club is to promote the game of cricket among Youth and Adults in the Greater Toronto Area (GTA).</p>
+                                                                </div>
+
+
+                                                               <!-- <div class="map">
+                                                                        <iframe frameborder="0" height="331" src=
+                                                                        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1903.422654227577!2d78.4418977743188!3d17.41920981896002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2f9ecace1010d17b!2sITON+Technologies+Pvt.+ltd.!5e0!3m2!1sen!2sin!4v1397759296766"
+                                                                        style="border:0" width="100%"></iframe>
+                                                                </div>
+
+
+                                                                <div class="contact-form mb-two mt-two">
+                                                                        <form role="form">
+                                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                                                        <div class="form-group">
+                                                                                                <input class="form-control" id="exampleInputEmail1" placeholder="NAME" type="text">
+                                                                                        </div>
+
+
+                                                                                        <div class="form-group">
+                                                                                                <input class="form-control" id="exampleInputEmail1" placeholder="EMAI ID" type="email">
+                                                                                        </div>
+
+
+                                                                                        <div class="form-group">
+                                                                                                <input class="form-control" id="exampleInputEmail1" placeholder="PHONE NUMBER" type="text">
+                                                                                        </div>
+                                                                                </div>
+
+
+                                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                                                        <div class="form-group">
+                                                                                                <textarea class="form-control" placeholder="YOUR COMMENTS" rows="3"></textarea>
+                                                                                        </div>
+                                                                                        <button class="btn btn-default float-right" type="submit">Submit</button>
+                                                                                </div>
+                                                                        </form>
+                                                                </div>-->
+                                                        </div>
+                                                        <!-- Iton platforms  inner ends here -->
+                                                </div>
+                                                <!-- Contact US   div ends here -->
+                                        </div>
+                                        <!-- right-content container ends here -->
+                                </div>
+                        </div>
+                        <!-- top-row container ends here -->
+                </div>
+                <!-- Main container ended here -->
+        </section>
+        <!-- Main section ends here -->
+        <!-- inner pages contet starts here -->
+
+
+        <section class="inner-page">
+                <!--mobile-payments inner pages contet starts here -->
+
+
+                <div class="mobile-payments-inner">
+                        <div class="container-fluid plot">
+                                <!-- mobile payment navigation started here-->
+
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mobile-payment-nav">
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                <img class=
+                                                "img-responsive float-left padding-two black-logo display-none logo" src="img/iton-logo.png">
+
+                                                <div class="bread-crum">
+                                                        <a class="visited" href="index.html#">ITON PLATFORM &gt;</a> MOBILE PAYMENTS
+                                                </div>
+                                        </div>
+
+
+                                        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6">
+                                                <div class="inner-top-icons plot-white-icons">
+                                                        <a style="margin-top: 20px;" class="inner-close" href="index.html#"><img class="img-responsive" src="img/close.png"></a> <a class="horizontal" href=
+                                                        "index.html"><img class="img-responsive" src="img/her-icon.png"></a> <a class="vertical" href="index.html#"><img class="img-responsive" src=
+                                                        "img/ver-icon.png"></a>
+                                                </div>
+
+
+                                                <div class="inner-top-icons plot-black-icons display-none">
+                                                        <a class="inner-close" href="index.html#"><img class="img-responsive" src="img/close-black.png"></a> <a class="horizontal" href=
+                                                        "index.html#"><img class="img-responsive" src="img/her-black1.png"></a> <a class="vertical" href="index.html#"><img class="img-responsive" src=
+                                                        "img/ver-black1.png"></a>
+                                                </div>
+
+
+                                                <nav class="navbar navbar-default navbar-right" role="navigation" style="display:none;">
+                                                        <div class="container-fluid">
+                                                                <!-- Brand and toggle get grouped for better mobile display -->
+
+
+                                                                <div class="navbar-header">
+                                                                        <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"><span class=
+                                                                        "sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class=
+                                                                        "icon-bar"></span></button>
+                                                                </div>
+                                                                <!-- Collect the nav links, forms, and other content for toggling -->
+
+
+                                                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                                                        <ul class="nav navbar-nav">
+                                                                                <li class="active">
+                                                                                        <a href="index.html#">Overview</a>
+                                                                                </li>
+
+
+                                                                                <li>
+                                                                                        <a href="index.html#">Push Messaging</a>
+                                                                                </li>
+
+
+                                                                                <li>
+                                                                                        <a href="index.html#">SMS Messaging</a>
+                                                                                </li>
+
+
+                                                                                <li>
+                                                                                        <a href="index.html#">Mobile Strategy & Consulting</a>
+                                                                                </li>
+                                                                        </ul>
+                                                                </div>
+                                                                <!-- /.navbar-collapse -->
+                                                        </div>
+                                                        <!-- /.container-fluid -->
+                                                </nav>
+                                        </div>
+                                </div>
+                                <!-- mobile payment navigation ends here-->
+                                <!-- mplot-one started here-->
+
+
+                                <div class="container mplot-one">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-six">
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 plotform-main-img">
+                                                        <p class="plotform-sub-tittle mt-ten text-center mobile-hd">MOBILE PAYMENT</p>
+
+
+                                                        <div class="inner-main-img"><img class="img-responsive inner-main-imgl" src="img/mobile-payment-1.png">
+                                                        </div>
+                                                </div>
+
+
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 plotform-main-text">
+                                                        <div class="plotform-text">
+                                                                <!--<p class="plotform-tittle">MOBILE PAYMENTS</p>-->
+
+
+                                                                <p class="plotform-sub-tittle mt-nine mb-two">Smartphone as the Hub of Mobile Commerce</p>
+
+
+                                                                <p class="plotform-text mt-five">Though mobile devices have played only a small role in retail payments to date, developments within
+                                                                and beyond the mobile world suggest that they will take center stage very soon. Retailers must begin to determine what role mobile
+                                                                payments will play in their business. Our Solution will help businesses to transform the mobile users into paying customers.</p>
+
+
+                                                                <p class="plotform-sub-tittle-two">Payment Methods</p>
+
+
+                                                                <ul class="platform-ul">
+                                                                        <li>Bar-code payments</li>
+
+
+                                                                        <li>Numeric-code payments</li>
+
+
+                                                                        <li>Message-based payments</li>
+
+
+                                                                        <li>Browser-based payments</li>
+
+
+                                                                        <li>Application-based payments</li>
+                                                                </ul>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <!-- mplot-one ends here-->
+                                <!-- mplot-two started here-->
+
+
+                                <div class="mplot-two">
+                                        <div class="container">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-six mb-two">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 plotform-main-text">
+                                                                <div class="plotform-text">
+                                                                        <!--<p class="plotform-tittle">MOBILE PAYMENTS</p>-->
+
+
+                                                                        <p class="mplot-two-sub-tittle mt-nine mb-two">Mobile payment is a trend that is quickly catching up with customers</p>
+
+
+                                                                        <p class="mplot-two-text mt-five">Mobile payment solution currently in existence enable users not only to browse the Internet
+                                                                        and communicate with their social network contacts while on the go, but also to make purchases and make payments for the same
+                                                                        via the mobile channel and supports a secure payment flow with full support for “1-click purchase”; without them having to use
+                                                                        cash or credit cards.</p>
+
+
+                                                                        <ul class="mplot-two-ul">
+                                                                                <li>Secured Transaction with PIN enabled service</li>
+
+
+                                                                                <li>Say No to User names and passwords</li>
+
+
+                                                                                <li>Successful payment in less than 10 Seconds</li>
+                                                                        </ul>
+                                                                </div>
+                                                        </div>
+
+
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 plotform-main-img">
+                                                                <p class="mplot-sub-tittle mt-ten text-center mplot-two-hd">ANY INTERNET-CONNECTED DEVICE</p>
+
+
+                                                                <div class="inner-main-img mt-three"><img class="img-responsive inner-main-imgl" src="img/mobile-img1.png">
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <!-- mplot-two ends here-->
+                        </div>
+                </div>
+                <!--mobile-payments inner pages contet starts here -->
+                <!--a to p services inner pages contet starts here -->
+
+
+                <div class="atop-inner">
+                        <div class="container-fluid plot">
+                                <!--a to p services navigation started here-->
+
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 atop-nav">
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                <img class=
+                                                "img-responsive float-left padding-two black-logo display-none logo" src="img/iton-logo.png">
+
+                                                <div class="bread-crum">
+                                                        <a class="visited" href="index.html#">ITON PLATFORM &gt;</a> A2P SERVICES
+                                                </div>
+                                        </div>
+
+
+                                        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6">
+                                                <div class="inner-top-icons">
+                                                        <a style="margin-top: 20px;" class="inner-close" href="index.html#"><img class="img-responsive" src="img/close.png"></a> <a class="horizontal" href=
+                                                        "index.html#"><img class="img-responsive" src="img/her-icon.png"></a> <a class="vertical" href="index.html#"><img class="img-responsive" src=
+                                                        "img/ver-icon.png"></a>
+                                                </div>
+                                        </div>
+                                </div>
+                                <!-- a to p services navigation ends here-->
+                                <!-- mplot-one started here-->
+
+
+                                <div class="container mplot-one">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-two mb-two">
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 plotform-main-img">
+                                                        <div class="inner-main-img mt-four"><img class="img-responsive inner-main-imgl" src="img/A2P-IMG1.png">
+                                                        </div>
+                                                </div>
+
+
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                        <div class="plotform-text mt-ten">
+                                                                <!--<p class="plotform-tittle">MOBILE PAYMENTS</p>-->
+
+
+                                                                <p class="plotform-sub-tittle mb-one">A2P SERVICES</p>
+
+
+                                                                <p class="plotform-text mt-five">The A2P (application-to-person) services offered by ITON are very reliable and network based. Most
+                                                                enterprises depend on email for their regular communication. However, this has drawbacks such as the low levels of immediacy and low
+                                                                responsiveness, which are extremely important in order to effectively engage with employees. The SMS option, however, is a more
+                                                                versatile and effective option.</p>
+
+
+                                                                <p class="plotform-sub-tittle-two">DELIVER A2P MESSAGING FOR ENTERPRISE CUSTOMERS</p>
+
+
+                                                                <p class="plotform-text">The ITON Enterprise Messaging Service allows you to use network-based application-to-person (A2P) services for
+                                                                enterprise customers through multi-channel SMS notifications and location offerings. We provide you with the most efficient platform,
+                                                                which is very reliable. The benefits include:</p>
+
+
+                                                                <ul class="platform-ul">
+                                                                        <li>The service is low cost and easy-to-integrate</li>
+
+
+                                                                        <li>It provides the feasibility to have two-way SMS conversations between enterprises and customers</li>
+
+
+                                                                        <li>Location data can be leveraged for timely and relevant user experiences</li>
+                                                                </ul>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <!-- mplot-one ends here-->
+                                <!-- mplot-two started here-->
+
+
+                                <div class="mplot-two">
+                                        <div class="container">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-seven mb-two">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                                <div class="plotform-text">
+                                                                        <!--<p class="plotform-tittle">MOBILE PAYMENTS</p>-->
+
+
+                                                                        <p class="mplot-two-sub-tittle mt-five mb-two">SOPHISTICATED MESSAGING FEATURES</p>
+
+
+                                                                        <p class="mplot-two-text mt-five">Through the ITON enterprise messaging, end user satisfaction can be significantly enhanced as
+                                                                        they would be able to have an email-like SMS experience. It also comes with other benefits, including the following:</p>
+
+
+                                                                        <ul class="mplot-two-ul">
+                                                                                <li>Can be easily integrated with email systems</li>
+
+
+                                                                                <li>Provides two implementation options - APIs and cloud based inbox</li>
+
+
+                                                                                <li>Provides interfaces that are customizable</li>
+
+
+                                                                                <li>Is very reliable and incorporates strong SLAs</li>
+                                                                        </ul>
+
+
+                                                                        <p class="mplot-two-sub-tittle mt-five mb-two">TWO-WAY IN-NETWORK MESSAGING WITH CONVERSATION SUPPORT</p>
+
+
+                                                                        <p class="mplot-two-text mt-five">ITON's trusted and secure enterprise messaging service delivers value-added messaging
+                                                                        services to according to our enterprise customer requirements.</p>
+
+
+                                                                        <p class="mplot-two-text mt-two">Our industry-leading SLAs, paired with our scalable messaging platform that processes more
+                                                                        than 2 billion messages each day, ensure messages are delivered accurately and reliably, resulting in better target audience
+                                                                        engagement for our enterprise customers and new revenue streams for their businesses.</p>
+                                                                </div>
+                                                        </div>
+
+
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 plotform-main-img">
+                                                                <div class="inner-main-img mt-nine mb-two"><img class="img-responsive inner-main-imgl" src="img/A2P-IMG2.png">
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <!-- mplot-two ends here-->
+                        </div>
+                </div>
+                <!--a to p services  inner pages contet starts here -->
+                <!--INTERACTIVE MESSAGING inner pages contet starts here -->
+
+
+                <div class="interactive-inner">
+                        <div class="container-fluid plot">
+                                <!--INTERACTIVE MESSAGING navigation started here-->
+
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 interactive-nav">
+                                        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6">
+                                                <img class=
+                                                "img-responsive float-left padding-two black-logo display-none logo" src="img/iton-logo.png">
+
+                                                <div class="bread-crum">
+                                                        <a class="visited" href="index.html#">ITON PLATFORM &gt;</a> INTERACTIVE MESSAGING
+                                                </div>
+                                        </div>
+
+
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                <div class="inner-top-icons">
+                                                        <a style="margin-top: 20px;" class="inner-close" href="index.html#"><img class="img-responsive" src="img/close.png"></a> <a class="horizontal" href=
+                                                        "index.html#"><img class="img-responsive" src="img/her-icon.png"></a> <a class="vertical" href="index.html#"><img class="img-responsive" src=
+                                                        "img/ver-icon.png"></a>
+                                                </div>
+                                        </div>
+                                </div>
+                                <!--INTERACTIVE MESSAGING navigation ends here-->
+                                <!-- INTERACTIVE MESSAGING started here-->
+
+
+                                <div class="container mplot-one">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-two">
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 plotform-main-img">
+                                                        <div class="inner-main-img"><img class="img-responsive inner-main-imgl" src="img/interactive-img.png">
+                                                        </div>
+                                                </div>
+
+
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                        <div class="plotform-text mt-ten">
+                                                                <!--<p class="plotform-tittle">MOBILE PAYMENTS</p>-->
+
+
+                                                                <p class="plotform-sub-tittle mb-one">INTERACTIVE MESSAGING</p>
+
+
+                                                                <p class="plotform-text mt-two">nteractive messaging has become immensely popular since they allow people to reply to your SMS
+                                                                messages. A short code is a number between 3 and 7 digits in length that can be used by customers, suppliers and employees to reply to
+                                                                your messages. These are extremely useful for marketing campaigns or promotions. They are also ideal for customer interactions since
+                                                                they can easily remember the number.</p>
+
+
+                                                                <p class="plotform-text mt-one">Short codes are country specific and therefore cannot be used to receive replies from international
+                                                                locations. There are two types of short codes:</p>
+
+
+                                                                <p class="plotform-sub-tittle-two">STANDARD SHORT CODES</p>
+
+
+                                                                <p class="plotform-text">These work across all major mobile operators. Additional fee is also not charged to mobile users when sending
+                                                                and receiving messages</p>
+
+
+                                                                <p class="plotform-sub-tittle-two">PREMIUM SHORT CODES</p>
+
+
+                                                                <p class="plotform-text">These are mainly used by business organizations to generate revenue when competitions or promotional events
+                                                                are held. Mobile users will be charged extra when they receiving and responding to a message</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <!-- INTERACTIVE MESSAGING ends here-->
+                        </div>
+                </div>
+                <!--INTERACTIVE MESSAGING  inner pages contet starts here -->
+                <!-- ussd inner pages contet starts here -->
+
+
+                <div class="ussd-inner">
+                        <div class="container-fluid plot">
+                                <!--ussd navigation started here-->
+
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ussd-nav">
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                <img class=
+                                                "img-responsive float-left padding-two black-logo display-none logo" src="img/iton-logo.png">
+
+                                                <div class="bread-crum">
+                                                        <a class="visited" href="index.html#">ITON PLATFORM &gt;</a> U.S.S.D
+                                                </div>
+                                        </div>
+
+
+                                        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6">
+                                                <div class="inner-top-icons">
+                                                        <a style="margin-top: 20px;" class="inner-close" href="index.html#"><img class="img-responsive" src="img/close.png"></a> <a class="horizontal" href=
+                                                        "index.html#"><img class="img-responsive" src="img/her-icon.png"></a> <a class="vertical" href="index.html#"><img class="img-responsive" src=
+                                                        "img/ver-icon.png"></a>
+                                                </div>
+                                        </div>
+                                </div>
+                                <!--ussd navigation ends here-->
+                                <!-- ussd started here-->
+
+
+                                <div class="container mplot-one">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 plotform-main-img">
+                                                        <div class="inner-main-img mt-nine"><img class="img-responsive inner-main-imgl stretchLeft" src="img/ussd.png">
+                                                        </div>
+                                                </div>
+
+
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                        <div class="plotform-text mt-ten">
+                                                                <!--<p class="plotform-tittle">MOBILE PAYMENTS</p>-->
+
+
+                                                                <p class="plotform-sub-tittle mb-one">U.S.S.D</p>
+
+
+                                                                <p class="plotform-text mt-five">With the existing competitive environment, customers prefer organizations that can successfully meet
+                                                                and even exceed their expectations. Real time connections can be created with your customers with Unstructured Supplementary Service
+                                                                Data (USSD). GSM cellular telephones use the USSD protocol to communicate with the service provider’s computers. The USSD protocol can
+                                                                be utilized for the following:</p>
+
+
+                                                                <ul class="platform-ul">
+                                                                        <li>WAP browsing</li>
+
+
+                                                                        <li>Pre-paid callback service</li>
+
+
+                                                                        <li>Mobile money services</li>
+
+
+                                                                        <li>Location based content services</li>
+
+
+                                                                        <li>Menu based information services</li>
+                                                                </ul>
+
+
+                                                                <p class="plotform-text mt-five">USSD messages create a real-time connection with the user, which allows a two-way exchange of data.
+                                                                This makes it more responsive and an exceptionally fast connection is also established between the user and the application. It is
+                                                                therefore a very reliable option for any menu-based transaction or service.</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <!-- ussd ends here-->
+                        </div>
+                </div>
+                <!-- ussd  inner pages contet starts here -->
+                <!-- nfc inner pages contet starts here -->
+
+
+                <div class="nfc-inner">
+                        <div class="container-fluid plot">
+                                <!--nfc navigation started here-->
+
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 interactive-nav">
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                <img class=
+                                                "img-responsive float-left padding-two black-logo display-none logo" src="img/iton-logo.png">
+
+                                                <div class="bread-crum">
+                                                        <a class="visited" href="index.html#">ITON PLATFORM &gt;</a> N.F.C
+                                                </div>
+                                        </div>
+
+
+                                        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6">
+                                                <div class="inner-top-icons">
+                                                        <a style="margin-top: 20px;" class="inner-close" href="index.html#"><img class="img-responsive" src="img/close.png"></a> <a class="horizontal" href=
+                                                        "index.html#"><img class="img-responsive" src="img/her-icon.png"></a> <a class="vertical" href="index.html#"><img class="img-responsive" src=
+                                                        "img/ver-icon.png"></a>
+                                                </div>
+                                        </div>
+                                </div>
+                                <!--nfc navigation ends here-->
+                                <!-- nfc started here-->
+
+
+                                <div class="container mplot-one">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-two mb-two">
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 plotform-main-img">
+                                                        <div class="inner-main-img mt-four"><img class="img-responsive inner-main-imgl" src="img/nfc-mg1.png">
+                                                        </div>
+                                                </div>
+
+
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                        <div class="plotform-text mt-ten">
+                                                                <!--<p class="plotform-tittle">MOBILE PAYMENTS</p>-->
+
+
+                                                                <p class="plotform-sub-tittle mb-one">NEAR FIELD COMMUNICATIONS</p>
+
+
+                                                                <p class="plotform-text mt-five">Technology is becoming more mobile as “on-the-go” lifestyles are becoming increasingly popular. Near
+                                                                Field Communications (NFC) is a set of standards that can be used to establish radio communication among smart phones and other similar
+                                                                devices. This is done by bringing the two devices into close proximity or by touching them together.</p>
+
+
+                                                                <p class="plotform-sub-tittle-two">NFC has endless possibilities. Examples of applications include:</p>
+
+
+                                                                <ul class="platform-ul">
+                                                                        <li>Instant payments and coupon delivery using handsets, as we currently do with credit and debit cards.</li>
+
+
+                                                                        <li>Marketing and exchange of information such as schedules, maps and business cards and coupon delivery using NFC Marketing
+                                                                        tags</li>
+
+
+                                                                        <li>Payment for items by just waving the mobile phone over NFC capable devices</li>
+
+
+                                                                        <li>Transferring images and posters for displaying and printing via mobile phones</li>
+                                                                </ul>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <!-- nfc ends here-->
+                        </div>
+                </div>
+                <!-- nfc  inner pages contet starts here -->
+                <!--mobile-innovation inner pages contet starts here -->
+
+
+                <div class="mobile-innovation-inner">
+                        <div class="container-fluid plot">
+                                <!-- mobile-innovation navigation started here-->
+
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mobile-payment-nav">
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                <img class=
+                                                "img-responsive float-left padding-two black-logo display-none logo" src="img/iton-logo.png">
+
+                                                <div class="bread-crum">
+                                                        <a class="visited" href="index.html#">ITON PLATFORM &gt;</a> MOBILE PAYMENTS
+                                                </div>
+                                        </div>
+
+
+                                        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6">
+                                                <div class="inner-top-icons">
+                                                        <a style="margin-top: 20px;" class="inner-close" href="index.html#"><img class="img-responsive" src="img/close.png"></a> <a class="horizontal" href=
+                                                        "index.html#"><img class="img-responsive" src="img/her-icon.png"></a> <a class="vertical" href="index.html#"><img class="img-responsive" src=
+                                                        "img/ver-icon.png"></a>
+                                                </div>
+
+
+                                                <div class="inner-top-icons plot-black-icons display-none">
+                                                        <a class="inner-close" href="index.html#"><img class="img-responsive" src="img/close-black.png"></a> <a class="horizontal" href=
+                                                        "index.html#"><img class="img-responsive" src="img/her-black1.png"></a> <a class="vertical" href="index.html#"><img class="img-responsive" src=
+                                                        "img/ver-black1.png"></a>
+                                                </div>
+
+
+                                                <nav class="navbar navbar-default navbar-right" role="navigation">
+                                                        <div class="container-fluid">
+                                                                <!-- Brand and toggle get grouped for better mobile display -->
+
+
+                                                                <div class="navbar-header">
+                                                                        <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle
+                                                                        navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+                                                                </div>
+                                                                <!-- Collect the nav links, forms, and other content for toggling -->
+
+
+                                                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                                                        <ul class="nav navbar-nav">
+                                                                                <li class="">
+                                                                                        <a href="index.html#">Mobile Couponing</a>
+                                                                                </li>
+
+
+                                                                                <li>
+                                                                                        <a href="index.html#">Mobile Ticketing</a>
+                                                                                </li>
+
+
+                                                                                <li>
+                                                                                        <a href="index.html#">M Parking</a>
+                                                                                </li>
+
+
+                                                                                <li>
+                                                                                        <a href="index.html#">Mobile Surveys</a>
+                                                                                </li>
+
+
+                                                                                <li>
+                                                                                        <a href="index.html#">Mobile CRM</a>
+                                                                                </li>
+                                                                        </ul>
+                                                                </div>
+                                                                <!-- /.navbar-collapse -->
+                                                        </div>
+                                                        <!-- /.container-fluid -->
+                                                </nav>
+                                        </div>
+                                </div>
+                                <!-- mobile-innovation navigation ends here-->
+
+
+                                <div class="height">
+                                        <p class="plotform-sub-tittle text-center mt-eight mb-two">MOBILE INNOVATIONS</p>
+                                        <img class="img-responsive inner-main-imgl" src="img/innovation-img.png">
+
+                                        <div class="container">
+                                                <p class="plotform-text mt-five mobi-text">ITON helps companies understand how to leverage messaging to extend and transform their businesses and the
+                                                way they interact. We are helping our client’s make the most of mobile to engage customers in order to increase revenue and improve customer
+                                                satisfaction as well as drive internal processes that can increase efficiency and reduce costs.</p>
+                                        </div>
+                                </div>
+                                <!-- mplot-two started here-->
+
+
+                                <div class="mplot-two">
+                                        <div class="container">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-six mb-two">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                                <div class="plotform-text plotform-main-text">
+                                                                        <!--<p class="plotform-tittle">MOBILE PAYMENTS</p>-->
+
+
+                                                                        <p class="mplot-two-sub-tittle mt-nine mb-two">MOBILE CRM</p>
+
+
+                                                                        <p class="mplot-two-text mt-five">Due to the intense competition that exists in the market today, it has become imperative to
+                                                                        keep in touch with travelers. Dependency on mobile phones has increased immensely since they have information at their
+                                                                        fingertips. This has also led to increased competition among travel and ticketing agencies, hotels, airlines, rental car
+                                                                        agencies and other businesses.</p>
+
+
+                                                                        <p class="mplot-two-text mt-five">CRM through mobile phones is becoming extremely important for organizations in order to
+                                                                        maintain customer relationships.</p>
+                                                                </div>
+                                                        </div>
+
+
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 plotform-main-img">
+                                                                <div class="inner-main-img mt-five"><img class="img-responsive inner-main-imgl" src="img/innovation-img2.png">
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <!-- mplot-two ends here-->
+                        </div>
+                </div>
+                <!--mobile-innovation inner pages contet starts here -->
+        </section>
+        <!--inner pages inner pages contet ends here -->
+        <!-- script files started here -->
+        <script src="js/jquery-2.0.2.min.js" type="text/javascript">
+        </script> 
+        <script src="js/bootstrap.min.js" type="text/javascript">
+        </script> 
+        <script src="js/custom.js" type="text/javascript">
+        </script> <!-- script files ends here -->
+         
+        
+        <script src="js/mobile-detect.js">
+        </script> 
+        <script>
+
+        var md = new MobileDetect(window.navigator.userAgent);
+        if(md.mobile()!=null&&md.mobile()!="iPad"){
+          // window.location.replace("mobile/index.html");
+        }
+        </script>
+	<script>
+	/*function onDeviceReady() {
+		navigator.splashscreen.hide();
+	}*/
+
+
+document.addEventListener("oncclibready", function(e) {
+
+
+navigator.splashscreen.hide();
+
+});
+
+
+	//document.addEventListener("deviceready", onDeviceReady, false);
+
+	/*$("#teamsstouchevnt").on('touchstart', function(e){
+		playersdata();
+		e.preventDefault();
+	});*/
+	
+	function clickumpires(){
+		if(document.getElementById('communication-center').children.length > 0){
+		 document.getElementById('communication-center').removeChild(document.getElementById('communication-center').children);
+		}
+		var umpiresdiv = document.createElement("div");
+		umpiresdiv.className="umpiresmaindiv"; 
+		document.getElementById('communication-center').appendChild(umpiresdiv);
+	
+		var umpiresdivimg = document.createElement("div");
+		umpiresdivimg.style.textAlign =  "center";
+		umpiresdiv.appendChild(umpiresdivimg);
+			
+			var img = document.createElement("img");
+			img.style.height =  "180px";
+			img.style.marginLeft =  "18px";
+			img.src="img/UMPIRES.png";
+			umpiresdivimg.appendChild(img);
+		var umpiresdivout = document.createElement("div");
+		umpiresdivout.style.textAlign =  "center";
+		umpiresdiv.appendChild(umpiresdivout);
+
+			/*var imgout = document.createElement("img");
+			imgout.src="img/Industries.png";
+			umpiresdivout.appendChild(imgout);
+
+			var imgnotout = document.createElement("img");
+			imgnotout.src="img/Industries.png";
+			umpiresdivout.appendChild(imgnotout);*/
+			var imgout1 = document.createElement("span");
+			imgout1.className="umpoutcls1";
+			umpiresdivout.appendChild(imgout1);
+				
+				var imgout2 = document.createElement("span");
+			imgout2.className="umpoutcls";
+			imgout1.appendChild(imgout2);
+
+				var imgout3 = document.createElement("span");
+			imgout3.className="umpoutcls3";
+			imgout3.innerHTML="OUT";
+			imgout2.appendChild(imgout3);
+
+			
+				var imgnotout1 = document.createElement("span");
+				imgnotout1.className="umpnotoutcls1";
+				umpiresdivout.appendChild(imgnotout1);
+				
+					var imgnotout2 = document.createElement("span");
+				imgnotout2.className="umpnotoutcls";
+				imgnotout1.appendChild(imgnotout2);
+
+					var imgnotout3 = document.createElement("span");
+				imgnotout3.className="umpnotoutcls3";
+				imgnotout3.innerHTML="<span style = 'font-size: 15px;'>Not</span><br><span>OUT</span>";
+				imgnotout2.appendChild(imgnotout3);
+
+
+		var umpiresdivtext = document.createElement("div");
+		umpiresdivtext.className="umpdeci"; 
+		umpiresdivtext.innerHTML="Decision pending.What do you think?";
+		umpiresdiv.appendChild(umpiresdivtext);
+
+	}
+        function playersdata() {
+
+        if(document.getElementById('playersdetailsid').children.length > 0){
+         document.getElementById('playersdetailsid').removeChild(document.getElementById('playersdetailsid').children);
+        }
+
+        var maindiv = document.createElement("div");
+	maindiv.className="teamsscroll";
+        document.getElementById('playersdetailsid').appendChild(maindiv); 
+
+
+        var teamlist_data = [{
+                                "title": "Asian Cricket Club (ACC)",
+                                "image_ground": "http://www.torontocitycricketclub.ca/siteimages/atnteam.jpg",
+                                "image_country": "3 DAYS AGO",
+                                "titlecode": "#TCCC at Feildian Grounds"
+                        }, {
+                                "title": "Asian TV Network (ATN)",
+                                "image_ground": "http://www.torontocitycricketclub.ca/siteimages/icicibankcricketteam.jpg",
+                                "image_country": "25/02/16",
+                                "titlecode": "#TCCC at Tea Hill Park"
+                        }, {
+                                "title": "Blue Mountain Cricket Club (BMCC)",
+                                "image_ground": "http://www.torontocitycricketclub.ca/siteimages/kpmg.jpg",
+                                "image_country": "18/02/16",
+                                "titlecode": "#TCCC at The Candy Fields"
+                        }, {
+                                "title": "ICICI BANK Cricket Club (ICICI)",
+                                "image_ground": "http://www.torontocitycricketclub.ca/siteimages/thoundrbolts.jpg",
+                                "image_country": "16/02/16",
+                                "titlecode": "#TCCC at Maple Leaf Cricket Club"
+                        }, {
+                                "title": "Jai Ho Cricket Club(JHCC)",
+                                "image_ground": "http://www.torontocitycricketclub.ca/siteimages/tlj.jpg",
+                                "image_country": "15/02/16",
+                                "titlecode": "#TCCC at Rideau Hall"
+                        }, {
+                                "title": "KPMG Cricket Club (KPMG)",
+                                "image_ground": "http://www.torontocitycricketclub.ca/siteimages/kpmg.jpg",
+                                "image_country": "18/02/16",
+                                "titlecode": "#TCCC at The Candy Fields"
+                        }, {
+                                "title": "Exiom Thunderbolts Cricket Club (ETB)",
+                                "image_ground": "http://www.torontocitycricketclub.ca/siteimages/thoundrbolts.jpg",
+                                "image_country": "16/02/16",
+                                "titlecode": "#TCCC at Maple Leaf Cricket Club"
+                        }, {
+                                "title": "Toronto Lumber Jack Cricket Club (TLJ)",
+                                "image_ground": "http://www.torontocitycricketclub.ca/siteimages/tlj.jpg",
+                                "image_country": "15/02/16",
+                                "titlecode": "#TCCC at Rideau Hall"
+                        }];
+
+
+
+        for (var i = 0; i < teamlist_data.length; i++) {
+        var firstdiv = document.createElement("div");
+        firstdiv.className="col-lg-4 col-sm-6 col-xs-6";
+        maindiv.appendChild(firstdiv);
+
+        var titlediv = document.createElement("div");
+        titlediv.innerHTML=teamlist_data[i].title;
+        titlediv.className="titleforteams";
+        firstdiv.appendChild(titlediv);
+
+
+        var imagediv = document.createElement("img");
+        imagediv.src=teamlist_data[i].image_ground;
+        imagediv.className="img-responsive iton-platform-thumbs img-rounded";
+        firstdiv.appendChild(imagediv); 
+
+
+        var countdiv = document.createElement("div");
+        countdiv.innerHTML= i+1;
+        countdiv.className="countteamstyle";     
+        firstdiv.appendChild(countdiv);
+
+        }
+
+        }
+
+        </script>
+        <script>
+	function login(){
+
+
+				//window.location.href = "innerindex.html";
+		
+			if(document.getElementById("exampleInputEmail2").value ==""){
+			
+				alertify.setting('notifier', 'delay', 2);
+				alertify.error("Please enter Username").dismissOthers();
+				return false;
+		        }
+			if(document.getElementById("exampleInputPassword2").value ==""){
+				
+				alertify.setting('notifier', 'delay', 2);
+				alertify.error("Please enter Password").dismissOthers();
+				return false;
+		      }
+
+			document.getElementById("img-loder").style.visibility = "visible";
+			var user={};
+			 user.emailId=document.getElementById("exampleInputEmail2").value;
+			 user.password=document.getElementById("exampleInputPassword2").value;
+
+
+
+			CCLIB.CRICKET_ADMIN.login(user, function(resp) {
+
+			//alert(JSON.stringify(resp));
+
+			if(resp.status=="success"){
+			
+			window.location.href = "innerindex.html";
+			document.getElementById("img-loder").style.visibility="hidden";
+			var logindata=JSON.stringify(resp);
+			localStorage.setItem('userdatalogin', logindata);
+			}else{
+			document.getElementById("img-loder").style.visibility="hidden";
+			alertify.setting('notifier', 'delay', 2);
+			alertify.error(""+resp.data+"").dismissOthers();
+			}
+
+			
+
+
+
+			});
+			//document.getElementById("img-loder").style.visibility="hidden";
+			//window.location.href = "innerindex.html";
+
+
+		
+	};
+
+	function forgot123(){
+
+		document.getElementById("login").style.display = "none";
+
+		document.getElementById("forgotdivid").style.display = "block";
+
+	};
+
+
+	function login1234(){
+
+		document.getElementById("login").style.display = "block";
+
+		document.getElementById("forgotdivid").style.display = "none";
+
+	};
+
+	function forgot	(){
+
+			if(document.getElementById("InputEmailforgotpass").value ==""){
+			
+				alertify.setting('notifier', 'delay', 2);
+				alertify.error("Please enter emailId").dismissOthers();
+				return false;
+		        }
+
+			var user={};
+
+			user.emailId=document.getElementById("InputEmailforgotpass").value;
+
+			CCLIB.CRICKET_ADMIN.forgotPassword(user, function(resp) {
+
+			//alert(JSON.stringify(resp));
+
+			if(resp.status=="success"){
+
+				alertify.setting('notifier', 'delay', 2);
+				alertify.success(""+resp.data.msg+"").dismissOthers();
+
+			}else{
+
+				alertify.setting('notifier', 'delay', 2);
+				alertify.error("Try again").dismissOthers();
+
+			}
+
+			
+
+
+			});
+
+
+
+
+
+	};	
+
+
+	var temas_data = [{
+                                "title": "Asian Cricket Club (ACC)",
+                                "image_ground": "http://www.torontocitycricketclub.ca/siteimages/atnteam.jpg",
+                                "image_country": "3 DAYS AGO",
+                                "titlecode": "#TCCC at Feildian Grounds"
+                        }, {
+                                "title": "Asian TV Network (ATN)",
+                                "image_ground": "http://www.torontocitycricketclub.ca/siteimages/icicibankcricketteam.jpg",
+                                "image_country": "25/02/16",
+                                "titlecode": "#TCCC at Tea Hill Park"
+                        }, {
+                                "title": "Blue Mountain Cricket Club (BMCC)",
+                                "image_ground": "http://www.torontocitycricketclub.ca/siteimages/kpmg.jpg",
+                                "image_country": "18/02/16",
+                                "titlecode": "#TCCC at The Candy Fields"
+                        }, {
+                                "title": "ICICI BANK Cricket Club (ICICI)",
+                                "image_ground": "http://www.torontocitycricketclub.ca/siteimages/thoundrbolts.jpg",
+                                "image_country": "16/02/16",
+                                "titlecode": "#TCCC at Maple Leaf Cricket Club"
+                        }, {
+                                "title": "Jai Ho Cricket Club(JHCC)",
+                                "image_ground": "http://www.torontocitycricketclub.ca/siteimages/tlj.jpg",
+                                "image_country": "15/02/16",
+                                "titlecode": "#TCCC at Rideau Hall"
+                        }, {
+                                "title": "KPMG Cricket Club (KPMG)",
+                                "image_ground": "http://www.torontocitycricketclub.ca/siteimages/kpmg.jpg",
+                                "image_country": "18/02/16",
+                                "titlecode": "#TCCC at The Candy Fields"
+                        }, {
+                                "title": "Exiom Thunderbolts Cricket Club (ETB)",
+                                "image_ground": "http://www.torontocitycricketclub.ca/siteimages/thoundrbolts.jpg",
+                                "image_country": "16/02/16",
+                                "titlecode": "#TCCC at Maple Leaf Cricket Club"
+                        }, {
+                                "title": "Toronto Lumber Jack Cricket Club (TLJ)",
+                                "image_ground": "http://www.torontocitycricketclub.ca/siteimages/tlj.jpg",
+                                "image_country": "15/02/16",
+                                "titlecode": "#TCCC at Rideau Hall"
+                        }];
+	var players_data = [{
+                                        "fullname": "ROSHAN LAL",
+                                        "toptitle": "ROSHAN",
+                                        "firstname": "ROSHAN",
+                                        "secondname": "LAL"
+                                }, {
+                                        "fullname": "KALPESH PATEL",
+                                        "toptitle": "KALPESH",
+                                        "firstname": "KALPESH",
+                                        "secondname": "PATEL"
+                                }, {
+                                        "fullname": "RAJESH BAINS",
+                                        "toptitle": "RAJESH",
+                                        "firstname": "RAJESH",
+                                        "secondname": "BAINS"
+                                }, {
+                                        "fullname": "NIRAV PATEL",
+                                        "toptitle": "NIRAV",
+                                        "firstname": "NIRAV",
+                                        "secondname": "PATEL"
+                                }, {
+                                        "fullname": "DEEPU PATEL",
+                                        "toptitle": "DEEPU",
+                                        "firstname": "DEEPU",
+                                        "secondname": "PATEL"
+                                }, {
+                                        "fullname": "ADESH SHARMA",
+                                        "toptitle": "ADESH",
+                                        "firstname": "ADESH",
+                                        "secondname": "SHARMA"
+                                }, {
+                                        "fullname": "DIVESH PATEL",
+                                        "toptitle": "DIVESH",
+                                        "firstname": "DIVESH",
+                                        "secondname": "PATEL"
+                                }, {
+                                        "fullname": "VIBHU PARKASH",
+                                        "toptitle": "VIBHU",
+                                        "firstname": "VIBHU",
+                                        "secondname": "BALJINDER"
+                                }, {
+                                        "fullname": "HABIB BALJINDER",
+                                        "toptitle": "HABIB",
+                                        "firstname": "HABIB",
+                                        "secondname": "LAL"
+                                }, {
+                                        "fullname": "SUNNY PURI",
+                                        "toptitle": "SUNNY",
+                                        "firstname": "SUNNY",
+                                        "secondname": "PURI"
+                                }, {
+                                        "fullname": "VIKRAM CHOUDHARY",
+                                        "toptitle": "VIKRAM",
+                                        "firstname": "VIKRAM",
+                                        "secondname": "CHOUDHARY"
+                                }, {
+                                        "fullname": "PANKAJ CHHABRA",
+                                        "toptitle": "PANKAJ",
+                                        "firstname": "PANKAJ",
+                                        "secondname": "CHHABRA"
+                                }, {
+                                        "fullname": "GURPREET SINGH",
+                                        "toptitle": "GURPREET",
+                                        "firstname": "GURPREET",
+                                        "secondname": "SINGH"
+                                }, {
+                                        "fullname": "GURPREET  GOPI",
+                                        "toptitle": "GURPREET",
+                                        "firstname": "GURPREET",
+                                        "secondname": "GOPI"
+                                }, {
+                                        "fullname": "ANNAND",
+                                        "toptitle": "ANNAND",
+                                        "firstname": "ANNAND",
+                                        "secondname": "ANNAND"
+                                }, {
+                                        "fullname": "JITENDER SHARMA",
+                                        "toptitle": "JITENDER",
+                                        "firstname": "JITENDER",
+                                        "secondname": "SHARMA"
+                                }, {
+                                        "fullname": "ARUN",
+                                        "toptitle": "ARUN",
+                                        "firstname": "ARUN",
+                                        "secondname": "ARUN"
+                                }, {
+                                        "fullname": "MANAV",
+                                        "toptitle": "MANAV",
+                                        "firstname": "MANAV",
+                                        "secondname": "MANAV"
+                                }, {
+                                        "fullname": "SATIENDER",
+                                        "toptitle": "SATIENDER",
+                                        "firstname": "SATIENDER",
+                                        "secondname": "SATIENDER"
+                                }, {
+                                        "fullname": "SUMMIT",
+                                        "toptitle": "SUMMIT",
+                                        "firstname": "SUMMIT",
+                                        "secondname": "SUMMIT"
+                                }, {
+                                        "fullname": "SANJAY PATEL",
+                                        "toptitle": "SANJAY",
+                                        "firstname": "SANJAY",
+                                        "secondname": "PATEL"
+                                }, {
+                                        "fullname": "ROSHAN LAL",
+                                        "toptitle": "ROSHAN",
+                                        "firstname": "ROSHAN",
+                                        "secondname": "LAL"
+                                }, {
+                                        "fullname": "VIMAL PATEL",
+                                        "toptitle": "VIMAL",
+                                        "firstname": "VIMAL",
+                                        "secondname": "PATEL"
+                                }];
+	var tournaments_data = [{
+                                        "fullname": "ROSHAN LAL",
+                                        "image_ground": "http://www.torontocitycricketclub.ca/siteimages/atnteam.jpg",
+                                        "firstname": "TCCC League 2015",
+                                        "secondname": "LAL"
+                                }, {
+                                        "fullname": "KALPESH PATEL",
+                                        "image_ground": "http://www.torontocitycricketclub.ca/siteimages/icicibankcricketteam.jpg",
+                                        "firstname": "TCCC League 2014",
+                                        "secondname": "PATEL"
+                                }, {
+                                        "fullname": "RAJESH BAINS",
+                                        "image_ground": "http://www.torontocitycricketclub.ca/siteimages/kpmg.jpg",
+                                        "firstname": "TCCC League 2013",
+                                        "secondname": "BAINS"
+                                }, {
+                                        "fullname": "NIRAV PATEL",
+                                        "image_ground": "http://www.torontocitycricketclub.ca/siteimages/thoundrbolts.jpg",
+                                        "firstname": "TCCC League 2012",
+                                        "secondname": "PATEL"
+                                }, {
+                                        "fullname": "RAJESH BAINS",
+                                        "image_ground": "http://www.torontocitycricketclub.ca/siteimages/tlj.jpg",
+                                        "firstname": "TCCC League 2011",
+                                        "secondname": "BAINS"
+                                }, {
+                                        "fullname": "NIRAV PATEL",
+                                        "image_ground": "http://www.torontocitycricketclub.ca/siteimages/kpmg.jpg",
+                                        "firstname": "TCCC League 2010",
+                                        "secondname": "PATEL"
+                                }];
+	function tournaments(){
+		if(document.getElementById('tournaments').children.length > 0){
+		 document.getElementById('tournaments').removeChild(document.getElementById('tournaments').children);
+		}
+
+        var maindiv = document.createElement("div");
+	maindiv.className="tournmaindiv inner-blog";
+        document.getElementById('tournaments').appendChild(maindiv); 
+
+	for (var i = 0; i < tournaments_data.length; i++) {
+        var firstdiv = document.createElement("div");
+	firstdiv.className="col-lg-4 col-md-4 col-sm-6 col-xs-6 teamplayerdiv";
+        maindiv.appendChild(firstdiv);
+
+
+        var imagediv = document.createElement("img");
+        imagediv.src=tournaments_data[i].image_ground;
+        imagediv.className="img-responsive iton-platform-thumbs img-rounded";
+        firstdiv.appendChild(imagediv); 
+
+
+
+        var namediv = document.createElement("div");
+        namediv.innerHTML= tournaments_data[i].firstname;
+        namediv.className="playername";
+        firstdiv.appendChild(namediv);
+
+
+
+        }
+
+	
+
+	}
+        function playersdata1234() {
+
+        if(document.getElementById('palyersiddetails').children.length > 0){
+         document.getElementById('palyersiddetails').removeChild(document.getElementById('palyersiddetails').children);
+        }
+
+        var maindiv = document.createElement("div");
+        maindiv.className="playersheight";
+        document.getElementById('palyersiddetails').appendChild(maindiv); 
+
+
+
+
+
+
+
+for(var j=0;j<1;j++){
+
+
+        var teamname = document.createElement("div");
+        teamname.innerHTML="PLAYERS - Asian Cricket Club (ACC)";
+
+        teamname.className="playerstextname";
+        maindiv.appendChild(teamname); 
+
+
+
+        for (var i = 0; i < players_data.length; i++) {
+        var firstdiv = document.createElement("div");
+	firstdiv.className="col-lg-4 col-md-4 col-sm-6 col-xs-6 teamplayerdiv";
+        maindiv.appendChild(firstdiv);
+
+
+        var imagediv = document.createElement("img");
+        imagediv.src="http://www.torontocitycricketclub.ca/siteimages/tlj.jpg";
+        imagediv.className="img-responsive iton-platform-thumbs img-rounded";
+        firstdiv.appendChild(imagediv); 
+
+
+
+        var namediv = document.createElement("div");
+        namediv.innerHTML=players_data[i].firstname;
+        namediv.className="playername";
+        firstdiv.appendChild(namediv);
+
+
+
+        }
+}
+
+        }
+        </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+   <s:Body>
+      <GetAllDetailsResponse xmlns="http://tempuri.org/">
+         <GetAllDetailsResult xmlns:a="http://schemas.datacontract.org/2004/07/eMeeting.Model" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+            <a:T_Se_Agenda_Info z:Id="i1" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+               <a:AgendaName>35</a:AgendaName>
+               <a:AgendaNo>1</a:AgendaNo>
+               <a:Agenda_Status>12</a:Agenda_Status>
+               <a:ChangeTracker z:Id="i2">
+                  <a:ExtendedProperties/>
+                  <a:ObjectsAddedToCollectionProperties/>
+                  <a:ObjectsRemovedFromCollectionProperties/>
+                  <a:OriginalValues/>
+                  <a:State>Unchanged</a:State>
+               </a:ChangeTracker>
+               <a:OtherAgendaName/>
+            </a:T_Se_Agenda_Info>
+            <a:T_Se_Agenda_Info z:Id="i3" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+               <a:AgendaName>36</a:AgendaName>
+               <a:AgendaNo>2</a:AgendaNo>
+               <a:Agenda_Status>12</a:Agenda_Status>
+               <a:ChangeTracker z:Id="i4">
+                  <a:ExtendedProperties/>
+                  <a:ObjectsAddedToCollectionProperties/>
+                  <a:ObjectsRemovedFromCollectionProperties/>
+                  <a:OriginalValues/>
+                  <a:State>Unchanged</a:State>
+               </a:ChangeTracker>
+               <a:OtherAgendaName/>
+            </a:T_Se_Agenda_Info>
+            <a:T_Se_Agenda_Info z:Id="i5" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+               <a:AgendaName>40</a:AgendaName>
+               <a:AgendaNo>3</a:AgendaNo>
+               <a:Agenda_Status>12</a:Agenda_Status>
+               <a:ChangeTracker z:Id="i6">
+                  <a:ExtendedProperties/>
+                  <a:ObjectsAddedToCollectionProperties/>
+                  <a:ObjectsRemovedFromCollectionProperties/>
+                  <a:OriginalValues/>
+                  <a:State>Unchanged</a:State>
+               </a:ChangeTracker>
+               <a:OtherAgendaName>Other Agenda</a:OtherAgendaName>
+            </a:T_Se_Agenda_Info>
+            <a:T_Se_Agenda_Info z:Id="i7" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+               <a:AgendaName>35</a:AgendaName>
+               <a:AgendaNo>4</a:AgendaNo>
+               <a:Agenda_Status>12</a:Agenda_Status>
+               <a:ChangeTracker z:Id="i8">
+                  <a:ExtendedProperties/>
+                  <a:ObjectsAddedToCollectionProperties/>
+                  <a:ObjectsRemovedFromCollectionProperties/>
+                  <a:OriginalValues/>
+                  <a:State>Unchanged</a:State>
+               </a:ChangeTracker>
+               <a:OtherAgendaName/>
+            </a:T_Se_Agenda_Info>
+            <a:T_Se_Agenda_Info z:Id="i9" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+               <a:AgendaName>40</a:AgendaName>
+               <a:AgendaNo>5</a:AgendaNo>
+               <a:Agenda_Status>12</a:Agenda_Status>
+               <a:ChangeTracker z:Id="i10">
+                  <a:ExtendedProperties/>
+                  <a:ObjectsAddedToCollectionProperties/>
+                  <a:ObjectsRemovedFromCollectionProperties/>
+                  <a:OriginalValues/>
+                  <a:State>Unchanged</a:State>
+               </a:ChangeTracker>
+               <a:OtherAgendaName/>
+            </a:T_Se_Agenda_Info>
+            <a:T_Se_Agenda_Info z:Id="i11" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+               <a:AgendaName>40</a:AgendaName>
+               <a:AgendaNo>6</a:AgendaNo>
+               <a:Agenda_Status>12</a:Agenda_Status>
+               <a:ChangeTracker z:Id="i12">
+                  <a:ExtendedProperties/>
+                  <a:ObjectsAddedToCollectionProperties/>
+                  <a:ObjectsRemovedFromCollectionProperties/>
+                  <a:OriginalValues/>
+                  <a:State>Unchanged</a:State>
+               </a:ChangeTracker>
+               <a:OtherAgendaName>other agenda</a:OtherAgendaName>
+            </a:T_Se_Agenda_Info>
+            <a:T_Se_Agenda_Info z:Id="i13" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+               <a:AgendaName>40</a:AgendaName>
+               <a:AgendaNo>7</a:AgendaNo>
+               <a:Agenda_Status>12</a:Agenda_Status>
+               <a:ChangeTracker z:Id="i14">
+                  <a:ExtendedProperties/>
+                  <a:ObjectsAddedToCollectionProperties/>
+                  <a:ObjectsRemovedFromCollectionProperties/>
+                  <a:OriginalValues/>
+                  <a:State>Unchanged</a:State>
+               </a:ChangeTracker>
+               <a:OtherAgendaName/>
+            </a:T_Se_Agenda_Info>
+         </GetAllDetailsResult>
+      </GetAllDetailsResponse>
+   </s:Body>
+</s:Envelope>

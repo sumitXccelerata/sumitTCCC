@@ -1,0 +1,79 @@
+.hawkeye {
+	height: 100%;/* Firefox 
+	height: -moz-calc(100% - 13px);
+	/* WebKit 
+	height: -webkit-calc(100% - 13px);
+	/* Opera 
+	height: -o-calc(100% - 13px);
+	/* Standard 
+	height: calc(100% - 13px);
+	*/
+}
+body.landscape .wrapper {
+	display: block;
+	width: auto;
+}
+.hawkeye .featureCntr {
+	height: 100%;
+	/* Firefox 
+	height: -moz-calc(100% - 31px);
+	/* WebKit 
+	height: -webkit-calc(100% - 31px);
+	/* Opera 
+	height: -o-calc(100% - 31px);
+	/* Standard 
+	height: calc(100% - 31px);*/
+	width: 100%;
+}
+#wrapper {
+	height: 100%;
+	width: auto;
+}
+.hawkeye .featureCntr ul.featureCarousel {
+	height: 100%;
+}
+.hawkeye .featureCntr ul.featureCarousel > li {
+	/* background-size: 100% auto; */
+	background-color: black;
+	background-size: cover;
+	background-position: center;
+	/* background-repeat: no-repeat; */
+	height: 100%;
+	width: 100%;
+}
+.hawkeye .featureCntr ul.featureCarousel > li.traj .vControlWrap {
+	width: 100%;
+}
+.hawkeye .featureList {
+	height: -webkit-calc(100% - 31px);
+}
+/*[if !IE].graphCntr .layer {
+    height: auto;
+    width: auto;
+}*/
+
+.hawkeye .featureList .content {
+	height: -webkit-calc(100% - 52px);
+	overflow: auto;
+}
+/*.hawkeye .filterPanel {
+    height: 100%;
+}*/
+
+.hawkeye .filterPanel .content {
+/*    height: -webkit-calc(100% - 74px);
+    min-height: auto;*/
+}
+.hawkeye .filterPanel .trajPanel {
+	height: 100%;
+}
+.hawkeye .filterPanel .trajPanel .trajWickets .content {
+	/*height: -webkit-calc(100% - 35px);*/
+	min-height: auto;
+}
+.hawkeye .filterPanel .defaultFilter {
+	height: 100%;
+}
+.hawkeye .filterPanel .defaultFilter .defaultFilterContent h3 {
+	padding-top: 20px;
+}

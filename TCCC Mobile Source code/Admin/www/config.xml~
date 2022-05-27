@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<widget xmlns = "http://www.w3.org/ns/widgets"
+		xmlns:gap = "http://phonegap.com/ns/3.1.0"
+		id        = "com.iton.cricketAdminApp"
+		versionCode="1.0"
+		version   = "1.0.1">
+		<name>TCCC Admin</name>
+		<description>TCCC Admin</description>
+		<author email="support@clubtcc.ca" href="http://clubtcc.ca/">itonteam
+        </author>
+		<preference name="DisallowOverscroll" value="true" />
+		<preference name="webviewbounce" value="false"/>
+		<preference name="UIWebViewBounce" value="false"/>		
+		<preference name="android-minSdkVersion" value="16"/>
+		<preference name="BackupWebStorage" value="none"/>
+		<preference name="show-splash-screen-spinner" value="false" />	
+		<preference name="AutoHideSplashScreen" value="false" />
+		<preference name="StatusBarOverlaysWebView" value="true" />		
+		<preference name="StatusBarStyle" value="lightcontent" />
+		<preference name="ShowSplashScreenSpinner" value="false" />
+		<preference name="orientation" value="landscape" />
+		<preference name="target-device" value="tablet" />
+		<feature name="StatusBar">
+		<param name="ios-package" value="CDVStatusBar" onload="true"/>
+		</feature>
+	<platform name="ios">
+		<splash src="res/splash/Default-Portrait.png" width="768" height="1024"/>
+		<splash src="res/splash/Default-Portrait@2x.png" width="1536" height="2048"/>
+		<splash src="res/splash/Default-Portrait-1366@2x.png" width="2048" height="2732"/>
+		<splash src="res/splash/Default-Landscape.png" width="1024" height="768"/>
+		<splash src="res/splash/Default-Landscape@2x.png" width="2048" height="1536"/>
+		<splash src="res/splash/Default-Landscape-1366@2x.png" width="2732" height="2048"/>
+
+		<icon src="res/icon/icon.png" width="57" height="57"/>
+		<icon src="res/icon/icon@2x.png" width="114" height="114"/>
+		<icon src="res/icon/icon-40.png" width="40" height="40"/>
+		<icon src="res/icon/icon-40@2x.png" width="80" height="80"/>
+		<icon src="res/icon/icon-60.png" width="60" height="60"/>
+		<icon src="res/icon/icon-60@2x.png" width="120" height="120"/>
+		<icon src="res/icon/icon-60@3x.png" width="180" height="180"/>
+		<icon src="res/icon/icon-72.png" width="72" height="72"/>
+		<icon src="res/icon/icon-72@2x.png" width="144" height="144"/>
+		<icon src="res/icon/icon-76.png" width="76" height="76"/>
+		<icon src="res/icon/icon-76@2x.png" width="152" height="152"/>
+		<icon src="res/icon/icon-small.png" width="29" height="29"/>
+		<icon src="res/icon/icon-83.5@2x.png" width="167" height="167"/>
+	  </platform>
+    <gap:plugin name="org.apache.cordova.console" />
+    <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="org.apache.cordova.splashscreen" />
+    <gap:plugin name="org.apache.cordova.camera" source="pgb" spec="0.3.6" />
+    <gap:plugin name="com.synconset.imagepicker" source="pgb" spec="1.0.4" />
+    <gap:plugin name="org.apache.cordova.file-transfer" spec="0.5.0" source="pgb" />
+    <gap:plugin name="io.litehelpers.cordova.sqlite"/> 
+    <plugin name="net.bgta.phonegap.plugin.appversion" spec="1.1.1" source="pgb" />
+    <allow-navigation href="*" />
+	<access origin="*" />
+</widget>

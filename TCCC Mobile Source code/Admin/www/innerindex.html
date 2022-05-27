@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta HTTP-EQUIV='Pragma' CONTENT='no-cache'>
+<meta HTTP-EQUIV='Cache-Control' CONTENT='no-cache'>
+<title>eTraveller | ITON Technologies</title>
+   <style type="text/css">
+	@import url("css/iphone.css");
+	@import url("css/bootstrap.min.css");
+	@import url("css/crash.css");
+	@import url("css/styles.css");
+	@import url("css/standings.css");
+	@import url("css/alertify.css");
+	@import url("css/default.css");
+	@import url("css/paginationgrid.css");		
+	
+</style>
+   <script src="country.json"></script> 
+<style>
+
+html, body{
+   height: 100%;
+   overflow: hidden;
+   position: relative;
+}
+
+.edgelist .mblListItemLabel{
+       display:none;
+}
+.mblListItemRightIcon {
+       display:none;
+}
+
+
+</style>
+    
+
+<script type="text/javascript" src="cordova.js"></script> 
+<script>
+    var dojoConfig = {
+        parseOnLoad: true,
+        async: true
+    };
+    </script>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojox/mobile/deviceTheme.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>-->
+
+<script src="src/extlib/alertify.js"></script>
+<script src="cclib/cricketleague/api.js"></script>
+<script src="cclib/cricketleague/db.js"></script>
+<script src="cclib/cclibs.js"></script>
+<script src="release/dojo/dojo.js"></script>
+
+<script type="text/javascript">
+
+  document.addEventListener("oncclibready", function(e) {
+
+        require([
+            "apps/eTraveller/mainlayout",
+            "dojo/dom",
+		"dojo/domReady!"
+        ], function(mainlayout,dom) {
+	    var Mainlayout = new mainlayout({
+                style:"width:100% !important; height:100% !important"
+            });
+
+
+
+
+
+
+            Mainlayout.placeAt("main");
+
+            Mainlayout.startup();
+            
+            Mainlayout.resize();
+	   
+           
+             
+        });     
+    });
+    
+  
+
+
+
+</script>
+
+
+</head>
+
+<body style="width:100% !important; height:100% !important; padding:0px; margin:0px;background:white" id="main">
+
+</body>
+
+
+</html>

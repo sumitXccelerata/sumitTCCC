@@ -1,0 +1,310 @@
+//url = /user.php?type=saveuser
+	function saveUser($req,$memcache)
+	{
+		logToFile("begin", "registartion by phone request -".$req['phoneNumber']);
+		$arry =  array();
+		$arry['status'] = "false";
+		$arry['msg'] = "Incorrect/Invalid User ID.";
+		if(empty($req['phoneNumber'])) return json_encode($arry);
+		
+		$userAvailabilty = explode("_",checkUser($req));
+		if($userAvailabilty[0] == "false") $arry['msg'] = "User already registered with us.";
+		$randomString = substr(str_shuffle("0123456789"), 0, 4);
+		if($userAvailabilty[0] == "verify")
+		{ 
+			$arry['msg'] = "Please verify mobile number.";
+			$query =  mysql_query("update user set verifyCode = '".$randomString."' where  phoneNumber = ".$req['phoneNumber']);
+		}
+		if($userAvailabilty[0] == "pwdnotset" || $userAvailabilty[0] == "verify" || $userAvailabilty[0] == "fnnotset" ) $arry['uId'] =$userAvailabilty[1];
+		
+		if($userAvailabilty[0] == "true")
+		{
+			$arry['msg'] = "Verification code sent to your mobile number.";
+			//echo "INSERT INTO user(phoneNumber,verifyCode,createdOn) VALUES (".$req['phoneNumber'].",'".$randomString."',now())";
+			$query =  mysql_query("INSERT INTO user(phoneNumber,verifyCode,createdOn) VALUES (".$req['phoneNumber'].",'".$randomString."',now())");
+			$arry['uId'] = mysql_insert_id();
+			logToFile($arry['uId'], $arry['msg']);
+		}
+		if($userAvailabilty[0] == "true" || $userAvailabilty[0] == "verify" )
+		{
+			$verify = "Your verification code is ".$randomString;
+			sendSms($req['phoneNumber'],$verify);	
+			$arry['randomString'] = $randomString;	
+			logToFile($arry['uId'], "verfication code resend successfully.");
+		}
+		$arry['status'] = $userAvailabilty[0];	
+		logToFile("begin", $arry['msg']." -".$req['phoneNumber']);
+		logToFile("begin", "response given for phone request -".$req['phoneNumber']);
+		return json_encode($arry);
+	}
+	
+	//url = /user.php?type=login&socialId=&password=
+	function loginUser($req,$memcache)
+	{
+		$arry= array();
+		$arry['status'] = "false";
+		$arry['msg'] = "Incorrect/Invalid User ID.";
+		if(empty($req['socialId'])) return json_encode($arry);
+		
+		if(empty($req['password']))
+		{
+			$arry['status'] = "false";
+			$arry['msg'] = "Invalid Password";
+			return json_encode($arry);
+		}
+		
+		$password = hash_hmac("md5",$req['password'],"donottuchtuktuk");
+		$query128 =  mysql_query("SELECT * FROM user where socialId='".$req['socialId']."' and password='".$password."'");
+		if(mysql_num_rows($query128) > 0)
+		{
+			$row = mysql_fetch_object($query128);
+			$arry['msg'] = "Logged in Successfully.";
+			$status = 'true';
+			if($row->isVerified ==0)
+			{ 
+				$status = 'verify';
+				$arry['msg'] = "Please verify mobile number.";
+				$verify = "Your verification code is ".$row->verifyCode;
+				sendSms($row->phoneNumber,$verify);	
+				logToFile($row->uId, "Please verify mobile number.");
+			}
+			//registerXmpp($req['socialId'],'tuktuk@123');
+			$arry['status'] = $status;
+			foreach($row as $key => $value)
+			{
+				$arry[$key] = $value;
+			}
+		}
+		echo json_encode($arry);	
+	}
+	
+	//url = /user.php?type=detailbyid&uId=
+	function getDetailedById($req,$memcache)
+	{
+		if(empty($req['uId']))
+		{
+			$arry = array();
+			$arry['status'] = "false";
+			$arry['msg'] = "Invalid User";
+			logToFile($req['uId'],$arry['msg']);
+			return json_encode($arry);
+		}
+		logToFile($req['uId'], "requested for user details.");
+		$key = "userDetails".$req['uId'];
+		$arry = $memcache->get($key);
+		if(!$arry)
+		{
+			$arry = array();
+			$query128 =  mysql_query("select * from user where uId=".$req['uId']);
+			$list= array();
+			if(mysql_num_rows($query128) > 0)
+			{
+				while($row = mysql_fetch_object($query128))
+				{
+					foreach($row as $column_name=>$column_value){
+						if($column_name!="password")$list[$column_name] = $column_value;
+					}
+					if(empty($list['profilePicUrl'])) $list['profilePicUrl'] = "images/default.png";
+					$reviews = getRecentPlaceReviews($memcache,$req['uId']);
+					$list['placereviews'] = $reviews;
+					$activity = getRecentActivityReviews($memcache,$req['uId']);
+					$list['activityreviews'] = $activity;
+					$recent = getRecentReviews($memcache,$req['uId']);
+					$list['recentreviews'] = $recent;
+					$memcache->set("userDetailsId".$req['uId'], $list, 0,0);
+					logToFile($req['uId'], "cache setted for user details.");
+				}
+			}	
+			$arry['status'] = "true";
+			$arry["list"] = $list;
+			$memcache->set($key, $arry, 0,0);
+		
+		}
+		logToFile($req['uId'], "response for user details.");
+		return json_encode($arry);
+	}
+	
+	//url = /user.php?type=updatepassword&uId=&password=
+	function updatePassword($req,$memcache)
+	{
+		
+		$arry =  array();
+		$arry['status'] = "false";
+		$arry['msg'] = "Incorrect/Invalid User ID.";
+		if(empty($req['uId'])) return json_encode($arry);
+		logToFile($req['uId'], "requset for update password.");
+		$password = hash_hmac("md5",$req['password'],"donottuchtuktuk");
+		$query =  mysql_query("update user set password = '".$password."',updatedOn=now() where uId = ".$req['uId']);
+		if(mysql_affected_rows()>0)
+		{
+			$arry['status'] = "true";
+			$arry['msg'] = "Password updated successfully.";
+			$memcache->delete("userDetails".$req['uId']);
+			$memcache->delete("userDetailsId".$req['uId']);
+			logToFile($req['uId'], "password updated succesfully.");
+		}
+		logToFile($req['uId'], "Response given succesfully.");
+		return json_encode($arry);
+	}
+	
+	//url = /user.php?type=forgotpassword&socialId=
+	function resetPassword($req,$memcache)
+	{
+		$arry =  array();
+		$arry['status'] = "false";
+		$arry['msg'] = "Incorrect/Invalid User ID.";
+		if(empty($req['socialId'])) return json_encode($arry);
+		$randomString = substr(str_shuffle("0123456789"), 0, 8);
+		$password = hash_hmac("md5",$randomString,"donottuchtuktuk");
+		$query128 =  mysql_query("select socialId,fullName,uId from user where socialId='".$req['socialId']."'");
+		if(mysql_num_rows($query128) > 0)
+		{
+			$row = mysql_fetch_row($query128);
+			$query =  mysql_query("update user set password = '".$password."' where socialId = '".$req['socialId']."'");
+			if(mysql_affected_rows()>0)
+			{
+				$arry['status'] = "true";
+				$arry['msg'] = "Password sent successfully to your mail Id .";
+				$array_template = array('{{username}}','{{verify}}');
+				$bdy = file_get_contents('templates/lostpassword.html');
+				$array_user = array();
+				$array_user['username'] = $row[1];
+				$array_user['verify'] = $randomString;
+				$body = str_replace($array_template, $array_user, $bdy);
+				sendMail($req['socialId'],$body,$row, "Password Recovery Mail from Viatutuk");
+				logToFile($row[2], "password reseted succesfully.");
+			}
+		}
+		
+		return json_encode($arry);
+	}
+	
+	//url = /user.php?type=changepassword&socialId=&password=&newpassword=
+	function changePassword($req,$memcache)
+	{
+		$arry =  array();
+		$arry['status'] = "false";
+		$arry['msg'] = "Incorrect/Invalid User ID.";
+		if(empty($req['socialId'])) return json_encode($arry);
+		
+		if(empty($req['password']))
+		{
+			$arry['status'] = "false";
+			$arry['msg'] = "Invalid old password.";
+			return json_encode($arry);
+		}
+		
+		if(empty($req['newpassword']))
+		{
+			$arry['status'] = "false";
+			$arry['msg'] = "Invalid new password.";
+			return json_encode($arry);
+		}
+		$arry['msg'] = "Invalid old password or emailId.";
+		$password = hash_hmac("md5",$req['password'],"donottuchtuktuk");
+		$newpassword = hash_hmac("md5",$req['newpassword'],"donottuchtuktuk");
+		$query128 =  mysql_query("select socialId,fullName,uId from user where socialId='".$req['socialId']."'");
+		if(mysql_num_rows($query128) > 0)
+		{
+			$row = mysql_fetch_row($query128);
+			$query =  mysql_query("update user set password = '".$newpassword."',updatedOn=now() where socialId='".$req['socialId']."' and  password = '".$password."' ");
+			if(mysql_affected_rows()>0)
+			{
+				$arry['status'] = "true";
+				$arry['msg'] = "Password changed successfully.";
+				$memcache->delete("userDetails".$req['uId']);
+				$memcache->delete("userDetailsId".$req['uId']);
+				$array_template = array('{{username}}','{{verify}}');
+				$bdy = file_get_contents('templates/changepassword.html');
+				$array_user = array();
+				$array_user['username'] = $row[1];
+				$array_user['verify'] =  "You are successfully changed viatutuk password.";
+				$body = str_replace($array_template, $array_user, $bdy);
+				sendMail($req['socialId'],$body,$row,"Password changed from Viatutuk");
+				logToFile($row[2], "password changed succesfully.");
+			}
+		}
+		return json_encode($arry);
+	}
+	
+	//url = /user.php?type=updatedetails&uId=&picPath=&fullName=shalini&nickName=shalinisss&languages=English&gender=female&age=&initialGeoLocationLat=17.4545&initialGeoLocationLong=76.9847&country=INDIA&bio=testet&isMyFavPublic=1&isMyFriendPublic=1&timeZone=
+	function updateDetails($req,$memcache)
+	{
+		$arry =  array();
+		$arry['status'] = "false";
+		$arry['msg'] = "Incorrect/Invalid User ID.";
+		if(empty($req['uId'])) return json_encode($arry);
+		$picPath="";
+		if(!empty($_FILES))$picPath= file_upload("users",$_FILES,$req,$req['uId']);
+		$set = "fullName='".$req['fullName']."',nickName='".$req['nickName']."',initialGeoLocationLong=".$req['initialGeoLocationLong'].",currentGeoLocationLat = ".$req['initialGeoLocationLat'].",currentGeoLocationLong = ".$req['initialGeoLocationLong'].",updatedOn=now(),timeZone='".$req['timeZone']."',";
+		if(!empty($picPath)) $set .= "profilePicUrl='".$picPath."?v=".rand(0,3)."',";
+		if(!empty($req['languages'])) $set .= "languagesKnown='".$req['languages']."',";
+		if(!empty($req['gender'])) $set .= "gender='".$req['gender']."',";
+		if(!empty($req['age'])) $set .= "age='".$req['age']."',";
+		if(!empty($req['country'])) $set .= "nationality='".$req['country']."',";
+		if(isset($req['isMyFavPublic'])) $set .= "isMyFavPublic=".$req['isMyFavPublic'].",";
+		if(isset($req['isMyFriendPublic'])) $set .= "isMyFriendPublic=".$req['isMyFriendPublic'].",";
+		if(!empty($req['bio'])) $set .= "bio='".$req['bio']."',";
+		$setValue = rtrim($set,',');
+		//echo "update user set ".$setValue." where uId = ".$req['uId'];
+		$query =  mysql_query("update user set ".$setValue." where uId = ".$req['uId']);
+		if(mysql_affected_rows()>0)
+		{
+			$arry['status'] = "true";
+			$arry['msg'] = "User updated successfully.";
+			$freindList = getFriendIds($memcache,$req['uId']);
+			foreach($freindList as $freind)
+			{
+				$memcache->delete("friendDetails".$freind);
+			}
+			$memcache->delete("userDetails".$req['uId']);
+			$memcache->delete("userDetailsId".$req['uId']);
+			logToFile($req['uId'], "user details updated.");
+		}
+		logToFile($req['uId'], $arry['msg']);
+		return json_encode($arry);
+	}
+	
+	//url = /user.php?type=updateudid&uId=&uDId=&deviceType=
+	function updateUDID($req,$memcache)
+	{
+		$arry =  array();
+		$arry['status'] = "false";
+		$arry['msg'] = "Incorrect/Invalid User ID.";
+		if(empty($req['uId'])) return json_encode($arry);
+		$query1 = mysql_query("select uId from user where deviceType='".$req['deviceType']."' and deviceId='".$req['uDId']."'");
+		if(mysql_num_rows($query1) > 0)
+		{
+			//$row = mysql_fetch_row($query1);
+			//$ruId = $row[1];
+			while($row1 = mysql_fetch_object($query1))
+			{
+				mysql_query("update user set deviceId='',deviceType='',updatedOn=now() where uId = ".$row1->uId);
+				$memcache->delete("userDetails".$row1->uId);
+				$memcache->delete("userDetailsId".$row1->uId);
+				$memcache->delete("udIdUser".$row1->uId);
+			}
+		}
+		$query =  mysql_query("update user set deviceId='".$req['uDId']."',deviceType='".$req['deviceType']."',updatedOn=now() where uId = ".$req['uId']);
+		if(mysql_affected_rows()>0)
+		{
+			$arry['status'] = "true";
+			$arry['msg'] = "User updated successfully.";
+			$memcache->delete("userDetails".$req['uId']);
+			$memcache->delete("userDetailsId".$req['uId']);
+			$memcache->delete("udIdUser".$req['uId']);
+			$details = $req['deviceType']."****".$req['uDId'];
+			$memcache->set("udIdUser".$req['uId'],$details,0,0);
+			logToFile($req['uId'], "user UDID updated.");
+		}
+		return json_encode($arry);
+	}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+</body>
+</html>

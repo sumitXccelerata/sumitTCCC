@@ -1,0 +1,438 @@
+Friday 13th of May 2016 07:08:22 AM - Info - 1
+Friday 13th of May 2016 07:08:22 AM - Info - 3
+Friday 13th of May 2016 07:08:22 AM - Info - update player set player_name='Manik Vinnakota',player_logo='images/player/file_349_cdv_photo_025.jpg',playing_role=3,player_country_id=1,player_cat=1,bat_style_id=12,bowl_style_id=12,description='Passion for cricketing...',dob='1982-05-13' where player_id = 9
+Friday 13th of May 2016 08:10:49 AM - Info - 1
+Friday 13th of May 2016 08:10:49 AM - Info - 3
+Friday 13th of May 2016 08:10:49 AM - Info - update player set player_name='Shaurya Gera',player_logo='images/player/file_053_cdv_photo_001.jpg',playing_role=3,player_country_id=1,player_cat=1,bat_style_id=13,bowl_style_id=11,description='Passion for cricket....',dob='1995-05-13' where player_id = 11
+Friday 13th of May 2016 08:11:02 AM - Info - 1
+Friday 13th of May 2016 08:11:02 AM - Info - 3
+Friday 13th of May 2016 08:11:02 AM - Info - update player set player_name='Rahul Shah',player_logo='images/player/file_913_cdv_photo_004.jpg',playing_role=3,player_country_id=1,player_cat=1,bat_style_id=12,bowl_style_id=11,description='Passion for cricket',dob='1973-05-13' where player_id = 14
+Friday 13th of May 2016 08:16:39 AM - Info - 38
+Friday 13th of May 2016 08:16:39 AM - Info - 3
+Friday 13th of May 2016 08:16:39 AM - Info - update player set player_name='Manik Vinnakota',player_logo='images/player/file_349_cdv_photo_025.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=12,description='Passion for cricketing...',dob='1982-05-13' where player_id = 9
+Friday 13th of May 2016 08:17:15 AM - Info - 38
+Friday 13th of May 2016 08:17:15 AM - Info - 3
+Friday 13th of May 2016 08:17:15 AM - Info - update player set player_name='Rahul Shah',player_logo='images/player/file_913_cdv_photo_004.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11,description='Passion for cricket',dob='1973-05-13' where player_id = 14
+Friday 13th of May 2016 08:18:10 AM - Info - 38
+Friday 13th of May 2016 08:18:10 AM - Info - 3
+Friday 13th of May 2016 08:18:10 AM - Info - update player set player_name='Mudit Rawat',player_logo='images/player/file_905_cdv_photo_003.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11,description='Passion for cricket.',dob='1981-05-13' where player_id = 13
+Friday 13th of May 2016 08:18:27 AM - Info - 38
+Friday 13th of May 2016 08:18:27 AM - Info - 3
+Friday 13th of May 2016 08:18:27 AM - Info - update player set player_name='Pameet Kohli',player_logo='images/player/file_184_cdv_photo_002.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=15,description='Passion for cricket...',dob='1980-05-13' where player_id = 12
+Friday 13th of May 2016 08:18:42 AM - Info - 38
+Friday 13th of May 2016 08:18:42 AM - Info - 3
+Friday 13th of May 2016 08:18:42 AM - Info - update player set player_name='Shaurya Gera',player_logo='images/player/file_053_cdv_photo_001.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=13,bowl_style_id=11,description='Passion for cricket....',dob='1995-05-13' where player_id = 11
+Friday 13th of May 2016 09:17:51 AM - Info - 6
+Friday 13th of May 2016 09:17:51 AM - Info - 1
+Friday 13th of May 2016 09:17:51 AM - Info - update player set player_name='Murali',player_logo='images/player/file_401_cdv_photo_002.jpg',playing_role=1,player_country_id=6 where player_id = 25
+Friday 13th of May 2016 09:18:00 AM - Info - 6
+Friday 13th of May 2016 09:18:00 AM - Info - 1
+Friday 13th of May 2016 09:18:00 AM - Info - update player set player_name='Murali111',player_logo='images/player/file_401_cdv_photo_002.jpg',playing_role=1,player_country_id=6 where player_id = 25
+Friday 13th of May 2016 09:19:36 AM - Info - 38
+Friday 13th of May 2016 09:19:36 AM - Info - 3
+Friday 13th of May 2016 09:19:36 AM - Info - update player set player_name='Akshay Reddy',player_logo='images/player/file_194_cdv_photo_004.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11 where player_id = 19
+Friday 13th of May 2016 09:19:39 AM - Info - 38
+Friday 13th of May 2016 09:19:39 AM - Info - 3
+Friday 13th of May 2016 09:19:39 AM - Info - update player set player_name='Akshay Reddy',player_logo='images/player/file_194_cdv_photo_004.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11 where player_id = 19
+Friday 13th of May 2016 09:49:36 AM - Info - 38
+Friday 13th of May 2016 09:49:36 AM - Info - 3
+Friday 13th of May 2016 09:49:36 AM - Info - update player set player_name='Akshay Reddy',player_logo='images/player/file_473_cdv_photo_004.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11 where player_id = 19
+Friday 13th of May 2016 09:58:18 AM - Info - 38
+Friday 13th of May 2016 09:58:18 AM - Info - 3
+Friday 13th of May 2016 09:58:18 AM - Info - update player set player_name='Amaan Raza',player_logo='images/player/file_920_cdv_photo_005.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11 where player_id = 20
+Friday 13th of May 2016 09:58:52 AM - Info - 38
+Friday 13th of May 2016 09:58:52 AM - Info - 3
+Friday 13th of May 2016 09:58:52 AM - Info - update player set player_name='Riaz Raihan',player_logo='images/player/file_018_cdv_photo_014.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=16,description='He is the best captain' where player_id = 1
+Friday 13th of May 2016 09:59:06 AM - Info - 38
+Friday 13th of May 2016 09:59:06 AM - Info - 3
+Friday 13th of May 2016 09:59:06 AM - Info - update player set player_name='Riaz Raihan',player_logo='images/player/file_018_cdv_photo_014.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=16,description='He is the best captain' where player_id = 1
+Friday 13th of May 2016 09:59:59 AM - Info - 38
+Friday 13th of May 2016 09:59:59 AM - Info - 3
+Friday 13th of May 2016 09:59:59 AM - Info - update player set player_name='Riaz Raihan',player_logo='images/player/file_018_cdv_photo_014.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=16,description='He is the best captain' where player_id = 1
+Friday 13th of May 2016 10:00:26 AM - Info - 38
+Friday 13th of May 2016 10:00:26 AM - Info - 3
+Friday 13th of May 2016 10:00:26 AM - Info - update player set player_name='Riaz Raihan',player_logo='images/player/file_018_cdv_photo_014.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=16,description='He is the best captain' where player_id = 1
+Friday 13th of May 2016 10:00:45 AM - Info - 38
+Friday 13th of May 2016 10:00:45 AM - Info - 3
+Friday 13th of May 2016 10:00:45 AM - Info - update player set player_name='Amaan Raza',player_logo='images/player/file_920_cdv_photo_005.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11 where player_id = 20
+Friday 13th of May 2016 10:01:11 AM - Info - 38
+Friday 13th of May 2016 10:01:11 AM - Info - 3
+Friday 13th of May 2016 10:01:11 AM - Info - update player set player_name='Akshay Reddy',player_logo='images/player/file_473_cdv_photo_004.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11 where player_id = 19
+Friday 13th of May 2016 10:18:15 AM - Info - 38
+Friday 13th of May 2016 10:18:15 AM - Info - 3
+Friday 13th of May 2016 10:18:15 AM - Info - update player set player_name='Amaan Raza',player_logo='images/player/file_920_cdv_photo_005.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11 where player_id = 20
+Friday 13th of May 2016 10:18:31 AM - Info - 38
+Friday 13th of May 2016 10:18:31 AM - Info - 3
+Friday 13th of May 2016 10:18:31 AM - Info - update player set player_name='Amaan Raza',player_logo='images/player/file_920_cdv_photo_005.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11,description='My desc' where player_id = 20
+Friday 13th of May 2016 10:19:04 AM - Info - 38
+Friday 13th of May 2016 10:19:04 AM - Info - 3
+Friday 13th of May 2016 10:19:04 AM - Info - update player set player_name='Amaan Raza',player_logo='images/player/file_920_cdv_photo_005.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11 where player_id = 20
+Friday 13th of May 2016 10:20:51 AM - Info - 38
+Friday 13th of May 2016 10:20:51 AM - Info - 3
+Friday 13th of May 2016 10:20:51 AM - Info - update player set player_name='Amaan Raza',player_logo='images/player/file_920_cdv_photo_005.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11 where player_id = 20
+Friday 13th of May 2016 10:21:06 AM - Info - 38
+Friday 13th of May 2016 10:21:06 AM - Info - 3
+Friday 13th of May 2016 10:21:06 AM - Info - update player set player_name='Amaan Raza',player_logo='images/player/file_920_cdv_photo_005.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11,description='Fine player' where player_id = 20
+Friday 13th of May 2016 10:21:41 AM - Info - 38
+Friday 13th of May 2016 10:21:41 AM - Info - 3
+Friday 13th of May 2016 10:21:41 AM - Info - update player set player_name='Riaz Raihan',player_logo='images/player/file_018_cdv_photo_014.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=16,description='He is the best captain...' where player_id = 1
+Friday 13th of May 2016 10:25:29 AM - Info - 38
+Friday 13th of May 2016 10:25:29 AM - Info - 3
+Friday 13th of May 2016 10:25:29 AM - Info - update player set player_name='Riaz Raihan',player_logo='images/player/file_018_cdv_photo_014.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=16,description='He is the best captain...' where player_id = 1
+Friday 13th of May 2016 10:25:36 AM - Info - 38
+Friday 13th of May 2016 10:25:36 AM - Info - 3
+Friday 13th of May 2016 10:25:36 AM - Info - update player set player_name='Riaz Raihan',player_logo='images/player/file_018_cdv_photo_014.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=16,description='He is the best captain' where player_id = 1
+Saturday 14th of May 2016 09:06:15 AM - Info - 38
+Saturday 14th of May 2016 09:06:15 AM - Info - 3
+Saturday 14th of May 2016 09:06:15 AM - Info - update player set player_name='Maxwell Xaviour',player_logo='images/player/file_269_cdv_photo_012.jpg',playing_role=3,player_country_id=38,player_cat=1 where player_id = 43
+Saturday 14th of May 2016 09:06:30 AM - Info - 38
+Saturday 14th of May 2016 09:06:30 AM - Info - 1
+Saturday 14th of May 2016 09:06:30 AM - Info - update player set player_name='Kesavan Juvarajan',player_logo='images/player/file_609_cdv_photo_011.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 42
+Saturday 14th of May 2016 09:07:46 AM - Info - 38
+Saturday 14th of May 2016 09:07:46 AM - Info - 1
+Saturday 14th of May 2016 09:07:46 AM - Info - update player set player_name='Kesavan Juvarajan',player_logo='images/player/file_618_cdv_photo_013.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 42
+Saturday 14th of May 2016 09:08:15 AM - Info - 38
+Saturday 14th of May 2016 09:08:15 AM - Info - 3
+Saturday 14th of May 2016 09:08:15 AM - Info - update player set player_name='Harmanjot Dhindsa',player_logo='images/player/file_842_cdv_photo_014.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=12 where player_id = 41
+Friday 20th of May 2016 06:43:10 AM - Info - 38
+Friday 20th of May 2016 06:43:10 AM - Info - 3
+Friday 20th of May 2016 06:43:10 AM - Info - update player set player_name='Dipesh Dar',player_logo='images/player/file_492_cdv_photo_006.jpg',playing_role=3,player_country_id=38,bat_style_id=12,bowl_style_id=11 where player_id = 29
+Friday 20th of May 2016 06:44:34 AM - Info - 38
+Friday 20th of May 2016 06:44:34 AM - Info - 3
+Friday 20th of May 2016 06:44:34 AM - Info - update player set player_name='Dipesh Dar',player_logo='images/player/file_279_cdv_photo_002.jpg',playing_role=3,player_country_id=38,bat_style_id=12,bowl_style_id=11 where player_id = 29
+Tuesday 24th of May 2016 05:49:21 AM - Info - 38
+Tuesday 24th of May 2016 05:49:21 AM - Info - 3
+Tuesday 24th of May 2016 05:49:21 AM - Info - update player set player_name='Aditya Dhar',player_logo='images/player/file_038_cdv_photo_001.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11 where player_id = 30
+Tuesday 24th of May 2016 05:49:58 AM - Info - 38
+Tuesday 24th of May 2016 05:49:58 AM - Info - 3
+Tuesday 24th of May 2016 05:49:58 AM - Info - update player set player_name='Anand Erramilli',player_logo='images/player/file_438_cdv_photo_002.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=16 where player_id = 31
+Tuesday 24th of May 2016 06:39:19 AM - Info - 38
+Tuesday 24th of May 2016 06:39:19 AM - Info - 3
+Tuesday 24th of May 2016 06:39:19 AM - Info - update player set player_name='Atul Gera',player_logo='images/player/file_217_cdv_photo_003.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=12,description='All rounder',dob='1975-05-13' where player_id = 3
+Tuesday 24th of May 2016 06:39:59 AM - Info - 38
+Tuesday 24th of May 2016 06:39:59 AM - Info - 3
+Tuesday 24th of May 2016 06:39:59 AM - Info - update player set player_name='Dipesh Dar',player_logo='images/player/file_685_cdv_photo_004.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11 where player_id = 29
+Tuesday 24th of May 2016 06:40:38 AM - Info - 38
+Tuesday 24th of May 2016 06:40:38 AM - Info - 3
+Tuesday 24th of May 2016 06:40:38 AM - Info - update player set player_name='Kumar Erramilli',player_logo='images/player/file_956_cdv_photo_005.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=16 where player_id = 32
+Tuesday 24th of May 2016 09:00:16 AM - Info - 38
+Tuesday 24th of May 2016 09:00:16 AM - Info - 4
+Tuesday 24th of May 2016 09:00:16 AM - Info - update player set player_name='Yug Rao',player_logo='images/player/file_750_cdv_photo_010.jpg',playing_role=4,player_country_id=38,player_cat=1,bat_style_id=12 where player_id = 35
+Wednesday 25th of May 2016 04:26:04 AM - Info - 38
+Wednesday 25th of May 2016 04:26:04 AM - Info - 3
+Wednesday 25th of May 2016 04:26:04 AM - Info - update player set player_name='Maxwell Xaviour',player_logo='images/player/file_269_cdv_photo_012.jpg',playing_role=3,player_country_id=38,player_cat=1 where player_id = 43
+Wednesday 25th of May 2016 04:26:21 AM - Info - 38
+Wednesday 25th of May 2016 04:26:21 AM - Info - 3
+Wednesday 25th of May 2016 04:26:21 AM - Info - update player set player_name='Maxwell Xaviour',player_logo='images/player/file_594_cdv_photo_001.jpg',playing_role=3,player_country_id=38,player_cat=1 where player_id = 43
+Wednesday 25th of May 2016 04:26:54 AM - Info - 38
+Wednesday 25th of May 2016 04:26:54 AM - Info - 3
+Wednesday 25th of May 2016 04:26:54 AM - Info - update player set player_name='Taresh Beri',player_logo='images/player/file_038_cdv_photo_008.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=12 where player_id = 37
+Wednesday 25th of May 2016 04:27:08 AM - Info - 38
+Wednesday 25th of May 2016 04:27:08 AM - Info - 3
+Wednesday 25th of May 2016 04:27:08 AM - Info - update player set player_name='Taresh Beri',player_logo='images/player/file_579_cdv_photo_002.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=12,description='Player' where player_id = 37
+Wednesday 25th of May 2016 04:42:37 AM - Info - 38
+Wednesday 25th of May 2016 04:42:37 AM - Info - 3
+Wednesday 25th of May 2016 04:42:37 AM - Info - update player set player_name='Maxwell Xaviour',player_logo='images/player/file_810_cdv_photo_003.jpg',playing_role=3,player_country_id=38,player_cat=1 where player_id = 43
+Wednesday 25th of May 2016 04:43:23 AM - Info - 38
+Wednesday 25th of May 2016 04:43:23 AM - Info - 1
+Wednesday 25th of May 2016 04:43:23 AM - Info - update player set player_name='Kesavan Juvarajan',player_logo='images/player/file_643_cdv_photo_004.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 42
+Wednesday 25th of May 2016 04:56:01 AM - Info - 38
+Wednesday 25th of May 2016 04:56:01 AM - Info - 3
+Wednesday 25th of May 2016 04:56:01 AM - Info - update player set player_name='Shalin Sinha',player_logo='images/player/file_923_cdv_photo_005.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=12 where player_id = 33
+Wednesday 25th of May 2016 04:58:46 AM - Info - 38
+Wednesday 25th of May 2016 04:58:46 AM - Info - 3
+Wednesday 25th of May 2016 04:58:46 AM - Info - update player set player_name='Shalin Sinha',player_logo='images/player/file_923_cdv_photo_005.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=12 where player_id = 33
+Wednesday 25th of May 2016 06:40:10 AM - Info - 38
+Wednesday 25th of May 2016 06:40:10 AM - Info - 3
+Wednesday 25th of May 2016 06:40:10 AM - Info - update player set player_name='Taresh Beri',player_logo='images/player/file_429_cdv_photo_001.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=12,description='Player' where player_id = 37
+Thursday 2nd of June 2016 05:19:45 AM - Info - 38
+Thursday 2nd of June 2016 05:19:45 AM - Info - 3
+Thursday 2nd of June 2016 05:19:45 AM - Info - update player set player_name='Maxwell Xaviour',player_logo='images/player/file_814_cdv_photo_002.jpg',playing_role=3,player_country_id=38,player_cat=1 where player_id = 43
+Thursday 2nd of June 2016 05:20:19 AM - Info - 38
+Thursday 2nd of June 2016 05:20:19 AM - Info - 1
+Thursday 2nd of June 2016 05:20:19 AM - Info - update player set player_name='Kesavan Juvarajan',player_logo='images/player/file_618_cdv_photo_003.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 42
+Thursday 2nd of June 2016 05:20:46 AM - Info - 38
+Thursday 2nd of June 2016 05:20:46 AM - Info - 3
+Thursday 2nd of June 2016 05:20:46 AM - Info - update player set player_name='Harmanjot Dhindsa',player_logo='images/player/file_203_cdv_photo_004.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=12 where player_id = 41
+Thursday 2nd of June 2016 05:21:13 AM - Info - 38
+Thursday 2nd of June 2016 05:21:13 AM - Info - 1
+Thursday 2nd of June 2016 05:21:13 AM - Info - update player set player_name='Kesavan Juvarajan',player_logo='images/player/file_530_cdv_photo_005.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 42
+Thursday 2nd of June 2016 05:21:49 AM - Info - 38
+Thursday 2nd of June 2016 05:21:49 AM - Info - 3
+Thursday 2nd of June 2016 05:21:49 AM - Info - update player set player_name='Maxwell Xaviour',player_logo='images/player/file_792_cdv_photo_007.jpg',playing_role=3,player_country_id=38,player_cat=1 where player_id = 43
+Thursday 2nd of June 2016 09:34:41 AM - Info - 38
+Thursday 2nd of June 2016 09:34:41 AM - Info - 3
+Thursday 2nd of June 2016 09:34:41 AM - Info - update player set player_name='Rajesh Bains',player_logo='images/player/file_829_cdv_photo_002.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=12 where player_id = 50
+Thursday 2nd of June 2016 09:48:34 AM - Info - 38
+Thursday 2nd of June 2016 09:48:34 AM - Info - 3
+Thursday 2nd of June 2016 09:48:34 AM - Info - update player set player_name='Neraav Shukla',player_logo='images/player/file_716_cdv_photo_006.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=12 where player_id = 54
+Friday 3rd of June 2016 12:26:26 AM - Info - 38
+Friday 3rd of June 2016 12:26:26 AM - Info - 1
+Friday 3rd of June 2016 12:26:26 AM - Info - update player set player_name='Test player',playing_role=1,player_country_id=38,dob='2015-05-05' where player_id = 195
+Friday 3rd of June 2016 12:30:05 AM - Info - 38
+Friday 3rd of June 2016 12:30:05 AM - Info - 1
+Friday 3rd of June 2016 12:30:05 AM - Info - update player set player_name='Test player',playing_role=1,player_country_id=38,dob='2015-05-05' where player_id = 195
+Friday 3rd of June 2016 12:30:43 AM - Info - 38
+Friday 3rd of June 2016 12:30:43 AM - Info - 1
+Friday 3rd of June 2016 12:30:43 AM - Info - update player set player_name='Test player',playing_role=1,player_country_id=38,dob='2015-05-05' where player_id = 195
+Friday 3rd of June 2016 12:31:01 AM - Info - 38
+Friday 3rd of June 2016 12:31:01 AM - Info - 1
+Friday 3rd of June 2016 12:31:01 AM - Info - update player set player_name='Test player1',playing_role=1,player_country_id=38,dob='2015-05-05' where player_id = 195
+Friday 3rd of June 2016 12:39:13 AM - Info - 38
+Friday 3rd of June 2016 12:39:13 AM - Info - 1
+Friday 3rd of June 2016 12:39:13 AM - Info - update player set player_name='Chandra Sekhara Pantula',player_logo='images/player/file_703_cdv_photo_061.jpg',playing_role=1,player_country_id=38,player_cat=1,bat_style_id=12 where player_id = 194
+Friday 3rd of June 2016 02:18:27 AM - Info - 38
+Friday 3rd of June 2016 02:18:27 AM - Info - 1
+Friday 3rd of June 2016 02:18:27 AM - Info - update player set player_name='Ketan Walse',player_logo='images/player/file_810_cdv_photo_016.jpg',playing_role=1,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=14 where player_id = 211
+Friday 3rd of June 2016 02:31:28 AM - Info - 38
+Friday 3rd of June 2016 02:31:28 AM - Info - 3
+Friday 3rd of June 2016 02:31:28 AM - Info - update player set player_name='Parth Patel',player_logo='images/player/file_469_cdv_photo_024.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11 where player_id = 215
+Friday 3rd of June 2016 02:32:12 AM - Info - 38
+Friday 3rd of June 2016 02:32:12 AM - Info - 2
+Friday 3rd of June 2016 02:32:12 AM - Info - update player set player_name='Nitin Deshpande',player_logo='images/player/file_041_cdv_photo_025.jpg',playing_role=2,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=14 where player_id = 216
+Friday 3rd of June 2016 02:39:00 AM - Info - 38
+Friday 3rd of June 2016 02:39:00 AM - Info - 1
+Friday 3rd of June 2016 02:39:00 AM - Info - update player set player_name='Mehul Jadhav',player_logo='images/player/file_649_cdv_photo_026.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 217
+Friday 3rd of June 2016 02:43:31 AM - Info - 38
+Friday 3rd of June 2016 02:43:31 AM - Info - 1
+Friday 3rd of June 2016 02:43:31 AM - Info - update player set player_name='Pranay Sankhe',player_logo='images/player/file_648_cdv_photo_027.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 218
+Friday 3rd of June 2016 02:44:04 AM - Info - 38
+Friday 3rd of June 2016 02:44:04 AM - Info - 1
+Friday 3rd of June 2016 02:44:04 AM - Info - update player set player_name='Aniruddha Sondur',player_logo='images/player/file_873_cdv_photo_028.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 219
+Friday 3rd of June 2016 02:44:30 AM - Info - 38
+Friday 3rd of June 2016 02:44:30 AM - Info - 2
+Friday 3rd of June 2016 02:44:30 AM - Info - update player set player_name='Swapnil Bhalerao',player_logo='images/player/file_193_cdv_photo_029.jpg',playing_role=2,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=16 where player_id = 220
+Friday 3rd of June 2016 02:45:03 AM - Info - 38
+Friday 3rd of June 2016 02:45:03 AM - Info - 3
+Friday 3rd of June 2016 02:45:03 AM - Info - update player set player_name='Anthony Christopher',player_logo='images/player/file_796_cdv_photo_030.jpg',playing_role=3,player_country_id=38,player_cat=1 where player_id = 221
+Friday 3rd of June 2016 02:45:57 AM - Info - 38
+Friday 3rd of June 2016 02:45:57 AM - Info - 1
+Friday 3rd of June 2016 02:45:57 AM - Info - update player set player_name='Ajay Jain',player_logo='images/player/file_670_cdv_photo_022.jpg',playing_role=1,player_country_id=38,player_cat=1,bowl_style_id=16 where player_id = 222
+Friday 3rd of June 2016 02:46:18 AM - Info - 
+Friday 3rd of June 2016 02:46:18 AM - Info - 
+Friday 3rd of June 2016 02:46:18 AM - Info - update player set player_name='Ajay' where player_id = 222
+Friday 3rd of June 2016 02:50:19 AM - Info - 38
+Friday 3rd of June 2016 02:50:19 AM - Info - 1
+Friday 3rd of June 2016 02:50:19 AM - Info - update player set player_name='Ajay Jain',player_logo='images/player/file_610_cdv_photo_031.jpg',playing_role=1,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=16 where player_id = 222
+Friday 3rd of June 2016 02:51:23 AM - Info - 38
+Friday 3rd of June 2016 02:51:23 AM - Info - 1
+Friday 3rd of June 2016 02:51:23 AM - Info - update player set player_name='Ajay Jain',player_logo='images/player/file_610_cdv_photo_031.jpg',playing_role=1,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=16 where player_id = 222
+Friday 3rd of June 2016 02:51:29 AM - Info - 
+Friday 3rd of June 2016 02:51:29 AM - Info - 
+Friday 3rd of June 2016 02:51:29 AM - Info - update player set player_name='Ajay' where player_id = 222
+Friday 3rd of June 2016 02:52:41 AM - Info - 38
+Friday 3rd of June 2016 02:52:41 AM - Info - 1
+Friday 3rd of June 2016 02:52:41 AM - Info - update player set player_name='Ajay Jain',player_logo='images/player/file_610_cdv_photo_031.jpg',playing_role=1,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=16 where player_id = 222
+Friday 3rd of June 2016 02:54:39 AM - Info - 38
+Friday 3rd of June 2016 02:54:39 AM - Info - 1
+Friday 3rd of June 2016 02:54:39 AM - Info - update player set player_name='Ajay Jain',player_logo='images/player/file_610_cdv_photo_031.jpg',playing_role=1,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=16 where player_id = 222
+Friday 3rd of June 2016 03:02:46 AM - Info - 38
+Friday 3rd of June 2016 03:02:46 AM - Info - 3
+Friday 3rd of June 2016 03:02:46 AM - Info - update player set player_name='Ajin Koshy',player_logo='images/player/file_352_cdv_photo_032.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11 where player_id = 223
+Friday 3rd of June 2016 03:04:48 AM - Info - 38
+Friday 3rd of June 2016 03:04:48 AM - Info - 2
+Friday 3rd of June 2016 03:04:48 AM - Info - update player set player_name='Arjun Sundaram',player_logo='images/player/file_342_cdv_photo_033.jpg',playing_role=2,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11 where player_id = 224
+Friday 3rd of June 2016 03:20:39 AM - Info - 38
+Friday 3rd of June 2016 03:20:39 AM - Info - 3
+Friday 3rd of June 2016 03:20:39 AM - Info - update player set player_name='Rajive Vijaykumar',player_logo='images/player/file_749_cdv_photo_048.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11 where player_id = 233
+Friday 3rd of June 2016 06:55:08 AM - Info - 1
+Friday 3rd of June 2016 06:55:08 AM - Info - 1
+Friday 3rd of June 2016 06:55:08 AM - Info - update player set player_name='Test player',player_logo='images/player/file_186_cdv_photo_004.jpg',playing_role=1,player_country_id=1,player_cat=1,bat_style_id=12,bowl_style_id=12,phonenumber='978978909876' where player_id = 240
+Friday 3rd of June 2016 08:07:07 AM - Info - 38
+Friday 3rd of June 2016 08:07:07 AM - Info - 3
+Friday 3rd of June 2016 08:07:07 AM - Info - update player set player_name='Riaz Raihan',player_logo='images/player/file_018_cdv_photo_014.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=16,description='He is the best captain',phonenumber='9772345678' where player_id = 1
+Friday 3rd of June 2016 08:08:13 AM - Info - 38
+Friday 3rd of June 2016 08:08:13 AM - Info - 3
+Friday 3rd of June 2016 08:08:13 AM - Info - update player set player_name='Riaz Raihan',player_logo='images/player/file_018_cdv_photo_014.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=16,description='He is the best captain' where player_id = 1
+Friday 3rd of June 2016 08:08:53 AM - Info - 38
+Friday 3rd of June 2016 08:08:53 AM - Info - 3
+Friday 3rd of June 2016 08:08:53 AM - Info - update player set player_name='Riaz Raihan',player_logo='images/player/file_018_cdv_photo_014.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=16,description='He is the best captain',phonenumber='9772345678678' where player_id = 1
+Friday 3rd of June 2016 08:09:28 AM - Info - 38
+Friday 3rd of June 2016 08:09:28 AM - Info - 3
+Friday 3rd of June 2016 08:09:28 AM - Info - update player set player_name='Riaz Raihan',player_logo='images/player/file_018_cdv_photo_014.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=16,description='He is the best captain',phonenumber='97723' where player_id = 1
+Friday 3rd of June 2016 08:09:57 AM - Info - 38
+Friday 3rd of June 2016 08:09:57 AM - Info - 3
+Friday 3rd of June 2016 08:09:57 AM - Info - update player set player_name='Riaz Raihan',player_logo='images/player/file_018_cdv_photo_014.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=16,description='He is the best captain' where player_id = 1
+Monday 6th of June 2016 04:19:44 AM - Info - 38
+Monday 6th of June 2016 04:19:44 AM - Info - 3
+Monday 6th of June 2016 04:19:44 AM - Info - update player set player_name='Parteek',player_logo='images/player/file_170_cdv_photo_001.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=13 where player_id = 76
+Tuesday 7th of June 2016 11:33:00 PM - Info - 38
+Tuesday 7th of June 2016 11:33:00 PM - Info - 4
+Tuesday 7th of June 2016 11:33:00 PM - Info - update player set player_name='Sudhan Goverdhan',player_logo='images/player/file_694_cdv_photo_001.jpg',playing_role=4,player_country_id=38,player_cat=1,bat_style_id=12 where player_id = 40
+Wednesday 15th of June 2016 03:01:53 AM - Info - 38
+Wednesday 15th of June 2016 03:01:53 AM - Info - 3
+Wednesday 15th of June 2016 03:01:53 AM - Info - update player set player_name='Anthony Christopher',player_logo='images/player/file_751_cdv_photo_001.jpg',playing_role=3,player_country_id=38,player_cat=1 where player_id = 221
+Wednesday 15th of June 2016 03:03:52 AM - Info - 38
+Wednesday 15th of June 2016 03:03:52 AM - Info - 1
+Wednesday 15th of June 2016 03:03:52 AM - Info - update player set player_name='Ashish Dandekar',player_logo='images/player/file_291_cdv_photo_002.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 198
+Wednesday 15th of June 2016 03:04:26 AM - Info - 38
+Wednesday 15th of June 2016 03:04:26 AM - Info - 2
+Wednesday 15th of June 2016 03:04:26 AM - Info - update player set player_name='Kushal Diwekar',player_logo='images/player/file_834_cdv_photo_003.jpg',playing_role=2,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=14 where player_id = 205
+Wednesday 15th of June 2016 03:08:20 AM - Info - 38
+Wednesday 15th of June 2016 03:08:20 AM - Info - 1
+Wednesday 15th of June 2016 03:08:20 AM - Info - update player set player_name='Mehul Jadhav',player_logo='images/player/file_614_cdv_photo_004.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 217
+Wednesday 15th of June 2016 03:08:56 AM - Info - 38
+Wednesday 15th of June 2016 03:08:56 AM - Info - 3
+Wednesday 15th of June 2016 03:08:56 AM - Info - update player set player_name='Yogesh Pathare',player_logo='images/player/file_231_cdv_photo_005.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=13 where player_id = 196
+Wednesday 15th of June 2016 03:09:32 AM - Info - 38
+Wednesday 15th of June 2016 03:09:32 AM - Info - 3
+Wednesday 15th of June 2016 03:09:32 AM - Info - update player set player_name='Yogesh Pathare',player_logo='images/player/file_231_cdv_photo_005.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=13 where player_id = 196
+Wednesday 15th of June 2016 03:10:09 AM - Info - 38
+Wednesday 15th of June 2016 03:10:09 AM - Info - 3
+Wednesday 15th of June 2016 03:10:09 AM - Info - update player set player_name='Ajin Koshy',player_logo='images/player/file_246_cdv_photo_006.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11 where player_id = 223
+Thursday 16th of June 2016 12:25:52 AM - Info - 38
+Thursday 16th of June 2016 12:25:52 AM - Info - 3
+Thursday 16th of June 2016 12:25:52 AM - Info - update player set player_name='S Parag Joshi',player_logo='images/player/file_560_cdv_photo_001.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=12 where player_id = 232
+Thursday 16th of June 2016 12:40:27 AM - Info - 38
+Thursday 16th of June 2016 12:40:27 AM - Info - 4
+Thursday 16th of June 2016 12:40:27 AM - Info - update player set player_name='Pritpal Singh',player_logo='images/player/file_573_cdv_photo_003.jpg',playing_role=4,player_country_id=38,player_cat=1 where player_id = 93
+Thursday 16th of June 2016 12:46:54 AM - Info - 38
+Thursday 16th of June 2016 12:46:54 AM - Info - 1
+Thursday 16th of June 2016 12:46:54 AM - Info - update player set player_name='Mohammad Sharique',player_logo='images/player/file_580_cdv_photo_004.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 92
+Thursday 16th of June 2016 12:47:45 AM - Info - 38
+Thursday 16th of June 2016 12:47:45 AM - Info - 1
+Thursday 16th of June 2016 12:47:45 AM - Info - update player set player_name='Arash Sudhir',player_logo='images/player/file_158_cdv_photo_005.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 80
+Thursday 16th of June 2016 12:48:13 AM - Info - 38
+Thursday 16th of June 2016 12:48:13 AM - Info - 4
+Thursday 16th of June 2016 12:48:13 AM - Info - update player set player_name='Manjinder S. Bhatti',player_logo='images/player/file_837_cdv_photo_006.jpg',playing_role=4,player_country_id=38,player_cat=1 where player_id = 90
+Thursday 16th of June 2016 12:50:38 AM - Info - 38
+Thursday 16th of June 2016 12:50:38 AM - Info - 3
+Thursday 16th of June 2016 12:50:38 AM - Info - update player set player_name='Taresh Beri',player_logo='images/player/file_429_cdv_photo_001.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=12,description='Player' where player_id = 37
+Thursday 16th of June 2016 12:51:54 AM - Info - 38
+Thursday 16th of June 2016 12:51:54 AM - Info - 3
+Thursday 16th of June 2016 12:51:54 AM - Info - update player set player_name='Taresh Beri',player_logo='images/player/file_258_cdv_photo_007.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=12,description='Player' where player_id = 37
+Thursday 16th of June 2016 12:54:58 AM - Info - 38
+Thursday 16th of June 2016 12:54:58 AM - Info - 2
+Thursday 16th of June 2016 12:54:58 AM - Info - update player set player_name='Arjun Sundaram',player_logo='images/player/file_286_cdv_photo_008.jpg',playing_role=2,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11 where player_id = 224
+Thursday 16th of June 2016 12:55:30 AM - Info - 38
+Thursday 16th of June 2016 12:55:30 AM - Info - 3
+Thursday 16th of June 2016 12:55:30 AM - Info - update player set player_name='Gaurav Dhiman',player_logo='images/player/file_586_cdv_photo_009.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11 where player_id = 225
+Thursday 16th of June 2016 12:56:10 AM - Info - 38
+Thursday 16th of June 2016 12:56:10 AM - Info - 3
+Thursday 16th of June 2016 12:56:10 AM - Info - update player set player_name='Kanishk Gupta',player_logo='images/player/file_836_cdv_photo_010.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=12 where player_id = 227
+Thursday 16th of June 2016 12:56:34 AM - Info - 38
+Thursday 16th of June 2016 12:56:34 AM - Info - 1
+Thursday 16th of June 2016 12:56:34 AM - Info - update player set player_name='Kapil Bapat',player_logo='images/player/file_594_cdv_photo_011.jpg',playing_role=1,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=15 where player_id = 228
+Thursday 16th of June 2016 12:57:00 AM - Info - 38
+Thursday 16th of June 2016 12:57:00 AM - Info - 3
+Thursday 16th of June 2016 12:57:00 AM - Info - update player set player_name='Manpreet Singh',player_logo='images/player/file_458_cdv_photo_012.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=16 where player_id = 230
+Thursday 16th of June 2016 12:57:45 AM - Info - 38
+Thursday 16th of June 2016 12:57:45 AM - Info - 3
+Thursday 16th of June 2016 12:57:45 AM - Info - update player set player_name='Rajive Vijay Kumar',player_logo='images/player/file_617_cdv_photo_013.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11 where player_id = 233
+Thursday 16th of June 2016 12:58:15 AM - Info - 38
+Thursday 16th of June 2016 12:58:15 AM - Info - 2
+Thursday 16th of June 2016 12:58:15 AM - Info - update player set player_name='Sid Vishwanathan',player_logo='images/player/file_736_cdv_photo_014.jpg',playing_role=2,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=13 where player_id = 237
+Thursday 16th of June 2016 01:09:23 AM - Info - 38
+Thursday 16th of June 2016 01:09:23 AM - Info - 3
+Thursday 16th of June 2016 01:09:23 AM - Info - update player set player_name='Naresh C Jain',player_logo='images/player/file_180_cdv_photo_033.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=14 where player_id = 166
+Thursday 16th of June 2016 01:15:50 AM - Info - 38
+Thursday 16th of June 2016 01:15:50 AM - Info - 3
+Thursday 16th of June 2016 01:15:50 AM - Info - update player set player_name='Mahir Ameen',player_logo='images/player/file_576_cdv_photo_010.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=13 where player_id = 144
+Thursday 16th of June 2016 05:48:35 AM - Info - 38
+Thursday 16th of June 2016 05:48:35 AM - Info - 3
+Thursday 16th of June 2016 05:48:35 AM - Info - update player set player_name='Gagandeep Thappar',player_logo='images/player/file_258_cdv_photo_001.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=16 where player_id = 39
+Thursday 16th of June 2016 06:50:13 AM - Info - 38
+Thursday 16th of June 2016 06:50:13 AM - Info - 1
+Thursday 16th of June 2016 06:50:13 AM - Info - update player set player_name='Amrinder S.Deol',player_logo='images/player/file_017_cdv_photo_001.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 79
+Thursday 16th of June 2016 06:51:57 AM - Info - 38
+Thursday 16th of June 2016 06:51:57 AM - Info - 3
+Thursday 16th of June 2016 06:51:57 AM - Info - update player set player_name='Muhammad H. Khan',player_logo='images/player/file_517_cdv_photo_002.jpg',playing_role=3,player_country_id=38,player_cat=1 where player_id = 78
+Thursday 16th of June 2016 06:53:18 AM - Info - 38
+Thursday 16th of June 2016 06:53:18 AM - Info - 1
+Thursday 16th of June 2016 06:53:18 AM - Info - update player set player_name='Arash Sudhir',player_logo='images/player/file_476_cdv_photo_004.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 80
+Thursday 16th of June 2016 06:55:13 AM - Info - 38
+Thursday 16th of June 2016 06:55:13 AM - Info - 1
+Thursday 16th of June 2016 06:55:13 AM - Info - update player set player_name='Arash Sudhir',player_logo='images/player/file_931_cdv_photo_005.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 80
+Thursday 16th of June 2016 06:57:18 AM - Info - 38
+Thursday 16th of June 2016 06:57:18 AM - Info - 1
+Thursday 16th of June 2016 06:57:18 AM - Info - update player set player_name='Gurpratap Singh',player_logo='images/player/file_734_cdv_photo_006.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 84
+Thursday 16th of June 2016 06:57:57 AM - Info - 38
+Thursday 16th of June 2016 06:57:57 AM - Info - 1
+Thursday 16th of June 2016 06:57:57 AM - Info - update player set player_name='Harpreet Dhillon',player_logo='images/player/file_456_cdv_photo_007.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 85
+Thursday 16th of June 2016 06:58:45 AM - Info - 38
+Thursday 16th of June 2016 06:58:45 AM - Info - 1
+Thursday 16th of June 2016 06:58:45 AM - Info - update player set player_name='Harsh Sudhir',player_logo='images/player/file_087_cdv_photo_008.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 86
+Thursday 16th of June 2016 06:59:48 AM - Info - 38
+Thursday 16th of June 2016 06:59:48 AM - Info - 1
+Thursday 16th of June 2016 06:59:48 AM - Info - update player set player_name='Harsh Sudhir',player_logo='images/player/file_342_cdv_photo_009.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 86
+Thursday 16th of June 2016 07:00:37 AM - Info - 38
+Thursday 16th of June 2016 07:00:37 AM - Info - 1
+Thursday 16th of June 2016 07:00:37 AM - Info - update player set player_name='Kamal P S Sangha',player_logo='images/player/file_592_cdv_photo_010.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 88
+Thursday 16th of June 2016 07:01:51 AM - Info - 38
+Thursday 16th of June 2016 07:01:51 AM - Info - 1
+Thursday 16th of June 2016 07:01:51 AM - Info - update player set player_name='Vikas Kumar',player_logo='images/player/file_568_cdv_photo_011.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 99
+Thursday 16th of June 2016 07:03:20 AM - Info - 38
+Thursday 16th of June 2016 07:03:20 AM - Info - 1
+Thursday 16th of June 2016 07:03:20 AM - Info - update player set player_name='Anhum Shafiq',player_logo='images/player/file_714_cdv_photo_014.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 100
+Thursday 16th of June 2016 07:04:23 AM - Info - 38
+Thursday 16th of June 2016 07:04:23 AM - Info - 1
+Thursday 16th of June 2016 07:04:23 AM - Info - update player set player_name='Stalanjeet Grewal',player_logo='images/player/file_158_cdv_photo_016.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 104
+Thursday 16th of June 2016 07:07:37 AM - Info - 38
+Thursday 16th of June 2016 07:07:37 AM - Info - 1
+Thursday 16th of June 2016 07:07:37 AM - Info - update player set player_name='Arash Sudhir',player_logo='images/player/file_475_cdv_photo_017.jpg',playing_role=1,player_country_id=38,player_cat=1 where player_id = 80
+Thursday 16th of June 2016 07:59:25 AM - Info - 38
+Thursday 16th of June 2016 07:59:25 AM - Info - 3
+Thursday 16th of June 2016 07:59:25 AM - Info - update player set player_name='Abhinav Kavuru',player_logo='images/player/file_401_cdv_photo_030.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=13,description='Player' where player_id = 134
+Thursday 16th of June 2016 07:59:49 AM - Info - 38
+Thursday 16th of June 2016 07:59:49 AM - Info - 1
+Thursday 16th of June 2016 07:59:49 AM - Info - update player set player_name='Adil Shah',player_logo='images/player/file_480_cdv_photo_051.jpg',playing_role=1,player_country_id=38,player_cat=1,description='Player' where player_id = 184
+Thursday 16th of June 2016 08:19:35 AM - Info - 38
+Thursday 16th of June 2016 08:19:35 AM - Info - 2
+Thursday 16th of June 2016 08:19:35 AM - Info - update player set player_name='Ameya Karandikar',player_logo='images/player/file_638_cdv_photo_001.jpg',playing_role=2,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=12 where player_id = 197
+Friday 17th of June 2016 06:37:41 AM - Info - 3
+Friday 17th of June 2016 06:37:41 AM - Info - 1
+Friday 17th of June 2016 06:37:41 AM - Info - update player set player_name='Test 1',playing_role=1,player_country_id=3,player_cat=1 where player_id = 243
+Friday 17th of June 2016 07:51:20 AM - Info - 17
+Friday 17th of June 2016 07:51:20 AM - Info - 1
+Friday 17th of June 2016 07:51:20 AM - Info - update player set player_name='test player1',playing_role=1,player_country_id=17,player_cat=1 where player_id = 244
+Tuesday 21st of June 2016 02:23:08 AM - Info - 38
+Tuesday 21st of June 2016 02:23:08 AM - Info - 3
+Tuesday 21st of June 2016 02:23:08 AM - Info - update player set player_name='Aneesh Reddy',player_logo='images/player/file_054_cdv_photo_001.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11 where player_id = 26
+Tuesday 28th of June 2016 05:02:03 AM - Info - 38
+Tuesday 28th of June 2016 05:02:03 AM - Info - 3
+Tuesday 28th of June 2016 05:02:03 AM - Info - update player set player_name='Abhinav Kavuru',player_logo='images/player/file_673_cdv_photo_001.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=13,description='Player' where player_id = 134
+Tuesday 28th of June 2016 05:02:39 AM - Info - 38
+Tuesday 28th of June 2016 05:02:39 AM - Info - 1
+Tuesday 28th of June 2016 05:02:39 AM - Info - update player set player_name='Akhil Reddy Thoutreddy',player_logo='images/player/file_632_cdv_photo_002.jpg',playing_role=1,player_country_id=38,player_cat=1,bat_style_id=13,bowl_style_id=21 where player_id = 131
+Tuesday 28th of June 2016 05:03:19 AM - Info - 38
+Tuesday 28th of June 2016 05:03:19 AM - Info - 2
+Tuesday 28th of June 2016 05:03:19 AM - Info - update player set player_name='Vikram Iyer',player_logo='images/player/file_801_cdv_photo_003.jpg',playing_role=2,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=16 where player_id = 124
+Tuesday 28th of June 2016 05:03:48 AM - Info - 38
+Tuesday 28th of June 2016 05:03:48 AM - Info - 1
+Tuesday 28th of June 2016 05:03:48 AM - Info - update player set player_name='Ganesh Kannan',player_logo='images/player/file_286_cdv_photo_004.jpg',playing_role=1,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=12 where player_id = 121
+Tuesday 28th of June 2016 05:04:53 AM - Info - 38
+Tuesday 28th of June 2016 05:04:53 AM - Info - 2
+Tuesday 28th of June 2016 05:04:53 AM - Info - update player set player_name='S Sundar Sitambaram',player_logo='images/player/file_943_cdv_photo_005.jpg',playing_role=2,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=12 where player_id = 114
+Tuesday 28th of June 2016 05:05:35 AM - Info - 38
+Tuesday 28th of June 2016 05:05:35 AM - Info - 2
+Tuesday 28th of June 2016 05:05:35 AM - Info - update player set player_name='N Kishantan',player_logo='images/player/file_450_cdv_photo_006.jpg',playing_role=2,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=12 where player_id = 112
+Tuesday 28th of June 2016 05:06:14 AM - Info - 38
+Tuesday 28th of June 2016 05:06:14 AM - Info - 2
+Tuesday 28th of June 2016 05:06:14 AM - Info - update player set player_name='Raja Subramanian',player_logo='images/player/file_053_cdv_photo_007.jpg',playing_role=2,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=12 where player_id = 111
+Tuesday 28th of June 2016 05:07:03 AM - Info - 38
+Tuesday 28th of June 2016 05:07:03 AM - Info - 3
+Tuesday 28th of June 2016 05:07:03 AM - Info - update player set player_name='Dishank Rustogi',player_logo='images/player/file_481_cdv_photo_008.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11 where player_id = 108
+Tuesday 28th of June 2016 05:08:14 AM - Info - 38
+Tuesday 28th of June 2016 05:08:14 AM - Info - 3
+Tuesday 28th of June 2016 05:08:14 AM - Info - update player set player_name='Himanshu Porwal',player_logo='images/player/file_568_cdv_photo_009.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11 where player_id = 107
+Tuesday 28th of June 2016 05:15:52 AM - Info - 38
+Tuesday 28th of June 2016 05:15:52 AM - Info - 3
+Tuesday 28th of June 2016 05:15:52 AM - Info - update player set player_name='Gaurav Kapoor',player_logo='images/player/file_534_cdv_photo_010.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=11 where player_id = 106
+Tuesday 28th of June 2016 05:16:59 AM - Info - 38
+Tuesday 28th of June 2016 05:16:59 AM - Info - 3
+Tuesday 28th of June 2016 05:16:59 AM - Info - update player set player_name='Senthil Natarajan',player_logo='images/player/file_239_cdv_photo_011.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=12 where player_id = 105
+Friday 1st of July 2016 11:09:49 PM - Info - 38
+Friday 1st of July 2016 11:09:49 PM - Info - 4
+Friday 1st of July 2016 11:09:49 PM - Info - update player set player_name='Gurpreet Singh - I',player_logo='images/player/file_697_cdv_photo_001.jpg',playing_role=4,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=12 where player_id = 64
+Friday 1st of July 2016 11:12:44 PM - Info - 38
+Friday 1st of July 2016 11:12:44 PM - Info - 2
+Friday 1st of July 2016 11:12:44 PM - Info - update player set player_name='Gurpreet Singh - II',player_logo='images/player/file_802_cdv_photo_003.jpg',playing_role=2,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=13 where player_id = 245
+Friday 8th of July 2016 07:04:18 AM - Info - 38
+Friday 8th of July 2016 07:04:18 AM - Info - 2
+Friday 8th of July 2016 07:04:18 AM - Info - update player set player_name='Dhananjay Singh Chauhan',player_logo='images/player/file_216_cdv_photo_001.jpg',playing_role=2,player_country_id=38,player_cat=1,bowl_style_id=11,dob='1984-08-02' where player_id = 43
+Friday 8th of July 2016 07:06:22 AM - Info - 38
+Friday 8th of July 2016 07:06:22 AM - Info - 3
+Friday 8th of July 2016 07:06:22 AM - Info - update player set player_name='Jasmeet Sandhu',player_logo='images/player/file_641_cdv_photo_002.jpg',playing_role=3,player_country_id=38,player_cat=1,bat_style_id=12,bowl_style_id=12,dob='1987-02-20' where player_id = 42
+Saturday 3rd of June 2017 02:32:51 AM - Info - 38
+Saturday 3rd of June 2017 02:32:51 AM - Info - 3
+Saturday 3rd of June 2017 02:32:51 AM - Info - update player set player_name='Kesavan Juvarajan',player_logo='images/player/file_321_cdv_photo_001.jpg',playing_role=3,player_country_id=38,player_cat=1,dob='1992-09-08' where player_id = 252

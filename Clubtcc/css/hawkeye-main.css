@@ -1,0 +1,393 @@
+.hidden {
+	display: none;
+}
+/*------------- HAWK-EYE FEATURES ---------------*/
+.hawkeye .featureCntr {
+	height: 288px;
+	overflow: hidden;
+	position: relative;
+	width: 480px;
+	z-index: 1;
+}
+.hawkeye .featureCntr ul.featureCarousel {
+	height: 288px;
+	position: absolute;
+	width: 20000em;
+	z-index: 1;
+}
+.hawkeye .featureCntr ul.featureCarousel li {
+	float: left;
+	overflow: hidden;
+	height: 288px;
+	position: relative;
+	width: 480px;
+	background-size: 480px 288px;
+}
+/*------------- HAWK-EYE FEATURES TRAJ ---------------*/
+
+li.traj .featureControl {
+	right: 5px;
+	position: absolute;
+	top: 5px;
+	z-index: 3;
+	max-width: 115px;
+	min-width: 95px;
+	background-color: rgba(0, 0, 0, 0.8);
+	overflow: hidden;
+	border-radius: 6px;
+	border-bottom: 1px solid #bbb;
+	border-top: 2px solid black;
+}
+.hawkeye .featureCntr ul.featureCarousel li.traj .featureControl .overHead {
+	font-weight: bold;
+	line-height: 33px;
+	padding: 0 10px 0 0;
+	background-image: -webkit-linear-gradient(top, #454545, #000000);
+	text-align: right;
+	border-radius: 6px 6px 0 0;
+	box-shadow: 0 1px 0.3px #777 inset;
+}
+.hawkeye .featureCntr ul.featureCarousel li.traj .featureControl .overHead div {
+	float: left;
+	margin-left: 6px;
+}
+.hawkeye .featureCntr ul.featureCarousel li.traj .featureControl ul {
+}
+.hawkeye .featureCntr ul.featureCarousel li.traj .featureControl li {
+	line-height: 33px;
+	padding: 0 0 0 0;
+	width: auto;
+	float: none;
+	height: auto;
+	border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.hawkeye .featureCntr ul.featureCarousel li.traj .featureControl li.ballOff {
+	opacity: 0.5;
+}
+.hawkeye .featureCntr ul.featureCarousel li.traj .featureControl li div {
+	float: left;
+	margin-left: 6px;
+}
+.hawkeye .featureCntr ul.featureCarousel li.traj .featureControl li div.colorKey {
+	width: 5px;
+	height: 33px;
+}
+.hawkeye .featureCntr ul.featureCarousel li.traj .featureControl li div.colorKey.one {
+	background-color: #de0d0d;
+}
+.hawkeye .featureCntr ul.featureCarousel li.traj .featureControl li div.colorKey.two {
+	background-color: #0263a0;
+}
+.hawkeye .featureCntr ul.featureCarousel li.traj .featureControl li div.colorKey.three {
+	background-color: #ffea00;
+}
+.hawkeye .featureCntr ul.featureCarousel li.traj .featureControl li div.colorKey.four {
+	background-color: #eee;
+}
+.hawkeye .featureCntr ul.featureCarousel li.traj .featureControl li div.colorKey.five {
+	background-color: #20b04c;
+}
+.hawkeye .featureCntr ul.featureCarousel li.traj .featureControl li div.colorKey.six {
+	background-color: #e97730;
+}
+.hawkeye .featureCntr ul.featureCarousel li.traj .featureControl li div.colorKey.seven {
+	background-color: #5ab4cc;
+}
+.hawkeye .featureCntr ul.featureCarousel li.traj .featureControl li div.colorKey.eight {
+	background-color: #555;
+}
+.hawkeye .featureCntr ul.featureCarousel li.traj .featureControl .ballCheckBox {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	top: 1px;
+}
+/*------------- HAWK-EYE FEATURES COLOURS ---------------*/
+
+.hawkeye .featureCntr ul.featureCarousel li.pitchmap .key li div.colorKey.white {
+	background-color: #eee;
+}
+.hawkeye .featureCntr ul.featureCarousel li.pitchmap .key li div.colorKey.red, .hawkeye .featureCntr ul.featureCarousel li.beehive .key li div.colorKey.red {
+	background-color: #DE0D0D;
+}
+.hawkeye .featureCntr ul.featureCarousel li.pitchmap .key li div.colorKey.blue, .hawkeye .featureCntr ul.featureCarousel li.beehive .key li div.colorKey.blue {
+	background-color: #0263A0;
+}
+.hawkeye .featureCntr ul.featureCarousel li.pitchmap .key li div.colorKey.yellow, .hawkeye .featureCntr ul.featureCarousel li.beehive .key li div.colorKey.yellow {
+	background-color: #FFEA00;
+}
+.hawkeye .featureCntr ul.featureCarousel li.beehive .key li div.colorKey.white {
+	background-color: #eee;
+}
+.hawkeye .featureCntr ul.featureCarousel li.beehive .key li div.colorKey.lightBlue {
+	background-color: #5AB4CC;
+}
+.hawkeye .featureCntr ul.featureCarousel li.pitchmap .key li div.colorKey.orange, .hawkeye .featureCntr ul.featureCarousel li.beehive .key li div.colorKey.orange {
+	background-color: #E97730;
+}
+/*------------- HAWK-EYE FEATURES PITCHMAP ---------------*/
+
+.hawkeye .featureCntr ul.featureCarousel li .key li div {
+	color: #FFFFFF;
+}
+.hawkeye .featureCntr ul.featureCarousel li.pitchmap .keyCntr {
+	left: 0;
+	position: absolute;
+	top: 7px;
+	z-index: 3;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.hawkeye .featureCntr ul.featureCarousel li.pitchmap .key {
+	background-color: rgba(0, 0, 0, 0.8);
+	overflow: hidden;
+	border-radius: 6px;
+	border-bottom: 1px solid #BBB;
+	border-top: 2px solid black;
+}
+.hawkeye .featureCntr ul.featureCarousel li.pitchmap.split .key {
+	display: table;
+	margin: 0 auto;
+}
+.hawkeye .featureCntr ul.featureCarousel li.pitchmap.leftHanded .key, .hawkeye .featureCntr ul.featureCarousel li.pitchmap.rightHanded .key {
+	float: right;
+	margin-right: 10px;
+}
+.hawkeye .featureCntr ul.featureCarousel li.pitchmap .key li {
+	line-height: 33px;
+	padding: 0 0 0 0;
+	width: auto;
+	float: none;
+	height: auto;
+	border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.hawkeye .featureCntr ul.featureCarousel li.pitchmap .key li div {
+	float: left;
+	margin-right: 6px;
+}
+.hawkeye .featureCntr ul.featureCarousel li.pitchmap .key .typeCheckBox {
+	margin: 0 0 0 6px;
+	padding: 0;
+	position: relative;
+	top: 1px;
+}
+.hawkeye .featureCntr ul.featureCarousel li.pitchmap .key li div.colorKey {
+	width: 5px;
+	height: 33px;
+}
+/*------------- HAWK-EYE FEATURES beehive ---------------*/
+
+.hawkeye .featureCntr ul.featureCarousel li.beehive .keyCntr {
+	left: 0;
+	position: absolute;
+	top: 7px;
+	z-index: 3;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.hawkeye .featureCntr ul.featureCarousel li.beehive .key {
+	width: 185px;
+	background-color: rgba(0, 0, 0, 0.8);
+	overflow: hidden;
+	border-radius: 6px;
+	border-bottom: 1px solid #BBB;
+	border-top: 2px solid black;
+}
+.hawkeye .featureCntr ul.featureCarousel li.beehive .key {
+	float: left;
+	margin-left: 10px;
+}
+.hawkeye .featureCntr ul.featureCarousel li.beehive.split .key {
+	display: table;
+	margin: 0 auto;
+}
+.hawkeye .featureCntr ul.featureCarousel li.beehive.right .key {
+	float: right;
+	margin-right: 10px;
+}
+.hawkeye .featureCntr ul.featureCarousel li.beehive .key li {
+	line-height: 33px;
+	padding: 0 0 0 0;
+	width: auto;
+	float: none;
+	height: auto;
+	border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.hawkeye .featureCntr ul.featureCarousel li.beehive .key li div {
+	float: left;
+	margin-left: 6px;
+}
+.hawkeye .featureCntr ul.featureCarousel li.beehive .key .typeCheckBox {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	top: 1px;
+}
+.hawkeye .featureCntr ul.featureCarousel li.beehive .key li div.colorKey {
+	width: 5px;
+	height: 33px;
+}
+/*------------- HAWK-EYE FEATURES NAV ---------------*/
+
+.hawkeye .featureCntr .featureNav {
+	position: absolute;
+	z-index: 2;
+	width: 480px;
+	top: 238px;
+}
+.hawkeye .featureCntr .featureNav ul {
+	display: table;
+	margin: 0 auto;
+}
+.hawkeye .featureCntr .featureNav li {
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: auto;
+}
+.hawkeye .featureCntr .featureNav li a {
+	background-attachment: scroll;
+	background-color: transparent;
+	background-image: url(../i/nav/page-button.png);
+	background-repeat: no-repeat;
+	display: block;
+	height: 8px;
+	outline: medium none;
+	text-indent: -9000px;
+	width: 12px;
+	-webkit-background-size: 6px 5px;
+}
+.hawkeye .featureCntr .featureNav .active a {
+	background-image: url(../i/nav/page-button-active.png);
+}
+/*------------ iPhone hacks ------------*/
+.graphCntr .background {
+	position: absolute;
+	top: 0;
+	z-index: 1;
+}
+.graphCntr .graph {
+	position: absolute;
+	top: 0;
+	z-index: 2;
+}
+.graphCntr .overlay {
+	left: 0;
+	position: absolute;
+	top: 0;
+	z-index: 3;
+	display: block;
+	background: none;
+}
+.graphCntr .overlay img {
+	border-style : none;
+	width: 480px;
+}
+.graphCntr .placeholder {
+	left: 0;
+	position: absolute;
+	top: 0;
+	z-index: 4;
+}
+.graphCntr .layer {
+	color: #FFFFFF;
+	font-family: Arial, "MS Trebuchet", sans-serif;
+	font-size: 12px;
+}
+#scroller {
+	float: left;
+	height: 100%;
+	padding: 0;
+	width: 500280px;
+}
+#graph-info {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 500;
+}
+/**** RESPONSIVE ***/
+
+.hawkeye {
+	height: 100%;/* Firefox 
+	height: -moz-calc(100% - 13px);
+	/* WebKit 
+	height: -webkit-calc(100% - 13px);
+	/* Opera 
+	height: -o-calc(100% - 13px);
+	/* Standard 
+	height: calc(100% - 13px);
+	*/
+}
+body.landscape .wrapper {
+	display: block;
+	width: auto;
+}
+.hawkeye .featureCntr {
+	height: 100%;
+	/* Firefox 
+	height: -moz-calc(100% - 31px);
+	/* WebKit 
+	height: -webkit-calc(100% - 31px);
+	/* Opera 
+	height: -o-calc(100% - 31px);
+	/* Standard 
+	height: calc(100% - 31px);*/
+	width: 100%;
+}
+#wrapper {
+	height: 100%;
+	width: auto;
+}
+.hawkeye .featureCntr ul.featureCarousel {
+	height: 100%;
+}
+.hawkeye .featureCntr ul.featureCarousel > li {
+	/* background-size: 100% auto; */
+	background-color: black;
+	background-size: cover;
+	background-position: center;
+	/* background-repeat: no-repeat; */
+	height: 100%;
+	width: 100%;
+}
+.hawkeye .featureCntr ul.featureCarousel > li.traj .vControlWrap {
+	width: 100%;
+}
+.hawkeye .featureList {
+	height: -webkit-calc(100% - 31px);
+}
+/*[if !IE].graphCntr .layer {
+    height: auto;
+    width: auto;
+}*/
+
+.hawkeye .featureList .content {
+	height: -webkit-calc(100% - 52px);
+	overflow: auto;
+}
+/*.hawkeye .filterPanel {
+    height: 100%;
+}*/
+
+.hawkeye .filterPanel .content {
+/*    height: -webkit-calc(100% - 74px);
+    min-height: auto;*/
+}
+.hawkeye .filterPanel .trajPanel {
+	height: 100%;
+}
+.hawkeye .filterPanel .trajPanel .trajWickets .content {
+	/*height: -webkit-calc(100% - 35px);*/
+	min-height: auto;
+}
+.hawkeye .filterPanel .defaultFilter {
+	height: 100%;
+}
+.hawkeye .filterPanel .defaultFilter .defaultFilterContent h3 {
+	padding-top: 20px;
+}

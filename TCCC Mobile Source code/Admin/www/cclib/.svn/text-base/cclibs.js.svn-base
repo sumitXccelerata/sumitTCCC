@@ -1,0 +1,1408 @@
+var CCLIB = new Object();
+CCLIB.CRICKET_ADMIN = new Object();
+
+/*
+ * Create tournament....
+ */
+
+CCLIB.CRICKET_ADMIN.createTournament = function(tournament,reFun){
+	APIUtils.createTournament(tournament,function(resp1){
+		//console.log("..............")
+		//console.log(resp1)
+		if(resp1.status=="success"){
+			tournament.tournamentId = resp1.data.tournament_id;
+			DBUtils.createTournament(tournament,function(resp2){
+				if(resp2.status=="success")
+					reFun(resp1);
+				else
+					reFun(resp2);
+			});
+		}else{
+			reFun(resp1);
+		}
+	});
+}
+/*
+ * Ex:
+ */
+CCLIB.CRICKET_ADMIN.updateTournament = function(tournament,reFun){
+	//alert(JSON.stringify(tournament))
+	APIUtils.updateTournament(tournament,function(resp1){
+		if(resp1.status=="success"){
+			DBUtils.updateTournament(tournament,function(resp2){
+				if(resp2.status=="success")
+					reFun(resp1);
+				else
+					reFun(resp2);
+			});
+		}else{
+			reFun(resp1);
+		}
+	});
+}
+
+
+/*
+ * Select all tournments
+ */
+
+CCLIB.CRICKET_ADMIN.retrieveTournaments = function(reFun){
+	DBUtils.retrieveTournaments(function(resp){
+		reFun(resp);
+		//console.log(resp)
+	});
+}
+
+CCLIB.CRICKET_ADMIN.deleteTournament = function(tournamentId,reFun){
+	APIUtils.deleteTournament(tournamentId,function(resp){
+		if(resp.status=="success"){
+			DBUtils.deleteTournament(tournamentId,function(resp1){
+				reFun(resp1);
+			});
+		}
+	});
+}
+
+//Teams....
+
+/*
+ * Create team....
+ */
+
+CCLIB.CRICKET_ADMIN.createTeam = function(team,reFun){
+	APIUtils.createTeam(team,function(resp1){
+		console.log(resp1)
+		if(resp1.status=="success"){
+			team.teamId = resp1.data.team_id;
+			DBUtils.createTeam(team,function(resp2){
+				if(resp2.status=="success")
+					reFun(resp1);
+				else
+					reFun(resp2);
+			});
+		}else{
+			reFun(resp1);
+		}
+	});
+}
+
+
+CCLIB.CRICKET_ADMIN.updateTeam = function(team,reFun){
+	APIUtils.updateTeam(team,function(resp1){
+		if(resp1.status=="success"){
+			DBUtils.updateTeam(team,function(resp2){
+				if(resp2.status=="success")
+					reFun(resp1);
+				else
+					reFun(resp2);
+			});
+		}else{
+			reFun(resp1);
+		}
+	});
+}
+
+/*
+ * Select all tournments
+ */
+
+CCLIB.CRICKET_ADMIN.retrieveTeams = function(reFun){
+	DBUtils.retrieveTeams(function(resp){
+		reFun(resp);
+	});
+}
+
+CCLIB.CRICKET_ADMIN.deleteTeam = function(teamId,reFun){
+	
+	APIUtils.deleteTeam(teamId,function(resp){
+		if(resp.status=="success"){
+			DBUtils.deleteTeam(teamId,function(resp1){
+				reFun(resp1);
+			});
+		}
+	});
+}
+
+//matchTypeId,title
+CCLIB.CRICKET_ADMIN.createMatchType = function(matchType,myFunction) {
+	/*APIUtils.createMatchType(matchType,function(resp){
+		myFunction(resp);
+	});*/
+	APIUtils.createMatchType(matchType,function(resp1){
+		if(resp1.status=="success"){
+			matchType.matchTypeId = resp1.data.match_type_id;
+			DBUtils.createMatchType(matchType,function(resp2){
+				if(resp2.status=="success")
+					myFunction(resp1);
+				else
+					myFunction(resp2);
+			});
+		}else{
+			myFunction(resp1);
+		}
+	});
+};
+
+CCLIB.CRICKET_ADMIN.updateMatchType = function(matchType,myFunction) {
+	APIUtils.updateMatchType(matchType,function(resp){
+		if(resp.status=="success"){
+			DBUtils.updateMatchType(matchType,function(resp1){
+				myFunction(resp1);
+			});
+		}else{
+			myFunction(resp);
+		}
+	});
+}
+
+CCLIB.CRICKET_ADMIN.deleteMatchType = function(matchTypeId,myFunction) {
+	
+	APIUtils.deleteMatchType(matchTypeId,function(resp){
+		if(resp.status=="success"){
+			DBUtils.deleteMatchType(matchTypeId,function(resp1){
+				myFunction(resp1);
+			});
+		}
+	});
+}
+
+CCLIB.CRICKET_ADMIN.getMatchTypes = function(myFunction) {
+	APIUtils.getMatchTypes(function(resp){
+		myFunction(resp);
+	});
+}
+
+
+
+//bowlStyleId, title
+CCLIB.CRICKET_ADMIN.createBowlingStyle = function(bowlingStyle,myFunction) {
+	APIUtils.createBowlingStyle(bowlingStyle,function(resp1){
+		console.log(JSON.stringify(resp1))
+		if(resp1.status=="success"){
+			bowlingStyle.bowlStyleId = resp1.data.bowl_style_id;
+			DBUtils.createBowlStyle(bowlingStyle,function(resp2){
+				if(resp2.status=="success")
+					myFunction(resp1);
+				else
+					myFunction(resp2);
+			});
+		}else{
+			myFunction(resp1);
+		}
+	});
+}
+
+CCLIB.CRICKET_ADMIN.updateBowlingStyle = function(bowlingStyle,myFunction) {
+	APIUtils.updateBowlingStyle(bowlingStyle,function(resp){
+		myFunction(resp);
+	});
+}
+
+CCLIB.CRICKET_ADMIN.deleteBowlingStyle = function(bowlingStyleId,myFunction) {
+	
+	APIUtils.deleteBowlingStyle(bowlingStyleId,function(resp){
+		if(resp.status=="success"){
+			DBUtils.deleteBowlStyle(bowlingStyleId,function(resp1){
+				myFunction(resp1);
+			});
+		}
+	});
+	
+	/*APIUtils.deleteBowlingStyle(bowlingStyleId,function(resp){
+		myFunction(resp);
+	});*/
+}
+
+CCLIB.CRICKET_ADMIN.getBowlingStyles = function(myFunction) {
+	APIUtils.getBowlingStyles(function(resp){
+		myFunction(resp);
+	});
+}
+CCLIB.CRICKET_ADMIN.getBowlingStyles(function(resp){
+	//console.log(resp)
+})
+
+
+//batStyleId, title
+CCLIB.CRICKET_ADMIN.createBattingStyle = function(battingStyle,myFunction) {
+	APIUtils.createBattingStyle(battingStyle,function(resp1){
+		//myFunction(resp);
+		//console.log("..............")
+		console.log(resp1)
+		if(resp1.status=="success"){
+			battingStyle.batStyleId = resp1.data.bat_style_id;
+			DBUtils.createBatStyle(battingStyle,function(resp2){
+				if(resp2.status=="success")
+					myFunction(resp1);
+				else
+					myFunction(resp2);
+			});
+		}else{
+			myFunction(resp1);
+		}
+	});
+}
+
+
+CCLIB.CRICKET_ADMIN.updateBattingStyle = function(battingStyle,myFunction) {
+	APIUtils.updateBattingStyle(battingStyle,function(resp1){
+		//myFunction(resp);
+		//console.log("..............")
+		//console.log(resp1)
+		if(resp1.status=="success"){
+			DBUtils.updateBatStyle (battingStyle,function(resp2){
+				if(resp2.status=="success")
+					myFunction(resp1);
+				else
+					myFunction(resp2);
+			});
+		}else{
+			myFunction(resp1);
+		}
+	
+	
+	});
+}
+
+CCLIB.CRICKET_ADMIN.deleteBattingStyle = function(battingStyleId,myFunction) {
+	
+	
+	APIUtils.deleteBattingStyle(battingStyleId,function(resp){
+		if(resp.status=="success"){
+			DBUtils.deleteBatStyle(battingStyleId,function(resp1){
+				myFunction(resp1);
+			});
+		}
+	});
+	
+	
+	/*APIUtils.deleteBattingStyle(battingStyleId,function(resp){
+		myFunction(resp);
+	});*/
+}
+
+
+CCLIB.CRICKET_ADMIN.getBattingStyles = function(myFunction) {
+	APIUtils.getBattingStyles(function(resp){
+		myFunction(resp);
+	});
+}
+
+//playerRoleId, title
+CCLIB.CRICKET_ADMIN.createPlayerRole = function(playerRole,myFunction) {
+	APIUtils.createPlayerRole(playerRole,function(resp1){
+		//console.log("..............")
+		if(resp1.status=="success"){
+			playerRole.playerRoleId = resp1.data.player_role_id;
+			DBUtils.createPlayerRole (playerRole,function(resp2){
+				if(resp2.status=="success")
+					myFunction(resp1);
+				else
+					myFunction(resp2);
+			});
+		}else{
+			myFunction(resp1);
+		}
+	
+	
+	
+	});
+}
+
+CCLIB.CRICKET_ADMIN.updatePlayerRole = function(playerRole,myFunction) {
+	APIUtils.updatePlayerRole(playerRole,function(resp){
+		myFunction(resp);
+	});
+}
+
+CCLIB.CRICKET_ADMIN.deletePlayerRole = function(playerRoleId,myFunction) {
+	APIUtils.deletePlayerRole(playerRoleId,function(resp){
+		if(resp.status=="success"){
+			DBUtils.deletePlayerRole(playerRoleId,function(resp1){
+				myFunction(resp1);
+			});
+		}
+	});
+	
+/*	var playerRoles={};
+	playerRoles.playerRoleId=4;
+
+	APIUtils.deletePlayerRole(playerRoleId,function(resp){
+		myFunction(resp);
+	});*/
+}
+
+CCLIB.CRICKET_ADMIN.getPlayerRoles = function(myFunction) {
+	APIUtils.getPlayerRoles(function(resp){
+		myFunction(resp);
+	});
+}
+
+//umpireId, name, countryName=
+CCLIB.CRICKET_ADMIN.createUmpire = function(umpire,myFunction) {
+	APIUtils.createUmpire(umpire,function(resp1){
+		//console.log("Umpireeeeeeeeeeeeeeeeeeeeeeeeeeee..............")
+		//console.log(resp1)
+		if(resp1.status=="success"){
+			umpire.umpireId = resp1.data.umpire_id;
+			DBUtils.createUmpire(umpire,function(resp2){
+				if(resp2.status=="success")
+					myFunction(resp1);
+				else
+					myFunction(resp2);
+			});
+		}else{
+			myFunction(resp1);
+		}
+	});
+}
+
+CCLIB.CRICKET_ADMIN.updateUmpire = function(umpire,myFunction) {
+	APIUtils.updateUmpire(umpire,function(resp){
+		if(resp.status=="success"){
+			DBUtils.updateUmpire(umpire,function(resp1){
+				myFunction(resp1);
+			});
+		}else{
+			myFunction(resp);
+		}
+	});
+}
+
+CCLIB.CRICKET_ADMIN.deleteUmpire = function(umpireId,myFunction) {
+	APIUtils.deleteUmpire(umpireId,function(resp){
+		if(resp.status=="success"){
+			DBUtils.deleteUmpire(umpireId,function(resp1){
+				myFunction(resp1);
+			});
+		}
+	});
+	
+	
+	/*APIUtils.deleteUmpire(umpireId,function(resp){
+		myFunction(resp);
+	});*/
+}
+
+CCLIB.CRICKET_ADMIN.getUmpires = function(myFunction) {
+	APIUtils.getUmpires(function(resp){
+		myFunction(resp);
+	});
+}
+
+//create TournamentHasTeam
+
+
+CCLIB.CRICKET_ADMIN.createTournamentHasTeam = function(tournamentHasTeam,myfunction){
+	APIUtils.createTournamentHasTeam(tournamentHasTeam,function(resp1){
+		//console.log("..............")
+		//console.log(resp1)
+			if(resp1.status=="success"){
+				//tournamentHasTeam.tournamentId = resp1.data.tournament_id;
+			DBUtils.createTournamentHasTeam(tournamentHasTeam,function(resp2){
+				if(resp2.status=="success")
+					myfunction(resp1);
+				else
+					myfunction(resp2);
+			});
+		}else{
+			myfunction(resp1);
+		}
+	});
+}
+
+CCLIB.CRICKET_ADMIN.createTournamentHasTeam=function(tournamentHasTeam,myfunction){
+	APIUtils.createTournamentHasTeam(tournamentHasTeam,function(resp){
+		myfunction(resp)
+	
+	});
+
+}
+
+CCLIB.CRICKET_ADMIN.createMultiTournamentHasTeam =function(tournamentHasTeam ,myfunction){
+	APIUtils.createMultiTournamentHasTeam (tournamentHasTeam ,function(resp){
+		myfunction(resp)
+	});
+};
+
+CCLIB.CRICKET_ADMIN.deleteTournamentHasTeam =function(tournamentHasTeam ,myFunction){
+	APIUtils.deleteTournamentHasTeam (tournamentHasTeam ,function(resp){
+		myFunction(resp)
+	});
+};
+
+CCLIB.CRICKET_ADMIN.getTournamentHasTeam =function(tournamentHasTeam ,myFunction){
+	APIUtils.getTournamentHasTeam (tournamentHasTeam ,function(resp){
+		myFunction(resp)
+	});
+};
+
+//create TeamHasPlayers
+CCLIB.CRICKET_ADMIN.createTeamHasPlayer = function(teamHasPlayer,myfunction){
+	APIUtils.createTeamHasPlayer(teamHasPlayer,function(resp1){
+		//console.log("..............")
+		console.log(resp1);
+			if(resp1.status=="success"){
+			teamHasPlayer.thpId = resp1.data.thp_id;
+			DBUtils.createTeamHasPlayer(teamHasPlayer,function(resp2){
+				if(resp2.status=="success")
+					myfunction(resp1);
+				else
+					myfunction(resp2);
+			});
+		}else{
+			myfunction(resp1);
+		}
+	});
+}
+
+
+CCLIB.CRICKET_ADMIN.createMultiTeamHasPlayer=function(teamHasPlayer,myfunction){
+	APIUtils.createMultiTeamHasPlayer(teamHasPlayer,function(resp){
+		myfunction(resp)
+	});
+};
+
+CCLIB.CRICKET_ADMIN.deleteTeamHasPlayer=function(teamHasPlayer,myFunction){
+	APIUtils.deleteTeamHasPlayer(teamHasPlayer,function(resp){
+		myFunction(resp)
+	});
+};
+
+CCLIB.CRICKET_ADMIN.getTeamHasPlayer=function(teamHasPlayer,myFunction){
+	APIUtils.getTeamHasPlayer(teamHasPlayer,function(resp){
+		myFunction(resp)
+	});
+};
+
+//tournamentHasPlayer::tournamentId, teamId, playerId, odi, test, t20
+CCLIB.CRICKET_ADMIN.createTournamentHasPlayer = function(tournamentHasPlayer,myFunction) {
+	APIUtils.createTournamentHasPlayer(tournamentHasPlayer,function(resp1){
+		//console.log(":::::::::::::::::::::::::::::::..............")
+		//console.log(resp1)
+		if(resp1.status=="success"){
+			tournamentHasPlayer.tThdId = resp1.data.t_thp_id;
+			DBUtils.createTournamentHasPlayer(tournamentHasPlayer,function(resp2){
+				if(resp2.status=="success")
+					myFunction(resp1);
+				else
+					myFunction(resp2);
+			});
+		}else{
+			myFunction(resp1);
+		}
+	});
+}
+
+CCLIB.CRICKET_ADMIN.updateTournamentHasPlayer = function(tournamentHasPlayer,myFunction) {
+	APIUtils.updateTournamentHasPlayer(tournamentHasPlayer,function(resp){
+		myFunction(resp);
+	});
+}
+
+CCLIB.CRICKET_ADMIN.deleteTournamentHasPlayer = function(tournamentHasPlayer,myFunction) {
+	APIUtils.deleteTournamentHasPlayer(tournamentHasPlayer,function(resp){
+		myFunction(resp);
+	});
+}
+
+CCLIB.CRICKET_ADMIN.getTournamentHasPlayer = function(tournamentHasPlayer,myFunction) {
+	APIUtils.getTournamentHasPlayer(tournamentHasPlayer,function(resp){
+		myFunction(resp);
+	});
+}
+
+CCLIB.CRICKET_ADMIN.createMultiTournamentHasPlayer = function(tournamentHasPlayer,myFunction) {
+	APIUtils.createMultiTournamentHasPlayer(tournamentHasPlayer,function(resp){
+		myFunction(resp);
+	});
+}
+
+CCLIB.CRICKET_ADMIN.getByTourTournamentHasPlayer = function(tournamentHasPlayer,myFunction) {
+	APIUtils.getByTourTournamentHasPlayer(tournamentHasPlayer,function(resp){
+		myFunction(resp);
+	});
+}
+
+//category
+
+CCLIB.CRICKET_ADMIN.createCategory = function(category,myFunction) {
+	APIUtils.createCategory(category,function(resp1){
+		console.log(resp1)
+		if(resp1.status=="success"){
+			category.catId = resp1.data.category_id;
+			DBUtils.createCategory(category,function(resp2){
+				if(resp2.status=="success")
+					myFunction(resp1);
+				else
+					myFunction(resp2);
+			});
+		}else{
+			myFunction(resp1);
+		}
+	});
+}
+
+CCLIB.CRICKET_ADMIN.updateCategory = function(category,myFunction) {
+	APIUtils.updateCategory(category,function(resp){
+		if(resp.status=="success"){
+			DBUtils.updateCategory(category,function(resp1){
+				myFunction(resp1);
+			});
+		}else{
+			myFunction(resp);
+		}
+	});
+}
+
+CCLIB.CRICKET_ADMIN.deleteCategory = function(category,myFunction) {
+	APIUtils.deleteCategory(category,function(resp){
+		if(resp.status=="success"){
+			DBUtils.deleteCategory(category,function(resp1){
+				myFunction(resp1);
+			});
+		}
+	});
+	}
+
+CCLIB.CRICKET_ADMIN.getCategory = function(category,myFunction) {
+	APIUtils.getCategory(category,function(resp){
+		myFunction(resp);
+	});
+	
+}//PlayerId, name, countryName=
+CCLIB.CRICKET_ADMIN.createPlayer = function(player,myFunction) {
+	APIUtils.createPlayer(player,function(resp1){
+			if(resp1.status=="success"){
+				player.playerId = resp1.data.player_id;
+			DBUtils.createPlayer(player,function(resp2){
+				if(resp2.status=="success")
+					myFunction(resp1);
+				else
+					myFunction(resp2);
+			});
+		}else{
+			myFunction(resp1);
+		}
+	});
+}
+
+
+CCLIB.CRICKET_ADMIN.updatePlayer = function(player,myFunction) {
+	APIUtils.updatePlayer(player,function(resp){
+		if(resp.status=="success"){
+			DBUtils.updatePlayer(player,function(resp1){
+				myFunction(resp1);
+			});
+		}else{
+			myFunction(resp);
+		}
+	});
+}
+
+CCLIB.CRICKET_ADMIN.deletePlayer = function(playerId,myFunction) {
+	APIUtils.deletePlayer(playerId,function(resp){
+		if(resp.status=="success"){
+			DBUtils.deletePlayer(playerId,function(resp1){
+				myFunction(resp1);
+			});
+		}
+	});
+	}
+
+CCLIB.CRICKET_ADMIN.getPlayers = function(myFunction) {
+	APIUtils.getPlayers(function(resp){
+		myFunction(resp);
+	});
+}
+
+//country
+CCLIB.CRICKET_ADMIN.getCountry = function(myFunction) {
+	APIUtils.getCountry(function(resp1){
+		myFunction(resp1);
+		//console.log(":::::::::::::::::::::::::::::::..............")
+		/*console.log(resp1)
+		if(resp1.status=="success"){
+			//tournamentHasPlayer.tThdId = resp1.data.t_thp_id;
+			DBUtils.getCountry(function(resp2){
+				if(resp2.status=="success")
+					myFunction(resp1);
+				else
+					myFunction(resp2);
+			});
+		}else{
+			myFunction(resp1);
+		}*/
+	
+	});
+}
+
+//match
+CCLIB.CRICKET_ADMIN.createMatch = function(match,myFunction) {
+	APIUtils.createMatch(match,function(resp1){
+		if(resp1.status=="success"){
+			match.matchId = resp1.data.match_id;
+			DBUtils.createMatch(match,function(resp2){
+				if(resp2.status=="success")
+					myFunction(resp1);
+				else
+					myFunction(resp2);
+			});
+		}else{
+			myFunction(resp1);
+		}
+	});
+}
+
+CCLIB.CRICKET_ADMIN.updateMatch = function(match,myFunction) {
+	APIUtils.updateMatch(match,function(resp){
+		myFunction(resp);
+	});
+}
+
+CCLIB.CRICKET_ADMIN.deleteMatch = function(match,myFunction) {
+	APIUtils.deleteMatch(match,function(resp){
+		myFunction(resp);
+	});
+}
+
+CCLIB.CRICKET_ADMIN.getMatch = function(match,myFunction) {
+	APIUtils.getMatch(match,function(resp){
+		myFunction(resp);
+	});
+}
+
+//match_has_team
+CCLIB.CRICKET_ADMIN.createMatchHasTeam = function(matchHasTeam,myFunction) {
+	APIUtils.createMatchHasTeam(matchHasTeam,function(resp1){
+	/*	console.log("::::|||......|||::::")
+		console.log(resp1)*/
+		if(resp1.status=="success"){
+			//matchHasTeam.matchId = resp1.data.match_id;
+			DBUtils.createMatchHasTeam(matchHasTeam,function(resp2){
+				if(resp2.status=="success")
+					myFunction(resp1);
+				else
+					myFunction(resp2);
+			});
+		}else{
+			myFunction(resp1);
+		}
+	});
+}
+
+
+CCLIB.CRICKET_ADMIN.createMultiMatchHasTeam = function(matchHasTeam,myFunction) {
+	APIUtils.createMatchHasTeam(matchHasTeam,function(resp){
+		myFunction(resp);
+	});
+}
+
+CCLIB.CRICKET_ADMIN.deleteMatchHasTeam = function(matchHasTeam,myFunction) {
+	APIUtils.deleteMatch(matchHasTeam,function(resp){
+		myFunction(resp);
+	});
+}
+
+CCLIB.CRICKET_ADMIN.getMatchHasTeam = function(matchHasTeam,myFunction) {
+	APIUtils.getMatch(matchHasTeam,function(resp){
+		myFunction(resp);
+	});
+}
+
+//matchhasplayer
+CCLIB.CRICKET_ADMIN.createMatchHasPlayer = function(matchHasPlayer,myFunction) {
+	APIUtils.createMatchHasPlayer(matchHasPlayer,function(resp1){
+		console.log(JSON.stringify(resp1))
+		if(resp1.status=="success"){
+			matchHasPlayer.matchId = resp1.data.match_id;
+			DBUtils.createMatchHasPlayer(matchHasPlayer,function(resp2){
+				if(resp2.status=="success")
+					myFunction(resp1);
+				else
+					myFunction(resp2);
+			});
+		}else{
+			myFunction(resp1);
+		}
+	});
+}
+
+CCLIB.CRICKET_ADMIN.updateMatchHasPlayer = function(matchHasPlayer,myFunction) {
+	APIUtils.updateMatchHasPlayer(matchHasPlayer,function(resp){
+		myFunction(resp);
+	});
+}
+
+CCLIB.CRICKET_ADMIN.deleteMatchHasPlayer = function(matchHasPlayer,myFunction) {
+	
+	APIUtils.deleteMatchHasPlayer(matchHasPlayer,function(resp){
+		if(resp.status=="success"){
+			DBUtils.deleteMatchHasPlayer(matchHasPlayer,function(resp1){
+				myFunction(resp1);
+			});
+		}
+	});
+	
+}
+
+CCLIB.CRICKET_ADMIN.getMatchHasPlayer = function(myFunction) {
+	APIUtils.getMatchHasPlayer(function(resp){
+		myFunction(resp);
+	});
+}
+CCLIB.CRICKET_ADMIN.getMatchHasPlayer(function(resp){
+	//console.log(resp)
+})
+
+//venue::venueId, teamId, playerId, country_id, venue_description
+CCLIB.CRICKET_ADMIN.createVenue = function(venue,myFunction) {
+	APIUtils.createVenue(venue,function(resp1){
+		//console.log(":::::::::::::::::::::::::::::::..............")
+		//console.log(resp1)
+		if(resp1.status=="success"){
+			venue.matchId = resp1.data.match_id;
+			DBUtils.createVenue(venue,function(resp2){
+				if(resp2.status=="success")
+					myFunction(resp1);
+				else
+					myFunction(resp2);
+			});
+		}else{
+			myFunction(resp1);
+		}
+	});
+}
+
+CCLIB.CRICKET_ADMIN.updateVenue = function(venue,myFunction) {
+	APIUtils.updateVenue(venue,function(resp){
+		myFunction(resp);
+	});
+}
+
+CCLIB.CRICKET_ADMIN.deleteVenue = function(venue,myFunction) {
+	APIUtils.deleteVenue(venue,function(resp){
+		myFunction(resp);
+	});
+}
+
+CCLIB.CRICKET_ADMIN.getVenue = function(myFunction) {
+	APIUtils.getVenue(function(resp){
+		myFunction(resp);
+	});
+}
+
+CCLIB.CRICKET_ADMIN.getByCountryVenue = function(venue,myFunction) {
+	APIUtils.getByCountryVenue(venue,function(resp){
+		myFunction(resp);
+	});
+}
+
+
+
+//pictures::picturestype, picturesdescription, picturestypeid, picturestitle, picturespath
+CCLIB.CRICKET_ADMIN.createPictures = function(pictures,myFunction) {
+	APIUtils.createPictures(pictures,function(resp1){
+		console.log(JSON.stringify(resp1))
+		if(resp1.status=="success"){
+			pictures.pictureId = resp1.data.picture_id;
+			DBUtils.createPictures(pictures,function(resp2){
+				if(resp2.status=="success")
+					myFunction(resp1);
+				else
+					myFunction(resp2);
+			});
+		}else{
+			myFunction(resp1);
+		}
+	});
+}
+
+CCLIB.CRICKET_ADMIN.updatePictures = function(pictures,myFunction) {
+	APIUtils.updatePictures(pictures,function(resp){
+		myFunction(resp);
+	});
+}
+
+CCLIB.CRICKET_ADMIN.deletePictures = function(pictures,myFunction) {
+	
+	APIUtils.deletePictures(pictures,function(resp){
+		if(resp.status=="success"){
+			DBUtils.deletePictures(pictures,function(resp1){
+				myFunction(resp1);
+			});
+		}
+	});
+}
+
+CCLIB.CRICKET_ADMIN.getPictures = function(myFunction) {
+	APIUtils.getPictures(function(resp){
+		myFunction(resp);
+	});
+}
+CCLIB.CRICKET_ADMIN.getPictures(function(resp){
+	//console.log(resp)
+})
+APIUtils.getCountry(function(resp){
+	var list = resp.data.list;
+	//console.log(JSON.stringify(list))
+	if(list)
+		for(var i=0;i<list.length;i++){
+			var country = list[i];
+			country.id=country.id;
+				country.iso=country.iso;
+					country.name=country.name;
+					country.nicename=country.nicename;
+					country.iso3=country.iso3;
+						country.numcode=country.numcode;
+							country.phonecode =country.phonecode; 
+							country.flagPath =country.flagPath; 
+							country.status= country.status;
+			DBUtils.createCountry(country,function(resp){
+				if(resp.status=="failed"){
+					DBUtils.updateCountry(resp.data,function(resp1){
+					})
+				}
+			});
+		}
+});
+
+//video_id, video_title
+CCLIB.CRICKET_ADMIN.createVideos = function(videos,myFunction) {
+	APIUtils.createVideos(videos,function(resp1){
+		console.log(JSON.stringify(resp1))
+		if(resp1.status=="success"){
+			videos.videoId = resp1.data.video_id;
+			DBUtils.createVideos(videos,function(resp2){
+				if(resp2.status=="success")
+					myFunction(resp1);
+				else
+					myFunction(resp2);
+			});
+		}else{
+			myFunction(resp1);
+		}
+	});
+}
+
+CCLIB.CRICKET_ADMIN.updateVideos = function(videos,myFunction) {
+	APIUtils.updateVideos(videos,function(resp){
+		myFunction(resp);
+	});
+}
+
+CCLIB.CRICKET_ADMIN.deleteVideos = function(videos,myFunction) {
+	
+	APIUtils.deleteVideos(videos,function(resp){
+		if(resp.status=="success"){
+			DBUtils.deleteVideos(videos,function(resp1){
+				myFunction(resp1);
+			});
+		}
+	});
+}
+
+CCLIB.CRICKET_ADMIN.getVideos = function(myFunction) {
+	APIUtils.getVideos(function(resp){
+		myFunction(resp);
+	});
+}
+CCLIB.CRICKET_ADMIN.getVideos(function(resp){
+	//console.log(resp)
+})
+// points
+CCLIB.CRICKET_ADMIN.createPointsConfig= function(points,myFunction) {
+	APIUtils.createPointsConfiguration(points,function(resp){
+		myFunction(resp);
+	});
+}
+
+CCLIB.CRICKET_ADMIN.updatePointsConfig= function(points,myFunction) {
+	APIUtils.updatePointsConfiguration(points,function(resp){
+		myFunction(resp);
+	});
+}
+
+CCLIB.CRICKET_ADMIN.deletePointsConfig= function(points,myFunction) {
+	APIUtils.delPointsConfiguration (points,function(resp){
+		myFunction(resp);
+	});
+}
+CCLIB.CRICKET_ADMIN.listByTourPointsConfiguration = function(points,myFunction) {
+	APIUtils.listByTourPointsConfiguration  (points,function(resp){
+		myFunction(resp);
+	});
+}
+CCLIB.CRICKET_ADMIN.getListPointsConfiguration = function(myFunction) {
+	APIUtils.getListPointsConfiguration(function(resp){
+		myFunction(resp);
+	});
+}
+
+// users
+CCLIB.CRICKET_ADMIN.createUser= function(user,myFunction) {
+	APIUtils.createUser(user,function(resp){
+		myFunction(resp);
+	});
+}
+
+CCLIB.CRICKET_ADMIN.getDeleUser= function(user,myFunction) {
+	APIUtils.deleteUser(user,function(resp){
+		myFunction(resp);
+	});
+}
+CCLIB.CRICKET_ADMIN.updateUser= function(user,myFunction) {
+	APIUtils.updateUser(user,function(resp){
+		myFunction(resp);
+	});
+}
+CCLIB.CRICKET_ADMIN.getUser= function(myFunction) {
+	APIUtils.getUserList(function(resp){
+		myFunction(resp);
+	});
+}
+
+
+
+autoSyncTables();
+function autoSyncTables(){
+	sysncLines();
+	setTimeout(autoSyncTables,45000);
+}
+
+function sysncLines(){
+
+	APIUtils.getTournaments(function(resp){
+		var list = resp.data.list;
+		if(list)
+			for(var i=0;i<list.length;i++){
+				var tournament = list[i];
+				tournament.pointsTable = tournament.points_table;
+				tournament.tournamentId = tournament.tournament_id;
+				tournament.name = tournament.tournament_name;
+				tournament.shortName = tournament.short_name;
+				tournament.logo = tournament.tournament_logo;
+				tournament.cat = tournament.tour_cat;
+				tournament.startDate = tournament.start_date;
+				tournament.endDate = tournament.end_date;
+				DBUtils.createTournament(tournament,function(resp){
+					if(resp.status=="failed"){
+						DBUtils.updateTournament(resp.data,function(resp1){
+						})
+					}
+				});
+			}
+	});
+	APIUtils.getTeams(function(resp){
+		var list = resp.data.list;
+		if(list)
+			for(var i=0;i<list.length;i++){
+				var team = list[i];
+				//type=create&team_name=&team_logo=&team_small_name=&team_color1=&team_color2=&team_color3=
+				team.teamId = team.team_id;
+				team.name = team.team_name;
+				team.smallName = team.team_small_name;
+				team.logo = team.team_logo;
+				team.catId = team.team_cat;
+				team.description = team.description;
+				DBUtils.createTeam(team,function(resp){
+					if(resp.status=="failed"){
+						DBUtils.updateTeam(resp.data,function(resp1){
+						})
+					}
+				});
+			}
+	});
+	
+	
+	APIUtils.getMatchTypes(function(resp){
+		var list = resp.data.list;
+		if(list)
+			for(var i=0;i<list.length;i++){
+				var team = list[i];
+				//type=update&match_type_id=&match_type_title
+				team.matchTypeId = team.match_type_id;
+				team.title = team.match_type_title;
+				DBUtils.createMatchType(team,function(resp){
+					if(resp.status=="failed"){
+						DBUtils.updateMatchType(resp.data,function(resp1){
+						})
+					}
+				});
+			}
+	});
+	
+	//type=update&bowl_style_id=&bowl_style_title
+	APIUtils.getBowlingStyles(function(resp){
+		var list = resp.data.list;
+		if(list)
+			for(var i=0;i<list.length;i++){
+				var team = list[i];
+				team.bowlStyleId = team.bowl_style_id;
+				team.title = team.bowl_style_title;
+				DBUtils.createBowlStyle(team,function(resp){
+					if(resp.status=="failed"){
+						DBUtils.updateBowlStyle(resp.data,function(resp1){
+						})
+					}
+				});
+			}
+	});
+	
+	//type=update&bat_style_id=&bat_style_title
+	APIUtils.getBattingStyles(function(resp){
+		var list = resp.data.list;
+		if(list)
+			for(var i=0;i<list.length;i++){
+				var battingStyle = list[i];
+				battingStyle.batStyleId = battingStyle.bat_style_id;
+				battingStyle.batStyleTitle = battingStyle.bat_style_title;
+				DBUtils.createBatStyle(battingStyle,function(resp){
+					if(resp.status=="failed"){
+						DBUtils.updateBatStyle(resp.data,function(resp1){
+						})
+					}
+				});
+			}
+	});
+	
+	
+	//type=update&player_role_id=&player_role_title
+	APIUtils.getPlayerRoles(function(resp){
+		var list = resp.data.list;
+		if(list)
+			for(var i=0;i<list.length;i++){
+				var team = list[i];
+				team.playerRoleId = team.player_role_id;
+				team.title = team.player_role_title;
+				DBUtils.createPlayerRole(team,function(resp){
+					if(resp.status=="failed"){
+						DBUtils.updatePlayerRole(resp.data,function(resp1){
+						})
+					}
+				});
+			}
+	});
+	
+	
+	//type=update&umpire_id=&umpire_name=&umpire_country_name=
+	APIUtils.getUmpires(function(resp){
+		var list = resp.data.list;
+		if(list)
+			for(var i=0;i<list.length;i++){
+				var umpire = list[i];
+				umpire.umpireId = umpire.umpire_id;
+				umpire.umpireName = umpire.umpire_name;
+				umpire.umpireCountryId = umpire.umpire_country;
+				umpire.umpireLogo=umpire.umpire_logo;
+				umpire.teamLogo=umpire.team_logo;
+				umpire.dob=umpire.umpire_dob
+				DBUtils.createUmpire(umpire,function(resp){
+					if(resp.status=="failed"){
+						DBUtils.updateUmpire(resp.data,function(resp1){
+						})
+					}
+				});
+			}
+	});
+	
+	//type=update&tournament_id=&team_id=
+	var tournamentHasTeamObj = {};
+	APIUtils.getTournamentHasTeam(tournamentHasTeamObj,function(resp){
+		var list = resp.data.list;
+		if(list)
+			for(var i=0;i<list.length;i++){
+				var tournamentHasTeam = list[i];
+				tournamentHasTeam.tournamentId = tournamentHasTeam.tournament_id;
+				tournamentHasTeam.teamId = tournamentHasTeam.team_id;
+				
+				DBUtils.createtournamentHasTeam(tournamentHasTeam,function(resp){
+					if(resp.status=="failed"){
+						DBUtils.updatetournamentHasTeam(resp.data,function(resp1){
+						})
+					}
+				});
+			}
+	});
+	
+	
+	var tournamentHasPlayerObj = {};
+	APIUtils.getTournamentHasPlayer(tournamentHasPlayerObj,function(resp){
+		var list = resp.data.list;
+		if(list)
+			for(var i=0;i<list.length;i++){
+				var tournamentHasPlayer = list[i];
+				tournamentHasPlayer.tThpId = tournamentHasPlayer.t_thp_id
+				tournamentHasPlayer.tournamentId = tournamentHasPlayer.tournament_id;
+				tournamentHasPlayer.teamId = tournamentHasPlayer.team_id;
+				tournamentHasPlayer.playerId = tournamentHasPlayer.player_id;
+				tournamentHasPlayer.Odi = tournamentHasPlayer.odi;
+				tournamentHasPlayer.Test = tournamentHasPlayer.test;
+				tournamentHasPlayer.T20 = tournamentHasPlayer.t20;
+				DBUtils.createTournamentHasPlayer(tournamentHasPlayer,function(resp){
+					if(resp.status=="failed"){
+						DBUtils.updateTournamentHasPlayer(resp.data,function(resp1){
+						})
+					}
+				});
+			}
+	});
+	APIUtils.getCategory(function(resp){
+		var list = resp.data.list;
+		if(list)
+			for(var i=0;i<list.length;i++){
+				var category = list[i];
+				category.categoryName = category.category_title;
+				category.catId = category.category_id;
+
+				DBUtils.createCategory(category,function(resp){
+					if(resp.status=="failed"){
+						DBUtils.updateCategory(category,function(resp1){
+						})
+					}
+				});
+			}
+	});
+	
+	//type=update&player_id=&player_name=&player_country_name=
+	APIUtils.getPlayers(function(resp){
+		var list = resp.data.list;
+		if(list)
+			for(var i=0;i<list.length;i++){
+				var player = list[i];
+				player.playerId=player.player_id;
+				player.playerName=player.player_name;
+				player.playerCountryId=player.player_country_id;
+				player.playerLogo=player.player_logo;
+				player.dob=player.dob;
+				player.bowlStyleId=player.bowl_style_id;
+				player.batStyleId=player.bat_style_id;
+				player.cat=player.player_cat ;
+				player.role=player.playing_role;	
+				player.description=player.description
+				
+				
+				DBUtils.createPlayer(player,function(resp){
+					if(resp.status=="failed"){
+						DBUtils.updatePlayer(resp.data,function(resp1){
+						})
+					}
+				});
+			}
+	});
+	
+	
+	
+	/*APIUtils.getCountry(function(resp){
+		var list = resp.data.list;
+		//console.log(JSON.stringify(list))
+		if(list)
+			for(var i=0;i<list.length;i++){
+				var country = list[i];
+				country.id=country.id;
+					country.iso=country.iso;
+						country.name=country.name;
+						country.nicename=country.nicename;
+						country.iso3=country.iso3;
+							country.numcode=country.numcode;
+								country.phonecode =country.phonecode; 
+								country.flagPath =country.flagPath; 
+								country.status= country.status;
+				DBUtils.createCountry(country,function(resp){
+					if(resp.status=="failed"){
+						DBUtils.updateCountry(resp.data,function(resp1){
+						})
+					}
+				});
+			}
+	});*/
+	
+	APIUtils.getMatch(function(resp){
+		var list = resp.data.list;
+		if(list)
+			for(var i=0;i<list.length;i++){
+				var match = list[i];
+				match.matchId = match.match_id;
+				match.matchName = match.match_name;
+				match.matchTypeId = match.match_type_id;
+				match.tournamentId = match.tournament_id;
+				match.location = match.location;
+				match.noInngs = match.no_inngs;
+				match.starttime = match.starttime;
+				match.description = match.description;
+				match.umpire1 = match.umpire1;
+				match.umpire2 = match.umpire2;
+				match.tvUmpire = match.tv_umpire;
+				match.matchRef = match.match_ref;
+				match.resUmpire = match.res_umpire;
+				match.localTime = match.local_time;
+				match.matchCat = match.match_cat;
+				match.matchDayNight = match.match_day_night;
+				match.venueId=match.venue_id;
+				DBUtils.createMatch(match,function(resp){
+					if(resp.status=="failed"){
+						DBUtils.updateMatch(resp.data,function(resp1){
+						})
+					}
+				});
+			}
+	});
+	//matchHasTeam
+	var matchHasTeam = {};
+	APIUtils.getMatchHasTeam(matchHasTeam,function(resp){
+		if(resp && resp.status=="failed")
+			return;
+		var list = resp.data.list;
+		if(list)
+			for(var i=0;i<list.length;i++){
+				var matchHasTeam = list[i];
+
+				matchHasTeam.matchId = matchHasTeam.match_id;
+				matchHasTeam.teamId = matchHasTeam.team_id;
+				
+				DBUtils.createMatchHasTeam(matchHasTeam,function(resp){
+/*					if(resp.status=="failed"){
+						DBUtils.updateMatchHasTeam(resp.data,function(resp1){
+						})
+					}*/
+				});
+			}
+	});
+	
+	//teamhasplayer
+	APIUtils.getTeamHasPlayer(null,function(resp1){
+		//console.log(resp1)
+		var list = resp1.data.list;
+		for(var i=0;i<list.length;i++){
+			var obj = list[i];
+			obj.teamId = obj.team_id;
+			obj.playerId = obj.player_id;
+			obj.thpId = obj.thp_id;
+			DBUtils.deleteTeamHasPlayer(obj,function(resp1){
+				DBUtils.createTeamHasPlayer(obj,function(resp){
+				});
+			})
+		}
+	})
+	APIUtils.getVenue(function(resp){
+		var list = resp.data.list;
+		if(list)
+			for(var i=0;i<list.length;i++){
+				var venue = list[i];
+				venue.venueId = venue.venue_id;
+				venue.venueTitle = venue.venue_title;
+				venue.venueGeoLat = venue.geoLat ;
+				venue.venueGeoLang = venue.geoLang;
+				venue.venueDescription = venue.venue_description;
+				venue.venuelocation = venue.venue_location;
+				venue.countryId = venue.country_id;
+				DBUtils.createVenue(venue,function(resp){
+					if(resp.status=="failed"){
+						DBUtils.updateVenue(resp.data,function(resp1){
+						})
+					}
+				});
+			}
+	});
+	
+	
+	APIUtils.getPictures(function(resp){
+		var list = resp.data.list;
+		if(list)
+			for(var i=0;i<list.length;i++){
+				var pictures = list[i];
+				pictures.pictureId = pictures.picture_id;
+				pictures.pictureTitle = pictures.picture_title;
+				pictures.pictureDescription =pictures.picture_description;
+				pictures.pictureType=pictures.picture_type;
+				pictures.pictureTypeId=pictures.picture_type_id;
+				pictures.PicPath=pictures.pic_path;
+				DBUtils.createPictures(pictures,function(resp){
+					if(resp.status=="failed"){
+						DBUtils.updatePictures(resp.data,function(resp1){
+						})
+					}
+				});
+			}
+	});
+	
+	APIUtils.getMatchHasPlayer(function(resp){
+		var list = resp.data.list;
+		if(list)
+			for(var i=0;i<list.length;i++){
+				var pictures = list[i];
+				matchHasPlayer.matchId = matchHasPlayer.match_id;
+				matchHasPlayer.teamId = matchHasPlayer.teamId;
+				matchHasPlayer.playerId =matchHasPlayer.player_id;
+				matchHasPlayer.Inngs=matchHasPlayer.inngs;
+				DBUtils.createMatchHasPlayer(matchHasPlayer,function(resp){
+					if(resp.status=="failed"){
+						DBUtils.updateMatchHasPlayer(resp.data,function(resp1){
+						})
+					}
+				});
+			}
+	});
+	
+	APIUtils.getVideos(function(resp){
+		var list = resp.data.list;
+		if(list)
+			for(var i=0;i<list.length;i++){
+				var videos = list[i];
+				videos.videoId = videos.video_id;
+				videos.videoTitle = videos.video_title;
+				videos.videoDescription =videos.video_description;
+				videos.videoType=videos.video_type;
+				videos.videoTypeId=videos.video_type_id;
+				videos.PicPath=videos.pic_path;
+				DBUtils.createVideos(videos,function(resp){
+					if(resp.status=="failed"){
+						DBUtils.updateVideos(resp.data,function(resp1){
+						})
+					}
+				});
+			}
+	});
+	
+	// points
+	APIUtils.getListPointsConfiguration(function(resp){
+		var list = resp.data.list;
+		if(list)
+			for(var i=0;i<list.length;i++){
+				var points = list[i];
+				points.pcName =points.pc_name;
+				points.tournamentId = points.tournament_id;
+				points.points =points.points;
+				points.pcId=points.pc_id;
+				DBUtils.createPointsconfig(points,function(resp){
+					if(resp.status=="failed"){
+						DBUtils.updatePointsconfig(resp.data,function(resp1){
+						})
+					}
+				});
+			}
+	});
+	//userName,user.roleName,user.emailId,user.password,user.socialId,user.updateId,user.deviceType,user.uId],	
+	APIUtils.getUserList(function(resp){
+		var list = resp.data.list;
+		if(list)
+			for(var i=0;i<list.length;i++){
+				var user = list[i];
+				user.uId =user.uId;
+				user.userName =user.username ;
+				user.roleName =user.role_name ;
+				user.emailId=user.emailId ;
+				user.password =user.password ;
+				user.socialId= user.socialId;
+				user.uDeviceId=user.uDId;
+				user.deviceType=user.deviceType;
+				user.teamId =user.team_id;
+				DBUtils.createUser(user,function(resp){
+					if(resp.status=="failed"){
+						DBUtils.updateUser(resp.data,function(resp1){
+						})
+					}
+				});
+			}
+	});
+}

@@ -1,0 +1,537 @@
+/*var tournament = {};
+tournament.name = "XXX786888X";
+tournament.shortName = "XXX78566XXX";
+tournament.logo = "logos";
+tournament.startDate = "2017-05-11";
+tournament.endDate = "2017-06-11";
+//tournament.startTime = "2016-03-18 10:30:00";
+//tournament.endtime = "2016-04-18 11:30:00";
+tournament.pointsTable = "3";
+tournament.cat = "ICCs";
+tournament.createdBy = "Developers";
+CCLIB.CRICKET_ADMIN.createTournament(tournament,function(resp){
+//	console.log(resp)
+});
+*/
+
+/*var tournament = {};
+tournament.tournamentId = 53;
+tournament.name = "T..sachinra";
+tournament.shortName = "gangulysauvrav";
+tournament.logo = "logos";
+//tournament.startDate = "2016-05-16";
+//tournament.endDate = "2016-06-16";
+tournament.pointsTable = "4";
+tournament.cat = "Icc";
+tournament.createdBy = "Developer";
+
+CCLIB.CRICKET_ADMIN.updateTournament(tournament,function(resp){
+	//console.log(resp)
+});
+*/
+
+/*
+ * Ex:
+ */
+/*CCLIB.CRICKET_ADMIN.retrieveTournaments(function(resp){
+	//console.log(JSON.stringify(resp))
+});*/
+
+
+/*var tournament = {};
+tournament.tournamentId = 46;
+*/
+/*CCLIB.CRICKET_ADMIN.deleteTournament(tournament.tournamentId,function(resp){
+	console.log(resp)
+});
+*/
+
+
+/** Ex:*//*
+
+var team = {};
+team.name = "westindies";
+//team.teamId = 20;
+team.smallName = "wi";
+team.logo = "LOGO";
+team.teamCatId=4;
+CCLIB.CRICKET_ADMIN.createTeam(team,function(resp){
+console.log("teammmmmmmmmmmmmmmmmmmmmm............LLLLLLLLLLLLLLLLLL......."+JSON.stringify(resp))
+});*/
+
+
+/*var team = {};
+team.name = "Srilankas";
+team.teamId = 18;
+team.smallName = "SL";
+team.logo = "LOGO";
+team.teamCatId=4;
+CCLIB.CRICKET_ADMIN.updateTeam(team,function(resp){
+console.log("teammmmmmmmmmmmmmmmmmmmmm"+JSON.stringify(resp))
+});*/
+
+
+
+
+/*
+ * Ex:
+ */
+/*var team = {};
+team.teamId = "15";
+				team.name = "pakistan";
+				team.smallName = "pak";
+				team.logo = "LOGOs";
+				team.catId = "5";
+				
+CCLIB.CRICKET_ADMIN.updateTeam(team,function(resp){
+	console.log("teammmmmmmmmmmmmmmmmmmmmm"+JSON.stringify(resp))
+});*/
+
+
+/*
+ * Ex:
+ */
+/*CCLIB.CRICKET_ADMIN.retrieveTeams(function(resp){
+	console.log(JSON.stringify(resp))
+});*/
+
+
+/*var team = {};
+team.teamId = 1;
+
+CCLIB.CRICKET_ADMIN.deleteTeam(team.teamId,function(resp){
+	reFun(resp)
+});
+*/
+
+	/*var team={};
+	team.teamId=2;
+	APIUtils.deleteTeam(team.teamId,function(resp){
+		//reFun(resp);
+		console.log(resp)
+	});
+
+*/
+
+
+/*var matchType={};
+//matchType.matchTypeId=19;
+matchType.title="bordersssss"
+
+CCLIB.CRICKET_ADMIN.createMatchType(matchType,function(resp){
+	
+	console.log(resp)
+})*/
+
+
+
+/*var matchType={};
+matchType.matchTypeId=20;
+matchType.title="kapilborder"
+
+CCLIB.CRICKET_ADMIN.updateMatchType(matchType,function(resp){
+	
+	console.log(resp)
+})*/
+
+/*var matchTypeId=21
+APIUtils.deleteMatchType(matchTypeId,function(resp){
+	//myFunction(resp);
+	console.log(resp)
+});*/
+
+
+/*var bowlingStyle={};
+//bowlingStyle.bowlStyleId="1"
+bowlingStyle.title="leftkjBBBxdj"
+CCLIB.CRICKET_ADMIN.createBowlingStyle(bowlingStyle,function(resp){
+console.log(resp)
+})*/
+
+/*var battingStyle={};
+battingStyle.batStyleId=4;
+battingStyle.batStyleTitle="left";
+CCLIB.CRICKET_ADMIN.createBattingStyle(battingStyle,function(resp){
+	
+console.log(resp)	
+
+	
+});*/
+
+
+/*var battingStyle={};
+battingStyle.batStyleId=8;
+battingStyle.batStyleTitle="right"
+CCLIB.CRICKET_ADMIN.updateBattingStyle(battingStyle,function(resp){
+	
+console.log(resp)	
+
+	
+});*/
+
+/*var battingStyle={};
+battingStyle.batStyleId=7;
+//battingStyle.batStyleTitle="right21"
+CCLIB.CRICKET_ADMIN.deleteBattingStyle(battingStyle,function(resp){
+	
+console.log(resp)	
+
+	
+});*/
+
+/*
+CCLIB.CRICKET_ADMIN.getBattingStyles(function(resp){
+	console.log(resp);
+});
+*/
+
+/*
+var playerRole={};
+//playerRole.playerRoleId=8;
+playerRole.title="battingg"
+CCLIB.CRICKET_ADMIN.createPlayerRole(playerRole,function(resp){
+	
+console.log(resp)	
+
+	
+});
+*/
+
+/*var playerRoles={};
+playerRoles.playerRoleId=4;
+playerRoles.title="bowling"
+CCLIB.CRICKET_ADMIN.updatePlayerRole(playerRoles,function(resp){
+	console.log(resp)
+	
+});
+*/
+/*
+var umpire={};
+umpire.umpireId=1;
+umpire.umpireName="kittu";
+umpire.umpireCountryId="3";
+umpire.umpireLogo="red";
+umpire.teamLogo="colors";
+umpire.dob="22343"
+CCLIB.CRICKET_ADMIN.createUmpire(umpire,function(resp){
+	//console.log(resp);
+})
+
+*/
+
+
+
+/*
+var tournamentHasTeam = {};
+tournamentHasTeam.tournamentId = "123";
+tournamentHasTeam.teamId = "712";
+CCLIB.CRICKET_ADMIN.createTournamentHasTeam(tournamentHasTeam,function(resp){
+	//console.log(resp)
+});*/
+
+
+
+/*
+var teamHasPlayer = {};
+teamHasPlayer.teamId = "1";
+teamHasPlayer.playerId = "2";
+CCLIB.CRICKET_ADMIN.createTeamHasPlayer(teamHasPlayer,function(resp){
+	console.log(resp)
+});*/
+
+/*var teamHasPlayer={};
+teamHasPlayer.teamId=4;
+teamHasPlayer.playerId=4;
+CCLIB.CRICKET_ADMIN.deleteTeamHasPlayer(teamHasPlayer,function(resp){
+	console.log(resp)
+})*/
+
+
+/*var tournamentHasPlayer = {};
+tournamentHasPlayer.tournamentId = "12";
+tournamentHasPlayer.teamId = "6";
+tournamentHasPlayer.playerId = "249";
+tournamentHasPlayer.odi = "1";
+tournamentHasPlayer.test = "0";
+tournamentHasPlayer.t20 = "0";
+tournamentHasPlayer.tThdId = "21";
+
+CCLIB.CRICKET_ADMIN.createTournamentHasPlayer(tournamentHasPlayer,function(resp){
+	console.log(resp)
+});*/
+
+/*var tournamentHasPlayer = {};
+tournamentHasPlayer.tournamentId = "123";
+tournamentHasPlayer.teamId = "45666";
+tournamentHasPlayer.playerId = "24689";
+tournamentHasPlayer.odi = "2";
+tournamentHasPlayer.test = "9";
+tournamentHasPlayer.t20 = "9";
+tournamentHasPlayer.tThdId = "232";
+CCLIB.CRICKET_ADMIN.updateTournamentHasPlayer(tournamentHasPlayer,function(resp){
+	console.log(resp)
+	
+})*/
+
+
+/*var category = {};
+category.categoryName = "TLCC123";
+CCLIB.CRICKET_ADMIN.createCategory(category,function(resp){
+	console.log(resp)
+});
+*/
+
+
+
+
+
+/*var category = {};
+category.categoryName = "TLCC12345678";
+category.catId = 3;
+CCLIB.CRICKET_ADMIN.updateCategory(category,function(resp){
+	console.log(resp)
+});*/
+
+
+
+
+
+/*var player={};
+player.playerId=2;
+player.playerName="Dhoni123";
+player.playerCountryId=1;
+player.playerLogo="skyblue";
+player.dob="2015-05-05";
+player.bowlStyleId=1;
+player.batStyleId=1;
+player.cat=1;
+player.role=1;	
+player.description="crkjhhickets"	
+CCLIB.CRICKET_ADMIN.updatePlayer(player,function(resp){
+	console.log(resp);
+})*/
+/*
+country={}
+country.id=1;
+country.iso="";
+country.name="";
+country.nicename="";
+country.iso3="";
+country.numcode="";
+country.phonecode=""; 
+
+CCLIB.CRICKET_ADMIN.getCountry(country,function(resp){
+	console.log(resp)
+})*/
+
+
+/*var match = {};
+match.matchName = "TCC";
+match.matchTypeId = "5";
+match.tournamentId = "05";
+match.location = "Toronto";
+match.noInngs = "2";
+match.starttime = "12";
+match.description = "toronto cricket";
+match.umpire1 = "ramakrishna";
+match.umpire2 = "satish";
+match.tvUmpire = "giri";
+match.matchRef = "kumar";
+match.resUmpire = "sekhar";
+match.localTime = "11";
+match.matchCat = "test";
+match.matchDayNight = "day";
+match.venueId="120";
+CCLIB.CRICKET_ADMIN.createMatch(match,function(resp){
+	console.log(resp)
+});*/
+
+/*var matchHasTeam = {};
+matchHasTeam.matchId = "66";
+matchHasTeam.teamId = "66";
+CCLIB.CRICKET_ADMIN.createMatchHasTeam(matchHasTeam,function(resp){
+	console.log(resp)
+});*/
+
+/*var matchHasTeam = {};
+matchHasTeam.matchId = "66";
+matchHasTeam.teamId = "66";
+CCLIB.CRICKET_ADMIN.deleteMatchHasTeam(matchHasTeam,function(resp){
+	console.log(resp)
+})*/
+/*var matchHasPlayer={};
+matchHasPlayer.matchId="2";
+matchHasPlayer.teamId="1";
+matchHasPlayer.playerId="1";	   
+CCLIB.CRICKET_ADMIN.createMatchHasPlayer(matchHasPlayer,function(resp){
+console.log(resp)
+})*/
+
+/*
+var venue = {};
+venue.venueId = "412";
+venue.venueTitle = "hfahf";
+venue.venueGeoLat = "12.2345";
+venue.venueGeoLang = "154.111";
+venue.venueDescription = "fdsfsdf";
+venue.venuelocation = "sssas";
+venue.countryId = "455";
+CCLIB.CRICKET_ADMIN.createVenue(venue,function(resp){
+	console.log(resp)
+});*/
+
+/*
+var venue = {};
+venue.venueId = "412";
+venue.venueTitle = "hfahf";
+venue.venueGeoLat = "12.2345";
+venue.venueGeoLang = "154.111";
+venue.venueDescription = "fdsfsdf";
+venue.venuelocation = "sssas";
+venue.countryId = "455";
+CCLIB.CRICKET_ADMIN.updateVenue(venue,function(resp){
+	console.log(resp)
+	
+})*/
+
+
+/*
+var pictures = {};
+pictures.pictureId = "1";
+pictures.pictureTitle = "t20";
+pictures.pictureDescription = "ind vs aus";
+pictures.pictureType = "jpg";
+pictures.pictureTypeid = "12";
+pictures.picturePicpath = "E";
+
+CCLIB.CRICKET_ADMIN.createPictures(pictures,function(resp){
+	console.log(resp)
+});
+*/
+
+/*
+var pictures = {};
+pictures.pictureId = "1";
+pictures.pictureTitle = "t20";
+pictures.pictureDescription = "ind vs aus";
+pictures.pictureType = "jpg";
+pictures.pictureTypeid = "12";
+pictures.picturePicpath = "images/tournament/_502_cdv_photo_006.jpg";
+CCLIB.CRICKET_ADMIN.updatePictures(pictures,function(resp){
+	console.log(resp)
+	
+})
+*/
+
+/* function process(){
+	var player = {};
+	player.playerName = "Rams G H G H G";
+	player.playerCountryId = 1;
+	player.playerLogo = "Logo";
+	player.dob = "2015-05-05";
+	player.bowlStyleId = "27";
+	player.batStyleId = "12";
+	player.cat = "5";
+	player.role = "21";
+	player.description = "Rams G";
+	console.log(JSON.stringify(player))
+	CCLIB.CRICKET_ADMIN.createPlayer(player,function(resp){
+		console.log(resp)
+	});*/
+	
+	/*var team = {};
+	team.name = "westindies123";
+	//team.teamId = 20;
+	team.smallName = "wi";
+	team.logo = "LOGO";
+	team.teamCatId=4;
+	CCLIB.CRICKET_ADMIN.createTeam(team,function(resp){
+		console.log("teammmmmmmmmmmmmmmmmmmmmm............LLLLLLLLLLLLLLLLLL......."+JSON.stringify(resp))
+	});*/
+	/*var category = {};
+	category.categoryName = "MyCategoryy";
+	CCLIB.CRICKET_ADMIN.createCategory(category,function(resp){
+		console.log(resp);
+	});*/
+	
+	
+
+/*function process(){
+	var pictures={};
+	pictures.pictureId = "54";
+	pictures.pictureTitle = "video";
+	pictures.pictureDescription ="video";
+	pictures.pictureType="tournament";
+	pictures.pictureTypeId="32";
+	pictures.PicPath="d";
+	CCLIB.CRICKET_ADMIN.createPictures(pictures,function(resp){
+		console.log(resp)
+	})
+}
+
+function process(){
+	var videos={};
+	videos.videoId = "54";
+	videos.videoTitle = "video";
+	videos.videoDescription ="video";
+	videos.videoType="tournament";
+	videos.videoTypeId="32";
+	videos.PicPath="d";
+	CCLIB.CRICKET_ADMIN.createVideos(videos,function(resp){
+		console.log(resp)
+	})
+}*/
+    
+   /*function process(){
+    	 var tournament = {};
+    	tournament.tournamentId=69;
+    	tournament.name = "gavarborder";
+    	tournament.shortName = "gskrb";
+    	tournament.logo = "logos";
+    	//tournament.startDate = "2017-05-11";
+    	//tournament.endDate = "2017-06-11";
+    	//tournament.startTime = "2016-03-18 10:30:00";
+    	//tournament.endtime = "2016-04-18 11:30:00";
+    	tournament.pointsTable = "3";
+    	tournament.cat = "3";
+    	tournament.createdBy = "Developers";
+    	CCLIB.CRICKET_ADMIN.updateTournament(tournament,function(resp){
+  		console.log(resp)
+    	});
+//tournament.tournamentId=69;
+CCLIB.CRICKET_ADMIN.deleteTournament(69,function(resp){
+  		console.log(resp)
+    	})
+    	
+
+	var user={};
+	//user.uId = ;
+	user.userName ="rammugk";
+	user.roleName =1;
+	user.emailId="ram@gmail.com";
+	user.password ="giri";
+	user.socialId= "Facebook";
+	user.uDeviceId="ffffff";
+	user.deviceType="motorola";
+	user.teamId="2";
+	CCLIB.CRICKET_ADMIN.createUser(user,function(resp){
+		console.log(JSON.stringify(resp))
+	})	
+	CCLIB.CRICKET_ADMIN.getUser(function(resp){
+		console.log(JSON.stringify(resp))
+	})	
+    }*/
+function process(){
+var pictures = {};
+//pictures.pictureId = "1";
+pictures.pictureTitle = "t20";
+pictures.pictureDescription = "ind";
+pictures.pictureType = "tournament";
+pictures.pictureTypeId = "12";
+pictures.PicPath = "images/tournament/_502_cdv_photo_006.jpg";
+CCLIB.CRICKET_ADMIN.createPictures(pictures,function(resp){
+	console.log(resp)
+	
+})
+}
+

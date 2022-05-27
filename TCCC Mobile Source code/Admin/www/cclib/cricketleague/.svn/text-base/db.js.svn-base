@@ -1,0 +1,2198 @@
+var DBUtils = new Object();
+
+DBUtils.loadDBInitials = function(){
+	db.transaction(
+			function(tx) {
+				//team_id,name,small_name,logo,color1,color2,color3
+				tx.executeSql('CREATE TABLE IF NOT EXISTS teams(team_id integer primary key,name text,small_name text,logo text,team_cat_id integer,description text,lupdate datetime DEFAULT CURRENT_TIMESTAMP)');
+				//type=create&tournament_name=&tournament_logo=&start_date=&end_date=&starttime=&endtime=&points_table=&tour_cat=&short_name=
+				tx.executeSql('CREATE TABLE IF NOT EXISTS tournaments(tournament_id integer primary key,name text,short_name text,logo text,category text,start_date datetime,end_date datetime,points_table text,lupdate datetime DEFAULT CURRENT_TIMESTAMP)');
+				//type=update&match_type_id=&match_type_title
+				tx.executeSql('CREATE TABLE IF NOT EXISTS matchtypes(match_type_id integer primary key,title text, lupdate datetime DEFAULT CURRENT_TIMESTAMP)');
+				//type=update&bowl_style_id=&bowl_style_title
+				tx.executeSql('CREATE TABLE IF NOT EXISTS bowlstyles(bowl_style_id integer primary key,title text,lupdate datetime DEFAULT CURRENT_TIMESTAMP)');
+				//type=update&bat_style_id=&bat_style_title
+				tx.executeSql('CREATE TABLE IF NOT EXISTS batstyles(bat_style_id integer primary key,bat_style_title text, lupdate datetime DEFAULT CURRENT_TIMESTAMP)');
+				//type=update&player_role_id=&player_role_title
+				tx.executeSql('CREATE TABLE IF NOT EXISTS playerroles(player_role_id integer primary key,title text,lupdate datetime DEFAULT CURRENT_TIMESTAMP)');
+				//type=update&umpire_id=&umpire_name=&umpire_country_name=
+				tx.executeSql('CREATE TABLE IF NOT EXISTS umpires(umpire_id integer primary key,umpire_name text,umpire_country_id text,umpire_logo text,team_logo text,umpire_dob integer,lupdate datetime DEFAULT CURRENT_TIMESTAMP)');
+				//type=create&tournament_id=&team_id=
+				tx.executeSql('CREATE TABLE IF NOT EXISTS tournamenthasteam(tournament_id integer,team_id integer,lupdate datetime DEFAULT CURRENT_TIMESTAMP,PRIMARY KEY(tournament_id, team_id))');
+				//type=create&team_id=&player_id=
+				tx.executeSql('CREATE TABLE IF NOT EXISTS teamhasplayer(team_id integer,player_id integer,thp_id integer,lupdate datetime DEFAULT CURRENT_TIMESTAMP,PRIMARY KEY(team_id, player_id))');
+				//type=update&tournament_id=&team_id=&player_id=&odi=0or1&test=0or1&t20=0or1
+				tx.executeSql('CREATE TABLE IF NOT EXISTS tournamenthasplayer(t_thp_id integer,tournament_id integer ,team_id integer,player_id integer,odi integer,test integer,t20 integer,lupdate datetime DEFAULT CURRENT_TIMESTAMP,PRIMARY KEY(tournament_id, team_id,player_id))');
+			    //type=update&player_role_id=&player_role_title
+				tx.executeSql('CREATE TABLE IF NOT EXISTS category(category_id integer primary key,categoryName text,lupdate datetime DEFAULT CURRENT_TIMESTAMP)');
+				//type=create&id=&=iso&name=&nicename=&iso3=&numcode=&phonecode=&flagPath=&status= 
+				tx.executeSql('CREATE TABLE IF NOT EXISTS country(id integer,iso text,name text,nicename text,iso3 text,numcode integer,phonecode integer,flagPath text,status integer,lupdate datetime DEFAULT CURRENT_TIMESTAMP)');
+				//type=update&match_id=&match_type_id=&tournament_id=&match_name=&location=&no_inngs=&starttime=&description=&match_status=&toss=&mom_match=&umpire1,umpire2=&tv_umpire=&match_ref=&res_umpire=&match_result=&local_time=&match_cat=&mom_id=&winning_match_id=&match_day_night=
+				tx.executeSql('CREATE TABLE IF NOT EXISTS match(match_id integer primary key,match_type_id integer,tournament_id integer,match_name text,location text,no_inngs integer,starttime integer,description text,match_status text,toss text,mom_match text,umpire1 text,umpire2 text,tv_umpire text,match_ref text,res_umpire text,match_result text,local_time integer,match_cat text,mom_id integer,winning_match_id integer,match_day_night text,venue_id integer,lupdate datetime DEFAULT CURRENT_TIMESTAMP)');
+                //type=create&match_id=&team_id=
+				tx.executeSql('CREATE TABLE IF NOT EXISTS matchhasteam(match_id integer,team_id integer,lupdate datetime DEFAULT CURRENT_TIMESTAMP,PRIMARY KEY(match_id, team_id))')
+				//matchhasplayer
+				tx.executeSql('CREATE TABLE IF NOT EXISTS matchhasplayer(match_id integer,team_id integer,player_id integer,inngs integer,lupdate datetime DEFAULT CURRENT_TIMESTAMP,PRIMARY KEY(match_id, team_id,player_id))')
+			    //type=update&venue_id=&team_id=&player_id=&country_id=&venue_description=&venue_location=
+				tx.executeSql('CREATE TABLE IF NOT EXISTS venue(venue_id integer primary key,venue_title text ,geoLat integer,geoLang integer,venue_description text,venue_location text,country_id integer,lupdate datetime DEFAULT CURRENT_TIMESTAMP)');
+				//type=update&picture_id=&picture_title=&picture_description=&picture_type=&picture_type_id=&pic_path=
+				tx.executeSql('CREATE TABLE IF NOT EXISTS pictures(picture_id integer primary key,picture_title text,picture_description text,picture_type text,picture_type_id integer,pic_path text,lupdate datetime DEFAULT CURRENT_TIMESTAMP)');
+				
+				//type=create&player_name=&player_logo=&bowl_style_id=&bat_style_id=&player_cat=&playing_role=&player_country_id=&description=&dob=
+				tx.executeSql('CREATE TABLE IF NOT EXISTS players(player_id integer primary key,player_name text ,player_logo text,bowl_style_id integer,bat_style_id integer,player_cat integer,playing_role integer,player_country_id text,description text,dob text,lupdate datetime DEFAULT CURRENT_TIMESTAMP)');
+				//type=update&video_id=&video_title
+				tx.executeSql('CREATE TABLE IF NOT EXISTS videos(video_id integer primary key,video_title text,video_description text,video_type text,video_type_id integer,pic_path text,lupdate datetime DEFAULT CURRENT_TIMESTAMP)');
+				//points
+				tx.executeSql('CREATE TABLE IF NOT EXISTS points(pc_id integer primary key,pc_name text ,tournament_id integer,points integer,lupdate datetime DEFAULT CURRENT_TIMESTAMP)');
+			    //user
+				tx.executeSql('CREATE TABLE IF NOT EXISTS user(uid integer primary key,username text ,role_name text,emailid text,password text,socialid text,udeviceid text,devicetype text,teamid integer,lupdate datetime DEFAULT CURRENT_TIMESTAMP)');
+			}
+	);
+
+}
+//DBUtils.loadDBInitials();
+if(!window.sqlitePlugin){
+	window.db = openDatabase('cricket_admin', '1.0', 'cricket_admin DB', 2 * 1024 * 1024*1024);
+	DBUtils.loadDBInitials();
+}else{
+	window.db = window.sqlitePlugin.openDatabase({name: "cricket_admin.db", location: 1},DBUtils.loadDBInitials(),function(){
+		console.log("Problem with connect sqlite...")
+	});
+}
+
+
+DBUtils.createTournament = function(tournament,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO tournaments(tournament_id,name,short_name,logo,points_table,category,start_date,end_date) VALUES(?,?,?,?,?,?,?,?) ';
+				tx.executeSql(query,[tournament.tournamentId,tournament.name,tournament.shortName,tournament.logo,tournament.pointsTable,tournament.cat,tournament.startDate,tournament.endDate],
+				function(tx, res) {
+					respObj.status = "success";
+					tournament.id = res.insertId;
+					respObj.data = tournament;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = tournament;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.updateTournament = function(tournament,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'update tournaments set name = ?,short_name = ?,logo = ?,points_table = ?,category = ?,start_date = ?,end_date = ? where tournament_id = ?';
+				tx.executeSql(query,[tournament.name,tournament.shortName,tournament.logo,tournament.pointsTable,tournament.cat,tournament.startDate,tournament.endDate,tournament.tournamentId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = tournament;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.deleteTournament = function(tournamentId,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'delete from tournaments where tournament_id = ?';
+				tx.executeSql(query,[tournamentId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = tournamentId;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.retrieveTournaments = function(retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM tournaments order by name", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+
+
+
+DBUtils.createTeam = function(team,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO teams(team_id,name,small_name,logo,team_cat_id,description) VALUES(?,?,?,?,?,?) ';
+				tx.executeSql(query,[team.teamId,team.name,team.smallName,team.logo,team.catId,team.description],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = team;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = team;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.updateTeam = function(team,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'update teams set name = ?,small_name = ?,logo = ?,team_cat_id = ?,description=? where team_id = ?';
+				tx.executeSql(query,[team.name,team.smallName,team.logo,team.catId,team.description,team.teamId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = team;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.deleteTeam = function(teamId,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'delete from teams where team_id = ?';
+				tx.executeSql(query,[teamId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = teamId;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.retrieveTeams = function(retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM teams", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+
+
+
+DBUtils.createMatchType = function(matchType,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				//match_type_id integer primary key,title text
+				var query = 'INSERT INTO matchtypes(match_type_id,title) VALUES(?,?) ';
+				tx.executeSql(query,[matchType.matchTypeId,matchType.title],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = matchType;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = matchType;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.updateMatchType = function(matchType,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'update matchtypes set title = ? where match_type_id = ?';
+				tx.executeSql(query,[matchType.title,matchType.matchTypeId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = matchType;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.deleteMatchType = function(matchTypeId,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'delete from matchtypes where match_type_id = ?';
+				tx.executeSql(query,[matchTypeId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = matchTypeId;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.getMatchTypes = function(retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM matchtypes ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+
+
+
+
+
+
+//bowlstyles : bowl_style_id integer primary key,title text
+DBUtils.createBowlStyle = function(bowlStyle,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				//match_type_id integer primary key,title text
+				var query = 'INSERT INTO bowlstyles(bowl_style_id,title) VALUES(?,?) ';
+				tx.executeSql(query,[bowlStyle.bowlStyleId,bowlStyle.title],
+						//bowlStyleId
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = bowlStyle;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = bowlStyle;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.updateBowlStyle = function(bowlStyle,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'update bowlstyles set title = ? where bowl_style_id = ?';
+				tx.executeSql(query,[bowlStyle.title,bowlStyle.bowlStyleId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = bowlStyle;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.deleteBowlStyle = function(bowlStyleId,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'delete from bowlstyles where bowl_style_id = ?';
+				tx.executeSql(query,[bowlStyleId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = bowlStyleId;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.getBowlStyles = function(retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM bowlstyles ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+
+
+
+
+
+
+
+//batstyles : bat_style_id integer primary key,title text
+DBUtils.createBatStyle = function(batStyle,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO batstyles(bat_style_id,bat_style_title) VALUES(?,?) ';
+				tx.executeSql(query,[batStyle.batStyleId,batStyle.batStyleTitle],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = batStyle;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = batStyle;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.updateBatStyle = function(batStyle,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'update batstyles set bat_style_title = ? where bat_style_id = ?';
+				tx.executeSql(query,[batStyle.batStyleTitle,batStyle.batStyleId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = batStyle;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.deleteBatStyle = function(batStyleId,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'delete from batstyles where bat_style_id = ?';
+				tx.executeSql(query,[batStyleId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = batStyleId;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.getBatStyles = function(retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM batstyles ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+
+
+
+
+
+
+
+//playerroles(player_role_id integer primary key,title text
+DBUtils.createPlayerRole = function(playerRole,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO playerroles(player_role_id,title) VALUES(?,?) ';
+				tx.executeSql(query,[playerRole.playerRoleId,playerRole.title],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = playerRole;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = playerRole;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.updatePlayerRole = function(playerRole,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'update playerroles set title = ? where player_role_id = ?';
+				tx.executeSql(query,[playerRole.title,playerRole.playerRoleId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = playerRole;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.deletePlayerRole = function(playerRoleId,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'delete from playerroles where player_role_id = ?';
+				tx.executeSql(query,[playerRoleId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = playerRoleId;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.getPlayerRoles = function(retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM playerroles ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+
+
+
+
+
+//type=update&umpire_id=&umpire_name=&umpire_country_name=
+DBUtils.createUmpire = function(umpire,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO umpires(umpire_id,umpire_name,umpire_country_id,umpire_logo,team_logo,umpire_dob) VALUES(?,?,?,?,?,?) ';
+				tx.executeSql(query,[umpire.umpireId,umpire.umpireName,umpire.umpireCountryId,umpire.umpireLogo,umpire.teamLogo,umpire.dob],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = umpire;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = umpire;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.updateUmpire = function(umpire,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'update umpires set umpire_name = ?, umpire_country_id = ?,umpire_logo=?,team_logo=?,umpire_dob=? where umpire_id = ?';
+				tx.executeSql(query,[umpire.umpireId,umpire.umpireName,umpire.umpireCountryId,umpire.umpireLogo,umpire.teamLogo,umpire.dob],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = umpire;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.deleteUmpire = function(umpireId,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'delete from umpires where umpire_id = ?';
+				tx.executeSql(query,[umpireId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = umpireId;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.getUmpires = function(retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM umpires order by umpire_name ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+
+
+
+DBUtils.createTournamentHasTeam = function(tournamentHasTeam,retFun){
+    db.transaction(
+		function(tx) {
+			var respObj = {};
+			respObj.status = "failed";
+			var query = 'INSERT INTO tournamenthasteam(tournament_id,team_id) VALUES(?,?) ';
+			tx.executeSql(query,[tournamentHasTeam.tournamentId,tournamentHasTeam.teamId],
+			function(tx, res) {
+				respObj.status = "success";
+				respObj.data = tournamentHasTeam;
+		        retFun(respObj);
+			}, function(e1) {
+				respObj.data =tournamentHasTeam;
+				retFun(respObj);
+			}); 
+		}
+);
+}
+
+
+ DBUtils.createMultiTournamentHasTeam = function(tournamentHasTeam,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO tournamenthasteam(tournament_id,team_id) VALUES(?,?) ';
+				tx.executeSql(query,[tournamentHasTeam.tournamentId,tournamentHasTeam.teamId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = tournamentHasTeam;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data =tournamentHasTeam;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+ DBUtils.deleteTournamentHasTeam = function(tournamentHasTeam,retFun){
+    db.transaction(
+		function(tx) {
+			var respObj = {};
+			respObj.status = "failed";
+			var query = 'delete from tournamenthasteam where  tournament_id= ? && team_id= ?';
+			tx.executeSql(query,[tournamentHasTeam.tournamentId,tournamentHasTeam.teamId],
+			function(tx, res) {
+				respObj.status = "success";
+				respObj.data =tournamentHasTeam;
+		        retFun(respObj);
+			}, function(e1) {
+				respObj.data = [e1];
+				retFun(respObj);
+			}); 
+		}
+);
+}
+
+DBUtils.getTournamentHasTeam = function(tournamentHasTeam,retFun){
+   db.transaction(
+		function(tx) {
+			var dataArray = [];
+			var respObj = {};
+			respObj.status = "failed";
+			tx.executeSql("SELECT * FROM tournamenthasteam order by tournament_id ", [], function(tx, res) {
+	            for (var i = 0; i < res.rows.length; i++){
+	                dataArray[i] = res.rows.item(i);
+	            }
+	            if(dataArray && dataArray.length>0){
+	            	respObj.status = "success";
+	            	respObj.data = dataArray;
+	            }else{
+	            	respObj.status = "success";
+	            	respObj.data = [];
+	            }
+	            retFun(respObj);
+	        });
+		}
+);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+DBUtils.createTeamHasPlayer = function(teamHasPlayer,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO teamhasplayer(team_id,player_id,thp_id) VALUES(?,?,?) ';
+				tx.executeSql(query,[teamHasPlayer.teamId,teamHasPlayer.playerId,teamHasPlayer.thpId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = teamHasPlayer;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data =teamHasPlayer;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+
+
+DBUtils.createMultiTeamHasPlayer = function(teamHasPlayer,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO teamhasplayer(team_id,player_id,thp_id) VALUES(?,?,?) ';
+				tx.executeSql(query,[teamHasPlayer.teamId,teamHasPlayer.playerId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = teamHasPlayer;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data =teamHasPlayer;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.deleteTeamHasPlayer = function(teamHasPlayer,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'delete from teamhasplayer where  team_id= ? && player_id= ?';
+				tx.executeSql(query,[teamHasPlayer.teamId,teamHasPlayer.playerId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data =teamHasPlayer;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.getTeamHasPlayer = function(retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM teamhasplayer order by team_id ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+//tournament_has_player
+
+DBUtils.createTournamentHasPlayer = function(tournamentHasPlayer,retFun){
+	//console.log(tournamentHasPlayer)
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO tournamenthasplayer(tournament_id,team_id,player_id,odi,test,t20) VALUES(?,?,?,?,?,?) ';
+				tx.executeSql(query,[tournamentHasPlayer.tournamentId,tournamentHasPlayer.teamId,tournamentHasPlayer.playerId,tournamentHasPlayer.odi,tournamentHasPlayer.test,tournamentHasPlayer.t20],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = tournamentHasPlayer;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = tournamentHasPlayer;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.deleteTournamentHasPlayer = function(tournamentHasPlayer,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'delete from tournamenthasplayer where tournament_id = ?,team_id = ?,player_id = ?,odi = ?,test = ?,t20 = ?';
+				tx.executeSql(query,[tournamentHasPlayer.tournamentId,tournamentHasPlayer.teamId,tournamentHasPlayer.playerId,tournamentHasPlayer.odi,tournamentHasPlayer.test,tournamentHasPlayer.t20],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = tournamentHasPlayer;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.updateTournamentHasPlayer = function(tournamentHasPlayer,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'update tournamenthasplayer set tournament_id = ?,team_id = ?,player_id = ?,odi = ?,test = ?,t20 = ? where tournament_id = ?,team_id = ?,player_id = ?,odi = ?,test = ?,t20 = ? ';
+				tx.executeSql(query,[tournamentHasPlayer.tournamentId,tournamentHasPlayer.teamId,tournamentHasPlayer.playerId,tournamentHasPlayer.odi,tournamentHasPlayer.test,tournamentHasPlayer.t20],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = tournamentHasPlayer;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+	
+	
+}
+
+DBUtils.getTournamentHasPlayer = function(tournamentHasPlayer,retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM tournamenthasplayer order by tournament_id ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+/*DBUtils.createMultiTournamentHasPlayer = function(tournamentHasPlayer,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO tournamenthasplayer(tournament_id,team_id,player_id,odi,test,t20) VALUES(?,?,?,?,?,?) ';
+				tx.executeSql(query,[tournamentHasPlayer.tournamentId,tournamentHasPlayer.teamId,tournamentHasPlayer.playerId,tournamentHasPlayer.odi,tournamentHasPlayer.test,tournamentHasPlayer.t20],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = tournamentHasPlayer;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = tournamentHasPlayer;
+					retFun(respObj);
+				}); 
+			}
+	);
+}*/
+
+DBUtils.getAllByTourTournamentHasPlayerURL = function(tournamentHasPlayer,retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM tournamenthasplayer order by tournament_id ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+//category
+
+DBUtils.createCategory = function(category,retFun){
+	//console.log(category)
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO category(category_id,categoryName) VALUES(?,?) ';
+				tx.executeSql(query,[category.catId,category.categoryName],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = category;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = category;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.deleteCategory = function(category,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'delete from category where category_id = ?';
+				tx.executeSql(query,[category.catId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = category;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.updateCategory = function(category,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'update category set categoryName = ? where category_id = ? ';
+				tx.executeSql(query,[category.categoryName,category.catId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = category;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+	
+	
+}
+
+DBUtils.getCategory = function(category,retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM category order by category_id ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+//playerroles(player_role_id integer primary key,title text
+DBUtils.createPlayerRole = function(playerRole,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO playerroles(player_role_id,title) VALUES(?,?) ';
+				tx.executeSql(query,[playerRole.playerRoleId,playerRole.title],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = playerRole;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = playerRole;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.updatePlayerRole = function(playerRole,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'update playerroles set title = ? where player_role_id = ?';
+				tx.executeSql(query,[playerRole.title,playerRole.playerRoleId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = playerRole;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.deletePlayerRole = function(playerRoleId,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'delete from playerroles where player_role_id = ?';
+				tx.executeSql(query,[playerRoleId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = playerRoleId;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.getPlayerRoles = function(retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM playerroles ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+//country
+
+DBUtils.getCountry = function(retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM country order by id ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+DBUtils.createCountry = function(country,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO country(id,iso,name,nicename,iso3,numcode,phonecode,flagPath,status) VALUES(?,?,?,?,?,?,?,?,?) ';
+				tx.executeSql(query,[country.id,country.iso,country.name,country.nicename,country.iso3,country.numcode,country.phonecode,country.flagPath,country.status],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = country;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = country;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+//match
+
+DBUtils.createMatch = function(match,retFun){
+	//console.log(match)
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO match(match_id,match_name,match_type_id,tournament_id,location,no_inngs,starttime,description,umpire1,umpire2,tv_umpire,match_ref,res_umpire,local_time,match_cat,match_day_night,venue_id) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ';
+				tx.executeSql(query,[match.matchId,match.matchName,match.matchTypeId,match.tournamentId,match.location,match.noInngs,match.starttime,match.description,match.umpire1,match.umpire2,match.tvUmpire,match.matchRef,match.resUmpire,match.localTime,match.matchCat,match.matchDayNight,match.venueId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = match;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = match;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.deleteMatch = function(match,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'delete from match where match_id = ? & tournament_id= ? ';
+				tx.executeSql(query,[match.matchId,match.tournamentId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = match;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.updateMatch = function(match,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'update match set match_type_id = ?,tournament_id = ?,match_name = ?,location = ?,no_inngs = ?,starttime = ?,description = ?,match_status = ?,toss = ?,mom_match = ?,umpire1 = ?,umpire2 = ?,tv_umpire = ?,match_ref = ?,res_umpire = ?,match_result = ?,local_time = ?,match_cat = ?,mom_id = ?,winning_match_id= ?,venue_id=? where match_id = ? ';
+				tx.executeSql(query,[match.matchId,match.matchTypeId,match.tournamentId,match.matchName,match.location,match.noInngs,match.starttime,match.description,match.matchStatus,match.toss,match.momMatch,match.umpire1,match.umpire2,match.tvUmpire,match.matchRef,match.resUmpire,match.matchResult,match.localTime,match.matchCat,match.momId,match.winningMatchId,match.matchDayNight,match.venueId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = match;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+	
+	
+}
+
+DBUtils.getMatch = function(match,retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM match order by match_id ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+DBUtils.getAllByTourMatch = function(match,retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM match order by match_id ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+//match_has_team
+
+
+DBUtils.createMatchHasTeam = function(matchHasTeam,retFun){
+	//console.log(matchHasTeam)
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO matchhasteam(match_id,team_id) VALUES(?,?) ';
+				tx.executeSql(query,[matchHasTeam.matchId,matchHasTeam.teamId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = matchHasTeam;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = matchHasTeam;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.deleteMatchHasTeam = function(matchHasTeam,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'delete from matchhasteam where match_id = ? & team_id= ? ';
+				tx.executeSql(query,[matchHasTeam.matchId,matchHasTeam.teamId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = matchHasTeam;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+
+
+DBUtils.getMatchHasTeam = function(matchHasTeam,retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM matchhasteam order by match_id ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+DBUtils.createMultiMatchHasTeam = function(matchHasTeam,retFun){
+	//console.log(matchHasTeam)
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO matchhasteam(match_id,team_id) VALUES(?,?) ';
+				tx.executeSql(query,[matchHasTeam.matchId,matchHasTeam.teamId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = matchHasTeam;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = matchHasTeam;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.createMatchHasPlayer = function(matchHasPlayer,retFun){
+	//console.log(matchHasPlayer)
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO matchhasplayer(match_id,team_id,player_id,inngs) VALUES(?,?,?,?) ';
+				tx.executeSql(query,[matchHasPlayer.matchId,matchHasPlayer.teamId,matchHasPlayer.playerId,matchHasPlayer.Inngs],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = matchHasPlayer;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = matchHasPlayer;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.createMultiMatchHasPlayer = function(matchHasPlayer,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO matchhasplayer(match_id,team_id,player_id,inngs) VALUES(?,?,?,?) ';
+				tx.executeSql(query,[matchHasPlayer.matchId,matchHasPlayer.teamId,matchHasPlayer.playerId,matchHasPlayer.Inngs],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = matchHasPlayer;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = matchHasPlayer;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+
+DBUtils.deleteMatchHasPlayer = function(matchHasPlayer,retFun){
+	//console.log(matchHasPlayer)
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'DELETE from matchhasplayer where match_id=?&team_id=?&player_id=?';
+				tx.executeSql(query,[matchHasPlayer.matchId,matchHasPlayer.teamId,matchHasPlayer.playerId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = matchHasPlayer;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = matchHasPlayer;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.updateMatchHasPlayer = function(matchHasPlayer,retFun){
+	//console.log(matchHasPlayer)
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'update  matchhasplayer set  match_id=?&team_id=?&player_id=? ';
+				tx.executeSql(query,[matchHasPlayer.matchId,matchHasPlayer.teamId,matchHasPlayer.playerId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = matchHasPlayer;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = matchHasPlayer;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.getMultiMatchHasPlayer = function(match,retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM matchhasplayer order by match_id ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+
+DBUtils.getMatchHasPlayer = function(retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM matchhasplayer ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+//venue
+
+DBUtils.createVenue = function(venue,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO venue(venue_id,venue_title,geoLat,geoLang,venue_description,venue_location,country_id) VALUES(?,?,?,?,?,?,?) ';
+				tx.executeSql(query,[venue.venueId,venue.venueTitle,venue.venueGeoLat,venue.venueGeoLang,venue.venueDescription,venue.venuelocation,venue.countryId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = venue;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = venue;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.deleteVenue = function(venue,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'delete from venue where match_id = ?,team_id = ?,player_id = ?';
+				tx.executeSql(query,[venue.matchId,venue.teamId,venue.playerId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = venue;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.updateVenue = function(venue,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'update venue set venue_id = ?,venue_title = ?,geoLat = ?,geoLang = ?,venue_description = ?,venue_location = ?,country_id = ? where venue_id = ?,venue_title = ?,geoLat = ?,geoLang = ?,venue_description = ?,venue_location = ?,country_id = ? ';
+				tx.executeSql(query,[venue.venueId,venue.venueTitle,venue.venueGeoLat,venue.venueGeoLang,venue.venueDescription,venue.venuelocation,venue.countryId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = venue;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+	
+	
+}
+DBUtils.getVenue = function(retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM venue ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+DBUtils.getAllByCountryVenueURL = function(venue,retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM venue order by country_id ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+//pictures
+
+DBUtils.createPictures = function(pictures,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO pictures(picture_title,picture_description,picture_type,picture_type_id,pic_path) VALUES(?,?,?,?,?) ';
+				tx.executeSql(query,[pictures.pictureTitle,pictures.pictureDescription,pictures.pictureType,pictures.pictureTypeId,pictures.PicPath],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = pictures;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = pictures;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.updatePictures = function(pictures,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'update pictures set  picture_id = ?,picture_title= ?,picture_description= ?,picture_type= ?,picture_type_id= ?,pic_path=?';
+				tx.executeSql(query,[pictures.pictureId,pictures.pictureTitle,pictures.pictureDescription,pictures.pictureType,pictures.pictureTypeId,pictures.PicPath],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = pictures;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.deletePictures = function(pictures,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'delete from pictures where picture_id = ?,picture_type = ?,picture_type_id = ?';
+				tx.executeSql(query,[pictures],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = pictures;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.getPictures = function(retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM pictures ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+DBUtils.getAllByTypePictures = function(pictures,retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM pictures order by picture_id", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+
+//
+
+//player_id,player_name,player_logo,bowl_style_id,player_cat,playing_role,player_country_id,description,dob
+DBUtils.createPlayer = function(player,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO players(player_id,player_name,player_logo,bowl_style_id,bat_style_id,player_cat,playing_role,player_country_id,description,dob) VALUES(?,?,?,?,?,?,?,?,?,?) ';
+				tx.executeSql(query,[player.playerId,player.playerName,player.playerLogo,player.bowlStyleId,player.batStyleId,player.cat,player.role,player.playerCountryId,player.description,player.dob],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = player;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = player;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.updatePlayer = function(player,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'update players set player_name=?,player_logo=?,bowl_style_id=?,bat_style_id=?,player_cat=?,playing_role=?,player_country_id=?,description=?,dob=? where player_id = ?';
+				tx.executeSql(query,[player.playerName,player.playerLogo,player.bowlStyleId,player.batStyleId,player.cat,player.role,player.playerCountryId,player.description,player.dob,player.playerId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = player;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.deletePlayer = function(playerId,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'delete from players where player_id = ?';
+				tx.executeSql(query,[playerId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = playerId;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.getPlayers = function(retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM players ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+//videos : video_id integer primary key,video_title text
+DBUtils.createVideos = function(videos,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO videos(video_title,video_description,video_type,video_type_id,pic_path) VALUES(?,?,?,?,?) ';
+				tx.executeSql(query,[videos.videoTitle,videos.videoDescription,videos.videoType,videos.videoTypeId,videos.PicPath],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = videos;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = videos;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.updateVideos = function(videos,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'update videos set  video_id = ?,video_title= ?,video_description= ?,video_type= ?,video_type_id= ?,pic_path=?';
+				tx.executeSql(query,[videos.videoId,videos.videoTitle,videos.videoDescription,videos.videoType,videos.videoTypeId,videos.PicPath],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = videos;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.deleteVideos = function(videos,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'delete from videos where video_id = ?,video_type = ?,video_type_id = ?';
+				tx.executeSql(query,[videos],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = videos;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.getVideos = function(retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM videos ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+DBUtils.getAllByTypeVideos = function(videos,retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM videos order by video_id", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+// points
+DBUtils.createPointsconfig = function(points,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO points(pc_id,pc_name,tournament_id,points) VALUES(?,?,?,?) ';
+				tx.executeSql(query,[points.pcId,points.pcName,points.tournamentId,points.points],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = points;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data =points;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.updatePointsconfig = function(points,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'update  points set  pc_name=?&tournament_id=?&points=?& where pc_id=? ';
+				tx.executeSql(query,[points.pcName,points.tournamentId,points.points,points.pcId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = points;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data =points;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.deletepointsconfig = function(points,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'delete from points where tournaments_id = ?,pc_id=?';
+				tx.executeSql(query,[points.tournamentId,points.pcId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = points;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.getPoints = function(retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM points ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+DBUtils.getPointsListByTour = function(points,retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM points where tournament_id=?", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+//user
+DBUtils.createUser = function(user,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'INSERT INTO user(uid,username ,role_name,emailid,password,socialid,udeviceid,devicetype,teamid ) VALUES(?,?,?,?,?,?,?,?,?)';
+				tx.executeSql(query,[user.uId,user.userName,user.roleName,user.emailId,user.password,user.socialId,user.uDeviceId,user.deviceType,user.teamId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = user;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data =user;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.updateUser = function(user,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'update  user set username=? ,&role_name=?,&emailid=?,&password=?,&socialid=?,&udeviceid=?,&devicetype=?,&teamid=? where uid= ?';
+				tx.executeSql(query,[user.userName,user.roleName,user.emailId,user.password,user.socialId,user.uDeviceId,user.deviceType,user.teamId,user.uId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = user;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data =user;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.deleteuser = function(uId,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'delete from user where uid = ?';
+				tx.executeSql(query,[uId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = uId;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data = [e1];
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.getUserList = function(retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM user ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+DBUtils.updatePassword = function(user,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'update  user set password=? where uid= ?';
+				tx.executeSql(query,[user.userName,user.uId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = user;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data =user;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+
+DBUtils.getLogin = function(user,retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT socialid,password FROM user where socialid=?,password=? ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+DBUtils.changePassword = function(user,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'update  user set password=? where uid= ?';
+				tx.executeSql(query,[user.userName,user.uId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = user;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data =user;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.updateUdId = function(user,retFun){
+	db.transaction(
+			function(tx) {
+				var respObj = {};
+				respObj.status = "failed";
+				var query = 'update  user set udeviceid=?,devicetype=? where uid= ?';
+				tx.executeSql(query,[user.uDeviceId,user.userName,user.uId],
+				function(tx, res) {
+					respObj.status = "success";
+					respObj.data = user;
+			        retFun(respObj);
+				}, function(e1) {
+					respObj.data =user;
+					retFun(respObj);
+				}); 
+			}
+	);
+}
+DBUtils.forgotPassword = function(user,retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT password FROM user where email=? ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+DBUtils.getDetailById = function(user,retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT * FROM user where uid=? ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}
+
+DBUtils.changePassword = function(user,retFun){
+	db.transaction(
+			function(tx) {
+				var dataArray = [];
+				var respObj = {};
+				respObj.status = "failed";
+				tx.executeSql("SELECT password FROM user where email=? ", [], function(tx, res) {
+		            for (var i = 0; i < res.rows.length; i++){
+		                dataArray[i] = res.rows.item(i);
+		            }
+		            if(dataArray && dataArray.length>0){
+		            	respObj.status = "success";
+		            	respObj.data = dataArray;
+		            }else{
+		            	respObj.status = "success";
+		            	respObj.data = [];
+		            }
+		            retFun(respObj);
+		        });
+			}
+	);
+}

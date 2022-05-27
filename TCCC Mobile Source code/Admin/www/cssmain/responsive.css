@@ -1,0 +1,19 @@
+@media (min-width: 2560px){
+.container {
+width: 2200px ;
+}
+.plotform-img img {
+width: auto;
+}
+.contact-us-img img {
+width: auto;
+}
+
+}
+
+@media (max-height: 700px){
+#platforms{	
+	height: 585px;
+overflow-y: auto;
+}
+}
